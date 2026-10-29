@@ -8,7 +8,17 @@
     "arskurs": "åk 3–6",
     "farg": "#b58cff",
     "topplista": true,
-    "status": "klar"
+    "status": "klar",
+    "lankar": [
+      {
+        "text": "För lärare",
+        "adress": "kristallgruvan/larare.html"
+      },
+      {
+        "text": "För föräldrar",
+        "adress": "kristallgruvan/foraldrar.html"
+      }
+    ]
   },
   {
     "id": "nordlig",

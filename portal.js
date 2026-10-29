@@ -2,6 +2,7 @@
    CYBERDYNE SPEL – PORTALENS STARTSIDA
    Visar inloggningen, spelen i spel.json och en gemensam topplista.
    Nytt spel: lägg till ett block i spel.json, ingen kod behöver ändras.
+   Extra länkar på spelets kort (t.ex. lärarsida): "lankar": [{ "text", "adress" }].
    ===================================================================== */
 (function () {
   'use strict';
@@ -69,6 +70,7 @@
         <div class="game-top">${gemSVG(g.farg || '#b58cff', 40)}<h2>${esc(g.namn)}</h2></div>
         <p>${esc(g.beskrivning)}</p>
         <div class="tags">${[g.amne, g.arskurs, g.topplista ? 'Topplista' : ''].filter(Boolean).map((t) => `<span>${esc(t)}</span>`).join('')}</div>
+        ${(g.lankar || []).length ? `<nav class="game-links" aria-label="Mer om ${esc(g.namn)}">${g.lankar.map((l) => `<a class="link" href="${esc(l.adress)}">${esc(l.text)}</a>`).join('')}</nav>` : ''}
         ${soon ? '<span class="btn ghost" aria-disabled="true">Kommer snart</span>' : `<a class="btn" href="${esc(g.adress)}">Spela</a>`}
       </article>`;
     }).join('') || '<p class="muted">Inga spel än.</p>';

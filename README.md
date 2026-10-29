@@ -51,6 +51,7 @@ Portalens egna filer (`index.html`, `portal.js`, `spel.json`) ändras direkt, ut
 
 1. Skapa en mapp, till exempel `ordjakten/`, med spelets `index.html`.
 2. Lägg till spelet i `spel.json` med `"status": "klar"`. Kortet syns då direkt på startsidan.
+   Har spelet egna sidor för lärare eller föräldrar, lägg till `"lankar": [{ "text": "För lärare", "adress": "ordjakten/larare.html" }]`. Länkarna visas på spelets kort.
 3. Om spelet ska ha inloggning och topplista:
    - Ladda in `<script src="../konto/config.js"></script>` och `<script src="../konto/konto.js"></script>`.
    - `CyberKonto.session()` ger den inloggade spelaren. Inloggningen delas automatiskt med portalen.
@@ -113,6 +114,7 @@ GitHub Pages: repo-inställningar → **Pages** → Custom domain `www.cyberdyne
 
 | Datum | Ändring |
 |---|---|
+| 2026-10-29 | Länkarna för lärare och föräldrar flyttade från sidfoten till Kristallgruvans kort (`lankar` i `spel.json`). |
 | 2026-10-29 | Nördlig tillagt i `nordlig/` och på startsidan. |
 | 2026-10-29 | Lärarhandledningen (`kristallgruvan/lararhandledning.pdf`) länkas från lärarsidan, även före inloggning. |
 | 2026-10-29 | Portalen skapad. Gemensam inloggning (databas v3). Kristallgruvan flyttad från matte.cyberdyne.se. |
