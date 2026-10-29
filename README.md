@@ -111,4 +111,5 @@ GitHub Pages: repo-inställningar → **Pages** → Custom domain `www.cyberdyne
 
 | Datum | Ändring |
 |---|---|
+| 2026-10-29 | Lärarhandledningen (`kristallgruvan/lararhandledning.pdf`) länkas från lärarsidan, även före inloggning. |
 | 2026-10-29 | Portalen skapad. Gemensam inloggning (databas v3). Kristallgruvan flyttad från matte.cyberdyne.se. |

@@ -818,6 +818,11 @@ a.btn { text-decoration: none; display: inline-block; }
     <button class="btn" type="submit">Logga in</button>
   </form>
   <p id="err" class="small errtxt" ${msg ? '' : 'hidden'}>${esc(msg || '')}</p>` : '<p>Lärarsidan behöver Supabase. Fyll i <code>konto/config.js</code> först (se README).</p>'}
+</section>
+<section class="panel">
+  <h2>Lärarhandledning</h2>
+  <p class="muted">Om spelet och matematiken, hur du tolkar statistiken, integritet och tips för klassrummet. Du behöver inte logga in för att läsa den.</p>
+  <div class="row"><a class="btn ghost" href="lararhandledning.pdf" target="_blank" rel="noopener">Öppna lärarhandledningen (PDF)</a></div>
 </section>`);
     const f = document.getElementById('tform');
     if (f) f.addEventListener('submit', async (e) => {
