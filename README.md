@@ -27,6 +27,7 @@ Gratis lärospel för mellanstadiet på **https://www.cyberdyne.se**. Allt ligge
 ```
 /                      portalen (www.cyberdyne.se)
 ├── index.html         startsidan
+├── om.html            Om-sidan (länkas i sidfoten, ändras direkt)
 ├── portal.js          inloggning, spellista och gemensam topplista
 ├── spel.json          listan över spel
 ├── stil.css           gemensam stil (byggs)
@@ -114,6 +115,7 @@ GitHub Pages: repo-inställningar → **Pages** → Custom domain `www.cyberdyne
 
 | Datum | Ändring |
 |---|---|
+| 2026-10-29 | Om-sida (`om.html`), länkad i sidfoten vid kontaktadressen. |
 | 2026-10-29 | Länkarna för lärare och föräldrar flyttade från sidfoten till Kristallgruvans kort (`lankar` i `spel.json`). |
 | 2026-10-29 | Nördlig tillagt i `nordlig/` och på startsidan. |
 | 2026-10-29 | Lärarhandledningen (`kristallgruvan/lararhandledning.pdf`) länkas från lärarsidan, även före inloggning. |
