@@ -1,0 +1,24 @@
+[
+  {
+    "id": "kristallgruvan",
+    "namn": "Kristallgruvan",
+    "beskrivning": "Matteuppdrag som anpassar sig efter dig. Samla kristaller, kläck varelser och bygg din egen bas.",
+    "adress": "kristallgruvan/",
+    "amne": "Matte",
+    "arskurs": "åk 3–6",
+    "farg": "#b58cff",
+    "topplista": true,
+    "status": "klar"
+  },
+  {
+    "id": "nasta-spel",
+    "namn": "Nästa spel",
+    "beskrivning": "Ett nytt spel är på gång.",
+    "adress": "",
+    "amne": "",
+    "arskurs": "",
+    "farg": "#5ee0c0",
+    "topplista": false,
+    "status": "snart"
+  }
+]

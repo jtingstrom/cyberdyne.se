@@ -1,0 +1,2007 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kristallgruvan</title>
+<meta name="description" content="Ett mattespel för åk 3–6: lös uppdrag, samla kristaller och varelser, bygg din bas och klättra på topplistan.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 7' shape-rendering='crispEdges'%3E%3Cpath fill='%230b0a10' d='M2 0h4v1h1v1h1v2H7v1H6v1H5v1H3V6H2V5H1V4H0V2h1V1h1z'/%3E%3Cpath fill='%23b58cff' d='M2 1h4v1h1v2H6v1H5v1H3V5H2V4H1V2h1z'/%3E%3Cpath fill='%23fff' d='M2 1h1v1H2zM1 2h1v1H1z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Nunito:wght@500;700;800&display=swap">
+<style>
+@font-face { font-family: "KG Siffror"; src: url(data:font/ttf;base64,AAEAAAAKAIAAAwAgT1MvMkhiRq0AAAEoAAAAYGNtYXAADACMAAABoAAAADRnbHlmX/0YRgAAAewAAASAaGVhZC+/A74AAACsAAAANmhoZWEGMAH+AAAA5AAAACRobXR4A94BLAAAAYgAAAAYbG9jYQWwBq4AAAHUAAAAGG1heHAAGQA2AAABCAAAACBuYW1lhg4k5QAABmwAAABpcG9zdACAAHgAAAbYAAAAOAABAAAAAQAAyHlpkF8PPPUAAQPoAAAAAOb/4AoAAAAA5v/gCgA8//ICbgLYAAAAAwACAAAAAAAAAAEAAAOE/wYAAAKyADwARAJuAAEAAAAAAAAAAAAAAAAAAAABAAEAAAALADQADQAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAwKyAZAABQAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAPz8/PwAAADAAOQOE/wYAAAOEAPoAAAAAAAAAAAH0ArwAAAAgAAACsgAAADwAPAA8ADwAPAA8ADwAPAA8ADwAAAACAAAAAwAAABQAAwABAAAAFAAEACAAAAAEAAQAAQAAADn//wAAADD////RAAEAAAAAAAAAAABQAH4AsgDiARwBUgGOAbwCBAJAAA0APP/yAm4C2AADAAcACwAPABMAFwAbAB8AIwAnACsALwAzAAATNSEVBTUzFSE1MxUFNTMVMzUzFQU1MxUzNTMVMzUzFQU1MxUzNTMVBTUzFSE1MxUFNSEVpAFi/jaSAQ6S/c6Spvr9zpI+kj6S/c76ppL9zpIBDpL+NgFiAmJ2dmh2dnZ2aHZ2dnZodnZ2dnZ2aHZ2dnZodnZ2dmh2dgAHAKT/8gIGAtgAAwAHAAsADwATABcAGwAAATUzFQc1MxUHNTMVBzUzFQc1MxUHNTMVBzUhFQEMkvr6kpKSkpKSkpL6AWICYnZ2aHZ2aHZ2aHZ2aHZ2aHZ2aHZ2AAgAPP/yAm4C2AADAAcACwAPABMAFwAbAB8AABM1IRUFNTMVITUzFQc1MxUHNTMVBzUzFQc1MxUHNSEVpAFi/jaSAQ6SkpL6kvqS+pL6AjICYnZ2aHZ2dnZodnZodnZodnZodnZodnYABwA8//ICbgLYAAMABwALAA8AEwAXABsAABM1IRUHNTMVBzUzFQU1IRUHNTMVBzUzFQU1IRU8AcoqkpKS/jYBYiqSkpL9zgHKAmJ2dmh2dmh2dmh2dmh2dmh2dmh2dgAACQA8//ICbgLYAAMABwALAA8AEwAXABsAHwAjAAABNTMVBzUzFQU1MxUzNTMVBTUzFTM1MxUFNSEVBzUzFQc1MxUBdJL6+v6ekj6S/jaSppL+NgIy+pKSkgJidnZodnZodnZ2dmh2dnZ2aHZ2aHZ2aHZ2AAAIADz/8gJuAtgAAwAHAAsADwATABcAGwAfAAATNSEVBTUzFQc1IRUHNTMVBzUzFQU1MxUhNTMVBTUhFTwCMv3OkpIByiqSkpL9zpIBDpL+NgFiAmJ2dmh2dmh2dmh2dmh2dmh2dnZ2aHZ2AAAJADz/8gJuAtgAAwAHAAsADwATABcAGwAfACMAABM1IRUFNTMVBzUzFQc1IRUFNTMVITUzFQU1MxUhNTMVBTUhFaQBYv42kpKSkgHK/jaSAQ6S/c6SAQ6S/jYBYgJidnZodnZodnZodnZodnZ2dmh2dnZ2aHZ2AAAHADz/8gJuAtgAAwAHAAsADwATABcAGwAAEzUhFQc1MxUHNTMVBzUzFQc1MxUHNTMVBzUzFTwCMpKS+pL6kvqSkpKSkgJidnZodnZodnZodnZodnZodnZodnYAAAsAPP/yAm4C2AADAAcACwAPABMAFwAbAB8AIwAnACsAABM1IRUFNTMVITUzFQU1MxUhNTMVBTUhFQU1MxUhNTMVBTUzFSE1MxUFNSEVpAFi/jaSAQ6S/c6SAQ6S/jYBYv42kgEOkv3OkgEOkv42AWICYnZ2aHZ2dnZodnZ2dmh2dmh2dnZ2aHZ2dnZodnYAAAkAPP/yAm4C2AADAAcACwAPABMAFwAbAB8AIwAAEzUhFQU1MxUhNTMVBTUzFSE1MxUFNSEVBzUzFQc1MxUFNSEVpAFi/jaSAQ6S/c6SAQ6S/jYBypKSkpL+NgFiAmJ2dmh2dnZ2aHZ2dnZodnZodnZodnZodnYAAAAABAA2AAEAAAAAAAEACgAAAAEAAAAAAAIABwAKAAMAAQQJAAEAFAARAAMAAQQJAAIADgAlS0cgU2lmZnJvclJlZ3VsYXIASwBHACAAUwBpAGYAZgByAG8AcgBSAGUAZwB1AGwAYQByAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAABMAFAAVABYAFwAYABkAGgAbABw=) format("truetype"); unicode-range: U+0030-0039; font-weight: 100 900; font-display: block; }
+
+/* Layout: en smal kolumn som en gruvgång – hjälte överst, ett stenblock (panel) per steg. Medvetet ett enda mörkt tema: grottan. */
+:root {
+  --bg: #15131c;
+  --rock: #221f2c;
+  --rock-2: #2b2738;
+  --rock-3: #3a3449;
+  --edge: #0b0a10;
+  --well: #100f16;
+  --fg: #f1ecf8;
+  --muted: #aaa2bf;
+  --moss: #7ccf5a;
+  --moss-d: #3f8a2a;
+  --moss-ink: #10200a;
+  --amethyst: #b58cff;
+  --gold: #ffd166;
+  --soft: #ff9f8a;
+  --f-display: "KG Siffror", "Pixelify Sans", "Courier New", monospace;
+  --f-body: "Nunito", ui-rounded, system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { background: var(--bg); color: var(--fg); }
+body {
+  font-family: var(--f-body); font-size: 18px; line-height: 1.5;
+  background-image: radial-gradient(var(--rock) 1.2px, transparent 1.6px), radial-gradient(var(--rock-2) 1px, transparent 1.4px);
+  background-size: 28px 28px, 44px 44px; background-position: 0 0, 13px 19px;
+}
+#app { max-width: 780px; margin: 0 auto; padding-inline: 16px; padding-block: 20px 64px; display: flex; flex-direction: column; gap: 18px; }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 700; line-height: 1.1; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(2.1rem, 7vw, 3.2rem); letter-spacing: .01em; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.1rem; }
+p { margin: 0; }
+.eyebrow { font-family: var(--f-display); font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+.muted { color: var(--muted); }
+.small { font-size: .85rem; }
+.center { text-align: center; }
+.grow { flex: 1; min-width: 0; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+.panel { background: var(--rock); border: 3px solid var(--edge); border-radius: 4px; box-shadow: inset 0 3px 0 var(--rock-3), 0 6px 0 var(--edge); padding: 22px; display: flex; flex-direction: column; gap: 14px; }
+
+.btn { font-family: var(--f-display); font-weight: 700; font-size: 1.1rem; color: var(--moss-ink); background: var(--moss); border: 3px solid var(--edge); border-radius: 4px; padding: 10px 18px; box-shadow: inset 0 -4px 0 var(--moss-d), 0 4px 0 var(--edge); cursor: pointer; transition: transform .06s; }
+.btn:hover { filter: brightness(1.08); }
+.btn:active { transform: translateY(3px); box-shadow: inset 0 -2px 0 var(--moss-d), 0 1px 0 var(--edge); }
+.btn.big { font-size: 1.35rem; padding: 14px 26px; align-self: flex-start; }
+.btn.ghost { background: var(--rock-3); color: var(--fg); box-shadow: inset 0 -4px 0 var(--rock-2), 0 4px 0 var(--edge); }
+.link { background: none; border: 0; color: var(--muted); font: inherit; font-size: .95rem; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; padding: 6px 2px; }
+.link:hover { color: var(--fg); }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+.mossa { position: relative; display: inline-block; width: 72px; flex: none; }
+.mossa svg { width: 100%; height: auto; display: block; }
+.mossa.big { width: 132px; }
+.mossa.mid { width: 92px; }
+.mossa.sleep svg { animation: breathe 3.2s ease-in-out infinite; transform-origin: 50% 90%; }
+.mossa.awake svg { animation: hop 1.1s ease-in-out infinite; }
+.zzz { position: absolute; right: -6px; top: 6px; font-family: var(--f-display); color: var(--amethyst); font-size: 1rem; }
+.zzz i, .zzz b { font-style: normal; font-weight: 700; display: inline-block; }
+.zzz i { font-size: 1.25em; transform: translateY(-.4em); }
+.zzz b { font-size: 1.55em; transform: translateY(-.9em); }
+@keyframes breathe { 50% { transform: scaleY(.95); } }
+@keyframes hop { 50% { transform: translateY(-6%); } }
+
+.hero { display: flex; gap: 22px; align-items: center; padding-block: 18px 6px; }
+.hero-txt { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.lead { font-size: 1.1rem; max-width: 52ch; }
+.hero.won h1 { color: var(--moss); }
+.holdzone { display: inline-block; flex: none; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; touch-action: manipulation; }
+
+.kid-list { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn.kid { font-size: 1.3rem; }
+.newkid { display: flex; flex-direction: column; gap: 10px; border-top: 3px dashed var(--rock-3); padding-top: 16px; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+.fld { display: flex; flex-direction: column; gap: 4px; font-size: .9rem; color: var(--muted); flex: 1 1 160px; }
+.fld.inline { flex-direction: row; align-items: center; gap: 10px; flex: none; }
+input, select, textarea { font: inherit; color: var(--fg); background: var(--well); border: 3px solid var(--edge); border-radius: 4px; padding: 10px 12px; box-shadow: inset 0 3px 0 rgba(0,0,0,.35); }
+textarea { width: 100%; font-family: ui-monospace, Menlo, monospace; font-size: .8rem; }
+.foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; align-items: center; }
+
+.intro { align-items: flex-start; }
+.paper { display: flex; gap: 14px; align-items: center; background: var(--rock-2); border: 3px solid var(--edge); border-radius: 4px; padding: 12px 14px; }
+.paper svg { flex: none; }
+.tips { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 4px; }
+.tips li::marker { color: var(--gold); }
+
+.maphead { display: flex; gap: 16px; align-items: center; }
+.meter { height: 18px; background: var(--well); border: 3px solid var(--edge); border-radius: 3px; margin: 6px 0; overflow: hidden; }
+.meter span { display: block; height: 100%; background: repeating-linear-gradient(90deg, var(--amethyst) 0 10px, #9b6bff 10px 12px); transition: width .4s; }
+.tunnels { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.tunnel { display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; column-gap: 12px; align-items: center; text-align: left; padding: 14px; background: var(--rock); color: var(--fg); border: 3px solid var(--edge); border-radius: 4px; box-shadow: inset 0 3px 0 var(--rock-3), 0 4px 0 var(--edge); cursor: pointer; font: inherit; }
+.tunnel .gem { grid-row: 1 / 3; }
+.t-name { display: flex; flex-direction: column; font-weight: 800; line-height: 1.2; }
+.t-name small { font-family: var(--f-display); font-weight: 500; color: var(--muted); font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; }
+.t-state { font-family: var(--f-display); font-size: .9rem; color: var(--moss); }
+.tunnel:hover:not(:disabled) { background: var(--rock-2); }
+.tunnel.next { border-color: var(--gold); }
+.tunnel.next .t-state { color: var(--gold); }
+.tunnel.done { cursor: default; background: var(--well); box-shadow: none; }
+.tunnel.done .t-state { color: var(--muted); }
+.gem.on { filter: drop-shadow(0 0 6px rgba(255,255,255,.18)); }
+
+.qhead { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: space-between; }
+.qarea { display: inline-flex; align-items: center; gap: 8px; font-family: var(--f-display); font-size: 1.05rem; }
+.dots { display: inline-flex; gap: 6px; }
+.dots i { width: 14px; height: 14px; background: var(--rock-3); border: 2px solid var(--edge); }
+.dots i.maybe { opacity: .45; }
+.dots i.now { background: var(--gold); opacity: 1; }
+.dots i.ok { background: var(--moss); opacity: 1; }
+.dots i.miss { background: var(--soft); opacity: 1; }
+.qcard { padding: 26px 24px; }
+.qtext { font-size: 1.45rem; font-weight: 700; line-height: 1.45; max-width: 40ch; }
+.qtext.expr { font-size: clamp(2rem, 8vw, 2.8rem); font-weight: 800; font-variant-numeric: tabular-nums; }
+.fr { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; line-height: 1.05; font-size: .82em; margin: 0 .12em; }
+.fr > span:first-child { border-bottom: .09em solid currentColor; padding: 0 .18em .04em; }
+.fr > span:last-child { padding-top: .04em; }
+.ansform { display: flex; flex-direction: column; gap: 10px; }
+.ansrow { display: flex; align-items: center; gap: 10px; }
+#ans { font-size: 1.9rem; font-weight: 800; width: min(260px, 100%); padding: 10px 14px; font-variant-numeric: tabular-nums; }
+.unit { font-size: 1.4rem; font-weight: 800; color: var(--muted); }
+.choices { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn.choice { background: var(--rock-3); color: var(--fg); box-shadow: inset 0 -4px 0 var(--rock-2), 0 4px 0 var(--edge); font-family: var(--f-body); font-weight: 800; font-size: 1.6rem; min-width: 96px; padding: 12px 20px; }
+.btn.choice:hover { background: #4a4260; }
+.dunno { align-self: flex-start; }
+
+.fig { display: block; width: 100%; max-width: 380px; height: auto; max-height: 260px; margin: 4px 0; }
+.fig .shape { fill: rgba(181,140,255,.14); stroke: var(--fg); stroke-width: 2.5; }
+.fig .fill { fill: var(--amethyst); stroke: var(--fg); stroke-width: 2; }
+.fig .lbl { fill: var(--fg); font: 800 17px var(--f-body); }
+.fig .tick { fill: var(--muted); font: 700 11px var(--f-body); }
+.fig .grid { stroke: var(--rock-3); stroke-width: 1; }
+.fig .grid2 { stroke: var(--rock-2); stroke-width: 1; }
+.fig .ray { stroke: var(--fg); stroke-width: 3; stroke-linecap: round; }
+.fig .mark { fill: none; stroke: var(--gold); stroke-width: 2.5; }
+.fig .dot { fill: var(--fg); }
+.fig .dash { stroke: var(--gold); stroke-width: 2; stroke-dasharray: 6 5; }
+
+.found { align-items: center; text-align: center; }
+.found .btn.big { align-self: center; }
+.gemstage { padding: 10px; animation: shine 1.6s ease-in-out infinite; }
+@keyframes shine { 50% { transform: translateY(-6px) scale(1.04); } }
+
+.depth { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.depth li { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 2px dashed var(--rock-3); flex-wrap: wrap; }
+.depth li:last-child { border-bottom: 0; }
+.d-name { font-weight: 800; }
+.d-gems { display: inline-flex; gap: 4px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 30px); opacity: 0; pointer-events: none; background: var(--rock-2); color: var(--fg); border: 3px solid var(--edge); border-radius: 4px; padding: 14px 22px; font-size: 1.15rem; box-shadow: 0 6px 0 var(--edge); transition: transform .18s, opacity .18s; max-width: calc(100% - 32px); text-align: center; z-index: 10; }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+.toast.good { background: var(--moss); color: var(--moss-ink); }
+.toast.good b { font-family: var(--f-display); }
+.toast.soft b { color: var(--gold); font-family: var(--f-display); }
+
+.loading { display: flex; flex-direction: column; align-items: center; gap: 12px; padding-top: 18vh; }
+
+/* föräldravy: lugnare, tabellorienterad */
+.parent { display: flex; flex-direction: column; gap: 18px; }
+.parent .panel { font-size: 16px; }
+.phead { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; flex-wrap: wrap; }
+.phead h1 { font-size: 2.2rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font: inherit; font-weight: 700; color: var(--fg); background: var(--rock-2); border: 2px solid var(--edge); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+.chip.on { background: var(--amethyst); color: var(--edge); }
+.sumgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; }
+.big-v { font-family: var(--f-display); font-size: 1.45rem; font-weight: 700; }
+.big-v small { font-family: var(--f-body); font-size: .9rem; color: var(--muted); }
+.sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; border-top: 3px dashed var(--rock-3); padding-top: 14px; }
+.sw ul { margin: 6px 0 0; padding-left: 1.1em; }
+.tablewrap { overflow-x: auto; }
+table { width: 100%; min-width: 540px; border-collapse: collapse; font-size: .95rem; }
+table.ans { min-width: 640px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--rock-3); vertical-align: top; }
+th { font-family: var(--f-display); font-weight: 500; color: var(--muted); font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; }
+td .gem { vertical-align: -2px; margin-right: 4px; }
+.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.pill { display: inline-block; font-size: .8rem; font-weight: 800; padding: 2px 10px; border-radius: 999px; border: 2px solid var(--edge); white-space: nowrap; }
+.pill.good { background: var(--moss); color: var(--moss-ink); }
+.pill.mid { background: var(--gold); color: #2a1f00; }
+.pill.low { background: var(--soft); color: #2a0d06; }
+.pill.none { background: var(--rock-3); color: var(--muted); }
+details { border-top: 1px solid var(--rock-3); padding: 10px 0; }
+summary { cursor: pointer; font-weight: 800; }
+table.ans tr.ok .mark { color: var(--moss); font-weight: 800; }
+table.ans tr.miss .mark { color: var(--soft); font-weight: 800; }
+#exportbox { display: flex; flex-direction: column; gap: 10px; }
+#exportbox[hidden] { display: none; }
+
+
+/* ---------- spelet ---------- */
+.px { display: block; flex: none; image-rendering: pixelated; }
+.hubtop { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; }
+.who { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.who h1 { font-size: clamp(1.8rem, 6vw, 2.6rem); }
+.statrow { display: flex; flex-wrap: wrap; gap: 10px; }
+.stat { display: inline-grid; grid-template-columns: auto auto; grid-template-rows: auto auto; column-gap: 8px; align-items: center; background: var(--rock); border: 3px solid var(--edge); border-radius: 4px; padding: 6px 12px; box-shadow: 0 4px 0 var(--edge); }
+.stat svg { grid-row: 1 / 3; }
+.stat b { font-family: var(--f-display); font-size: 1.35rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.stat small { color: var(--muted); font-size: .72rem; line-height: 1.1; }
+.stat.inline { box-shadow: none; padding: 4px 10px; display: inline-flex; gap: 6px; }
+.dayrow, .eggrow { flex-direction: row; align-items: center; gap: 16px; }
+.chest.ready { animation: wobble 1.4s ease-in-out infinite; }
+@keyframes wobble { 0%, 70%, 100% { transform: rotate(0); } 80% { transform: rotate(-6deg); } 90% { transform: rotate(6deg); } }
+.egg.cracked { animation: wobble 1s ease-in-out infinite; }
+.meter.egg-m span { background: repeating-linear-gradient(90deg, #f3ead7 0 10px, #d8ccb4 10px 12px); }
+.meter.thin { height: 10px; border-width: 2px; margin: 4px 0 0; }
+.panel.note { padding: 12px 18px; border-color: var(--gold); }
+.modes { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.mode { display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; column-gap: 12px; align-items: center; text-align: left; background: var(--rock); color: var(--fg); border: 3px solid var(--edge); border-radius: 4px; padding: 14px 16px; box-shadow: inset 0 3px 0 var(--rock-3), 0 5px 0 var(--edge); cursor: pointer; font: inherit; }
+.mode > svg { grid-row: 1 / 3; }
+.mode:hover { background: var(--rock-2); }
+.mode:active { transform: translateY(3px); box-shadow: inset 0 3px 0 var(--rock-3), 0 2px 0 var(--edge); }
+.m-t { font-family: var(--f-display); font-weight: 700; font-size: 1.3rem; }
+.m-d { color: var(--muted); font-size: .88rem; }
+.mode.main { grid-column: 1 / -1; grid-template-columns: 1fr; background: var(--moss); color: var(--moss-ink); box-shadow: inset 0 -5px 0 var(--moss-d), 0 5px 0 var(--edge); padding: 20px 22px; }
+.mode.main .m-t { font-size: 2rem; }
+.mode.main .m-d { color: var(--moss-ink); opacity: .8; }
+.mode.main:hover { background: #8ad968; }
+.mode.hot { border-color: var(--soft); }
+.mode.done { opacity: .7; }
+.navgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.nav { display: flex; flex-direction: column; align-items: center; gap: 6px; background: var(--rock-2); color: var(--fg); border: 3px solid var(--edge); border-radius: 4px; padding: 12px 6px; cursor: pointer; font: inherit; font-weight: 800; box-shadow: 0 4px 0 var(--edge); min-width: 0; }
+.nav small { color: var(--muted); font-weight: 700; font-size: .78rem; }
+.nav:hover { background: var(--rock-3); }
+.subhead { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.subhead h2 { flex: 1; }
+.earned { display: inline-flex; align-items: center; gap: 4px; font-family: var(--f-display); color: var(--amethyst); }
+.fb { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; padding: 14px 16px; border: 3px solid var(--edge); border-radius: 4px; background: var(--rock-2); }
+.fb.soft b:first-child { color: var(--gold); }
+.fb p { font-size: 1.2rem; }
+.bossbar { display: flex; align-items: center; gap: 14px; }
+.hearts { display: flex; gap: 6px; margin: 4px 0; }
+.hearts i { width: 18px; height: 18px; background: var(--rock-3); border: 2px solid var(--edge); }
+.hearts i.on { background: var(--soft); }
+.track { height: 16px; background: var(--well); border: 3px solid var(--edge); border-radius: 3px; overflow: hidden; }
+.track span { display: block; height: 100%; background: var(--gold); transition: width .2s linear; }
+.racecount { display: flex; align-items: center; gap: 8px; font-family: var(--f-display); font-size: 1.2rem; }
+.found .hatch { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px; }
+.found .hatch svg { animation: hop 1.2s ease-in-out infinite; }
+.gains { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; align-items: flex-start; text-align: left; }
+.gains li { display: flex; align-items: center; gap: 10px; }
+.levelup { font-family: var(--f-display); font-size: 1.15rem; color: var(--moss); }
+.medalwin { display: flex; align-items: center; gap: 12px; text-align: left; background: var(--rock-2); border: 3px solid var(--edge); border-radius: 4px; padding: 10px 14px; }
+.center-a { justify-content: center; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; }
+.card { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px; background: var(--rock); border: 3px solid var(--edge); border-radius: 4px; padding: 12px 8px; box-shadow: 0 4px 0 var(--edge); }
+.card.off { background: var(--well); box-shadow: none; }
+.card .meter { width: 100%; }
+.c-name { font-weight: 800; }
+.tiny { font-size: .72rem; }
+.gold { color: var(--gold); }
+.basewrap { gap: 12px; }
+.basebox { overflow-x: auto; background: linear-gradient(#1c1a26, #100f16); border: 3px solid var(--edge); border-radius: 4px; }
+.basesvg { display: block; width: 100%; min-width: 320px; height: auto; }
+.basesvg .cell { fill: transparent; stroke: rgba(255,255,255,.05); stroke-width: .15; cursor: pointer; }
+.basesvg .cell:hover { fill: rgba(255,209,102,.15); }
+.hotbar { display: flex; flex-wrap: wrap; gap: 8px; }
+.slot { display: flex; flex-direction: column; align-items: center; gap: 2px; background: var(--rock-2); color: var(--fg); border: 3px solid var(--edge); border-radius: 4px; padding: 6px; cursor: pointer; font: inherit; min-width: 56px; max-width: 84px; }
+.slot small { font-size: .7rem; color: var(--muted); max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.slot.sel { border-color: var(--gold); background: var(--rock-3); }
+.shoplist { display: flex; flex-direction: column; gap: 10px; }
+.shopitem { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 2px dashed var(--rock-3); flex-wrap: wrap; }
+.shopitem:last-child { border-bottom: 0; }
+.btn.sm { font-size: .95rem; padding: 6px 12px; box-shadow: inset 0 -3px 0 var(--moss-d), 0 3px 0 var(--edge); }
+.btn.sm.ghost { box-shadow: inset 0 -3px 0 var(--rock-2), 0 3px 0 var(--edge); }
+.btn:disabled { cursor: not-allowed; background: var(--rock-3); color: var(--muted); box-shadow: inset 0 -3px 0 var(--rock-2), 0 3px 0 var(--edge); filter: none; }
+.buyrow { display: flex; gap: 8px; }
+.btn.buy { display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 76px; line-height: 1.1; }
+.btn.buy small { display: inline-flex; align-items: center; gap: 3px; font-family: var(--f-body); font-weight: 800; font-size: .8rem; }
+.btn.buy small svg { display: inline-block; }
+.reqs, .rlist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.rlist li, .reqs li { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--rock-3); }
+.lvcell { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+.lvcell span { min-width: 7.5em; text-align: center; }
+table.lv input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--moss); }
+@media (max-width: 520px) {
+  .navgrid { grid-template-columns: repeat(2, 1fr); }
+  .mode.main .m-t { font-size: 1.6rem; }
+  .dayrow .chest svg { width: 36px; height: 36px; }
+}
+@media (max-width: 520px) {
+  .hero { flex-direction: column; align-items: flex-start; }
+  .mossa.big { width: 104px; }
+  .qcard { padding: 20px 16px; }
+  .qtext { font-size: 1.25rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+html, body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+.board { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.board li { display: grid; grid-template-columns: 2.6em 1fr auto; align-items: center; gap: 10px; padding: 10px 6px; border-bottom: 1px solid var(--rock-3); }
+.board li:last-child { border-bottom: 0; }
+.b-rank { font-family: var(--f-display); font-size: 1.2rem; color: var(--muted); text-align: center; }
+.b-name { font-weight: 800; min-width: 0; overflow-wrap: anywhere; }
+.b-name small { color: var(--muted); font-weight: 700; }
+.b-score { font-family: var(--f-display); font-size: 1.25rem; font-variant-numeric: tabular-nums; }
+.board li.top1 .b-rank { color: var(--gold); }
+.board li.top2 .b-rank { color: #d9d6e3; }
+.board li.top3 .b-rank { color: #e0a070; }
+.board li.me { background: var(--rock-2); outline: 3px solid var(--amethyst); outline-offset: -3px; border-radius: 4px; }
+.statbtn { cursor: pointer; font: inherit; color: var(--fg); text-align: left; }
+.statbtn:hover { background: var(--rock-2); }
+.errtxt { color: var(--soft); font-weight: 700; }
+.okmsg { color: var(--moss); font-weight: 700; }
+.check { display: flex; align-items: center; gap: 8px; font-size: .9rem; color: var(--muted); }
+.check input { width: 18px; height: 18px; accent-color: var(--moss); }
+.foot a.link { color: var(--muted); }
+.filters { flex-direction: row; flex-wrap: wrap; gap: 16px; padding-block: 14px; }
+.hbars { display: flex; flex-direction: column; gap: 10px; }
+.hbar { display: grid; grid-template-columns: minmax(8em, 13em) 1fr 3.6em; grid-template-rows: auto auto; column-gap: 12px; align-items: center; border-radius: 4px; padding: 2px 4px; }
+.hbar:hover, .hbar:focus { background: var(--rock-2); outline: none; }
+.hb-l { font-weight: 700; font-size: .92rem; min-width: 0; }
+.hb-track { height: 16px; background: transparent; border-radius: 0 4px 4px 0; }
+.hb-fill { display: block; height: 100%; background: var(--amethyst); border-radius: 0 4px 4px 0; }
+.hb-v { font-family: var(--f-display); text-align: right; font-variant-numeric: tabular-nums; }
+.hbar.few .hb-fill { opacity: .45; }
+.hb-n { grid-column: 2 / 4; font-size: .75rem; color: var(--muted); }
+details.skill summary { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; }
+.sk-p { margin-left: auto; font-family: var(--f-display); color: var(--gold); }
+.sk-n { min-width: 5.5em; text-align: right; }
+@media (max-width: 520px) { .hbar { grid-template-columns: 1fr 3.4em; } .hb-l { grid-column: 1 / 3; } .hb-track { grid-column: 1; } .hb-n { grid-column: 1 / 3; } }
+.info { max-width: 780px; margin: 0 auto; padding-inline: 16px; padding-block: 20px 64px; display: flex; flex-direction: column; gap: 18px; }
+.info .panel p { max-width: 65ch; }
+.info table { min-width: 0; }
+a.btn { text-decoration: none; display: inline-block; }
+.btn { line-height: 1.25; text-align: center; }
+.herobtns { display: grid; grid-template-columns: repeat(2, minmax(0, max-content)); gap: 12px; }
+.herobtns .btn { width: 100%; }
+@media (max-width: 360px) { .herobtns { grid-template-columns: 1fr; } }
+.steps { margin: 0; padding-left: 1.4em; display: flex; flex-direction: column; gap: 10px; }
+.steps li::marker { font-family: var(--f-display); color: var(--gold); }
+.areas { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.areas li { background: var(--rock-2); border: 2px solid var(--edge); border-radius: 999px; padding: 4px 12px; font-weight: 700; font-size: .95rem; }
+.checks { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.checks li { position: relative; padding-left: 26px; }
+.checks li::before { content: ""; position: absolute; left: 4px; top: .45em; width: 10px; height: 10px; background: var(--moss); box-shadow: 0 0 0 2px var(--edge); }
+.maillink { color: var(--amethyst); font-weight: 800; }
+.codebox { font-family: ui-monospace, Menlo, monospace; font-size: 1rem; background: var(--well); border: 3px solid var(--edge); border-radius: 4px; padding: 12px 14px; overflow-wrap: anywhere; user-select: all; }
+</style>
+</head>
+<body>
+<main id="app"></main>
+<div id="toast" class="toast" role="status" aria-live="assertive"></div>
+<noscript><p style="padding:16px">Sidan behöver JavaScript.</p></noscript>
+<script src="../konto/config.js"></script>
+<script src="../konto/konto.js"></script>
+<script>
+/* =====================================================================
+   KRISTALLGRUVAN – UPPGIFTSMOTOR (ren logik, inget DOM, ingen lagring)
+   Kan återanvändas oförändrad i spelet och på en egen server.
+   Nivåer: 1 = åk 3, 2 = åk 4, 3 = åk 5, 4 = åk 6, 5 = över åk 6
+   ===================================================================== */
+(function (root) {
+  'use strict';
+
+  const R = (a, b) => a + Math.floor(Math.random() * (b - a + 1));
+  const P = (arr) => arr[Math.floor(Math.random() * arr.length)];
+  const shuffle = (arr) => { const a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+  const gcd = (a, b) => (b ? gcd(b, a % b) : Math.abs(a));
+  const r6 = (x) => Math.round(x * 1e6) / 1e6;
+  const fmt = (n) => {
+    const x = r6(n);
+    const neg = x < 0;
+    const [i, d] = Math.abs(x).toString().split('.');
+    const int = i.length > 4 ? i.replace(/\B(?=(\d{3})+(?!\d))/g, ' ') : i;
+    return (neg ? '−' : '') + int + (d ? ',' + d : '');
+  };
+  const NAMES = ['Ella', 'Leo', 'Maja', 'Noah', 'Alva', 'Elias', 'Saga', 'Hugo', 'Wilma', 'Liam', 'Ebba', 'Viggo', 'Nora', 'Theo'];
+
+  const LEVEL_LABELS = ['under åk 3', 'åk 3', 'åk 4', 'åk 5', 'åk 6', 'över åk 6', 'åk 7–8'];
+  const SUP = '⁰¹²³⁴⁵⁶⁷⁸⁹';
+  const sup = (n) => String(n).split('').map((c) => SUP[+c]).join('');
+
+  const AREAS = [
+    { id: 'tal', name: 'Tal & positionssystem', gem: '#7fd1ff' },
+    { id: 'addsub', name: 'Addition & subtraktion', gem: '#7ccf5a' },
+    { id: 'tabell', name: 'Gångertabellerna', gem: '#ffd166' },
+    { id: 'muldiv', name: 'Multiplikation & division', gem: '#ff9f5a' },
+    { id: 'brak', name: 'Bråk', gem: '#ff7aa8' },
+    { id: 'dec', name: 'Decimaltal & procent', gem: '#5ee0c0' },
+    { id: 'geo', name: 'Geometri', gem: '#b58cff' },
+    { id: 'mat', name: 'Mätning & tid', gem: '#f2f2f2' },
+    { id: 'alg', name: 'Mönster & ekvationer', gem: '#6f8cff' },
+    { id: 'stat', name: 'Statistik & sannolikhet', gem: '#e6c27a' },
+    { id: 'prob', name: 'Problemlösning', gem: '#ff6b6b' },
+  ];
+
+  /* ---------- frågebyggare ---------- */
+  // text: bråk skrivs som {3/4} och ritas staplade i gränssnittet
+  function num(text, answer, o) { return Object.assign({ kind: 'num', text, answer: r6(answer) }, o || {}); }
+  function frac(text, n, d, o) { return Object.assign({ kind: 'frac', text, answer: { n, d } }, o || {}); }
+  function time(text, h, m, o) { return Object.assign({ kind: 'time', text, answer: { h: ((h % 24) + 24) % 24, m } }, o || {}); }
+  function choice(text, correct, wrong, o) {
+    o = o || {};
+    const opts = o.fixedOrder ? o.fixedOrder : shuffle([correct].concat(wrong));
+    const q = Object.assign({ kind: 'choice', text, choices: opts, answer: opts.indexOf(correct) }, o);
+    delete q.fixedOrder;
+    return q;
+  }
+  const pad = (n) => (n < 10 ? '0' : '') + n;
+
+  /* ---------- figurer (SVG, färger via CSS-klasser) ---------- */
+  const FIG = {
+    rect(w, h) {
+      const s = Math.min(200 / w, 120 / h), W = w * s, H = h * s, x = 70, y = 16;
+      return `<svg class="fig" viewBox="0 0 ${W + 110} ${H + 56}" role="img" aria-label="Rektangel ${w} gånger ${h} cm">
+<rect class="shape" x="${x}" y="${y}" width="${W}" height="${H}"/>
+<text class="lbl" x="${x + W / 2}" y="${y + H + 28}" text-anchor="middle">${fmt(w)} cm</text>
+<text class="lbl" x="${x - 10}" y="${y + H / 2 + 6}" text-anchor="end">${fmt(h)} cm</text></svg>`;
+    },
+    bar(n, k) {
+      const W = 300, w = W / n;
+      let r = '';
+      for (let i = 0; i < n; i++) r += `<rect class="${i < k ? 'fill' : 'shape'}" x="${10 + i * w}" y="10" width="${w}" height="50"/>`;
+      return `<svg class="fig" viewBox="0 0 320 70" role="img" aria-label="Stång i ${n} delar">${r}</svg>`;
+    },
+    angle(deg) {
+      const cx = 150, cy = 150, L = 130, rad = (deg * Math.PI) / 180;
+      const x2 = cx + L * Math.cos(rad), y2 = cy - L * Math.sin(rad);
+      let mark;
+      if (deg === 90) mark = `<path class="mark" d="M${cx + 22} ${cy} L${cx + 22} ${cy - 22} L${cx} ${cy - 22}"/>`;
+      else { const r = 30; mark = `<path class="mark" d="M${cx + r} ${cy} A${r} ${r} 0 0 0 ${cx + r * Math.cos(rad)} ${cy - r * Math.sin(rad)}"/>`; }
+      return `<svg class="fig" viewBox="0 0 300 170" role="img" aria-label="En vinkel"><line class="ray" x1="${cx}" y1="${cy}" x2="${cx + L}" y2="${cy}"/><line class="ray" x1="${cx}" y1="${cy}" x2="${x2}" y2="${y2}"/>${mark}<circle class="dot" cx="${cx}" cy="${cy}" r="4"/></svg>`;
+    },
+    tri(b, h) {
+      const s = Math.min(220 / b, 130 / h), B = b * s, H = h * s, x = 30, y = H + 16, ax = x + B * 0.35;
+      return `<svg class="fig" viewBox="0 0 ${B + 120} ${H + 56}" role="img" aria-label="Triangel med basen ${b} cm och höjden ${h} cm">
+<polygon class="shape" points="${x},${y} ${x + B},${y} ${ax},${y - H}"/>
+<line class="dash" x1="${ax}" y1="${y - H}" x2="${ax}" y2="${y}"/>
+<text class="lbl" x="${x + B / 2}" y="${y + 28}" text-anchor="middle">${b} cm</text>
+<text class="lbl" x="${ax + 8}" y="${y - H / 2}">${h} cm</text></svg>`;
+    },
+    lshape(W, H, cw, ch) {
+      const s = Math.min(200 / W, 140 / H), ox = 64, oy = 14, X = (v) => ox + v * s, Y = (v) => oy + v * s;
+      const pts = [[0, 0], [W - cw, 0], [W - cw, ch], [W, ch], [W, H], [0, H]].map(([a, b]) => `${X(a)},${Y(b)}`).join(' ');
+      return `<svg class="fig" viewBox="0 0 ${W * s + 130} ${H * s + 56}" role="img" aria-label="Sammansatt figur">
+<polygon class="shape" points="${pts}"/>
+<text class="lbl" x="${X(W / 2)}" y="${Y(H) + 28}" text-anchor="middle">${W} cm</text>
+<text class="lbl" x="${X(0) - 10}" y="${Y(H / 2) + 6}" text-anchor="end">${H} cm</text>
+<text class="lbl" x="${X(W - cw / 2)}" y="${Y(ch) - 8}" text-anchor="middle">${cw} cm</text>
+<text class="lbl" x="${X(W - cw) - 8}" y="${Y(ch / 2) + 6}" text-anchor="end">${ch} cm</text></svg>`;
+    },
+    bars(cats, vals) {
+      const x0 = 34, x1 = 300, y0 = 170, top = 14, max = 12, step = (y0 - top) / max, bw = (x1 - x0) / cats.length;
+      let g = '';
+      for (let v = 0; v <= max; v++) {
+        g += `<line class="${v % 2 ? 'grid2' : 'grid'}" x1="${x0}" y1="${y0 - v * step}" x2="${x1}" y2="${y0 - v * step}"/>`;
+        if (v % 2 === 0) g += `<text class="tick" x="${x0 - 6}" y="${y0 - v * step + 4}" text-anchor="end">${v}</text>`;
+      }
+      cats.forEach((c, i) => {
+        const h = vals[i] * step, x = x0 + i * bw + bw * 0.2;
+        g += `<rect class="fill" x="${x}" y="${y0 - h}" width="${bw * 0.6}" height="${h}"/>`;
+        g += `<text class="tick" x="${x + bw * 0.3}" y="${y0 + 18}" text-anchor="middle">${c}</text>`;
+      });
+      return `<svg class="fig" viewBox="0 0 310 196" role="img" aria-label="Stapeldiagram">${g}</svg>`;
+    },
+  };
+
+  /* ---------- mallar per område och nivå ---------- */
+  function digitValue(min, max, places) {
+    for (;;) {
+      const n = R(min, max), s = String(n), pl = P(places);
+      const idx = s.length - 1 - Math.log10(pl);
+      const d = Number(s[idx]);
+      if (d === 0) continue;
+      if (s.split('').filter((c) => c === s[idx]).length > 1) continue;
+      return num(`Vilket värde har siffran <b>${d}</b> i talet <b>${fmt(n)}</b>?`, d * pl, { skill: 'siffrans värde' });
+    }
+  }
+
+  const T = {
+    tal: {
+      1: [() => digitValue(100, 999, [10, 100]),
+          () => { const n = R(120, 980), k = P([10, 100]); return num(`Vilket tal är ${k} mer än ${fmt(n)}?`, n + k, { skill: 'räkna med 10 och 100' }); }],
+      2: [() => digitValue(10000, 99999, [100, 1000, 10000]),
+          () => { let n = R(1000, 9999); if (n % 100 === 50) n++; return num(`Avrunda ${fmt(n)} till närmaste hundratal.`, Math.round(n / 100) * 100, { skill: 'avrundning' }); }],
+      3: [() => { const n = R(10, 99) * 10000 + R(0, 999); return num(`Vilket tal är 1 000 mindre än ${fmt(n)}?`, n - 1000, { skill: 'stora tal, växling' }); },
+          () => { const a = R(1, 9), b = P([R(1, 9) * 10, R(1, 9)]), c = R(1, 9); return num(`Skriv med siffror: <b>${a} ${a === 1 ? 'miljon' : 'miljoner'} ${b} tusen ${c}</b>`, a * 1e6 + b * 1000 + c, { skill: 'tal till miljoner' }); }],
+      4: [() => { const t = -R(2, 9), u = R(-t + 1, 15); return num(`Termometern visar ${fmt(t)} °C. Temperaturen stiger ${u} grader. Vad visar termometern nu?`, t + u, { unit: '°C', skill: 'negativa tal' }); },
+          () => { const x = R(101, 999) / 100, m = P([10, 100]); return num(`Vad är ${m} · ${fmt(x)}?`, x * m, { skill: 'multiplikation med 10 och 100' }); },
+          () => { for (;;) { const a = R(1, 9), d1 = R(1, 9), d2 = R(1, 9), d3 = R(1, 9); const ds = [d1, d2, d3]; const pos = R(0, 1); const d = ds[pos]; if (ds.filter((x) => x === d).length > 1 || d === a) continue; const x = a + d1 / 10 + d2 / 100 + d3 / 1000; return num(`Vilket värde har siffran <b>${d}</b> i talet <b>${fmt(x)}</b>?`, d / (pos ? 100 : 10), { skill: 'decimala positioner' }); } }],
+      5: [() => { for (;;) { const a = -R(2, 12), b = R(4, 20); if ((a + b) % 2) continue; return num(`Vilket tal ligger mitt emellan ${fmt(a)} och ${fmt(b)} på tallinjen?`, (a + b) / 2, { skill: 'tallinje, negativa tal' }); } },
+          () => { const x = R(1, 9) + R(1, 99) / 100; return num(`Hur många hundradelar är ${fmt(x)}?`, Math.round(x * 100), { skill: 'decimala positioner' }); },
+          () => { const n = R(2, 999); return num(`Vad är ${fmt(n)} / 1 000?`, n / 1000, { skill: 'division med 1 000' }); }],
+    },
+    addsub: {
+      1: [() => { for (;;) { const a = R(25, 69), b = R(15, 29); if (a % 10 + b % 10 >= 10) return num(`${a} + ${b}`, a + b, { skill: 'tiotalsövergång' }); } },
+          () => { for (;;) { const a = R(41, 95), b = R(12, a - 10); if (a % 10 < b % 10) return num(`${a} − ${b}`, a - b, { skill: 'subtraktion med växling' }); } }],
+      2: [() => { const a = R(150, 599), b = R(150, 399); return num(`${a} + ${b}`, a + b, { skill: 'tresiffrig addition' }); },
+          () => { const a = R(2, 9) * 100 + R(1, 9), b = R(100, a - 20); return num(`${a} − ${b}`, a - b, { skill: 'växling över noll' }); }],
+      3: [() => { const a = R(2000, 9000), b = R(1000, a - 500); return num(`${fmt(a)} − ${fmt(b)}`, a - b, { skill: 'fyrsiffrig subtraktion' }); },
+          () => { const a = R(1200, 5999), b = R(1200, 3999); return num(`${fmt(a)} + ${fmt(b)}`, a + b, { skill: 'fyrsiffrig addition' }); }],
+      4: [() => { const a = R(50, 250) / 10, b = R(101, 999) / 100; return num(`${fmt(a)} + ${fmt(b)}`, a + b, { skill: 'addition med decimaltal' }); },
+          () => { const a = R(10, 30); let b = R(101, (a - 1) * 100); if (b % 10 === 0) b += 3; return num(`${a} − ${fmt(b / 100)}`, a - b / 100, { skill: 'subtraktion med decimaltal' }); }],
+      5: [() => { const a = R(3, 12), b = R(10, 25), c = R(5, 20); return num(`−${a} + ${b} − ${c}`, -a + b - c, { skill: 'negativa tal' }); },
+          () => { const n = R(10000, 89999); return num(`100 000 − ${fmt(n)}`, 100000 - n, { skill: 'växling över många nollor' }); }],
+    },
+    tabell: {
+      1: [() => { const a = P([2, 3, 4, 5, 10]), b = R(2, 10); return num(`${a} · ${b}`, a * b, { skill: 'tabell 2–5, 10' }); }],
+      2: [() => { const a = P([6, 7, 8, 9]), b = R(3, 9); return Math.random() < 0.5 ? num(`${a} · ${b}`, a * b, { skill: 'tabell 6–9' }) : num(`${b} · ${a}`, a * b, { skill: 'tabell 6–9' }); }],
+      3: [() => { const a = R(3, 9), b = R(3, 9); return num(`${a * b} / ${a}`, b, { skill: 'division ur tabellen' }); }],
+      4: [() => { const a = R(3, 9), b = R(3, 9) * 10; return num(`${a} · ${b}`, a * b, { skill: 'tabellen gånger tiotal' }); },
+          () => { const a = R(3, 9), b = R(3, 9) * 100; return num(`${fmt(a * b)} / ${a}`, b, { skill: 'division med hundratal' }); }],
+      5: [() => { const a = R(11, 15), b = R(3, 9); return num(`${a} · ${b}`, a * b, { skill: 'tabell över 10' }); },
+          () => { const a = R(11, 15); return num(`${a * a} / ${a}`, a, { skill: 'division över tabellen' }); }],
+    },
+    muldiv: {
+      1: [() => { const a = R(2, 4), b = R(11, 24); return num(`${a} · ${b}`, a * b, { skill: 'ental gånger tvåsiffrigt' }); },
+          () => { const a = R(2, 4), q = R(11, 24); return num(`${a * q} / ${a}`, q, { skill: 'enkel division' }); }],
+      2: [() => { const a = R(5, 9), b = R(23, 89); return num(`${a} · ${b}`, a * b, { skill: 'multiplikation med minnessiffra' }); },
+          () => { const a = R(3, 8), q = R(12, 30); return num(`${a * q} / ${a}`, q, { skill: 'kort division' }); }],
+      3: [() => { const a = R(12, 39), b = R(11, 25); return num(`${a} · ${b}`, a * b, { skill: 'tvåsiffrigt gånger tvåsiffrigt' }); },
+          () => { const a = R(4, 9), q = R(41, 125); return num(`${a * q} / ${a}`, q, { skill: 'division, tresiffrigt' }); }],
+      4: [() => { const a = R(11, 99) / 10, b = R(3, 9); return num(`${fmt(a)} · ${b}`, a * b, { skill: 'decimaltal gånger heltal' }); },
+          () => { const d = R(11, 25), q = R(12, 60); return num(`${fmt(d * q)} / ${d}`, q, { skill: 'division med tvåsiffrigt tal' }); }],
+      5: [() => { const a = R(11, 49) / 10, b = R(11, 19) / 10; return num(`${fmt(a)} · ${fmt(b)}`, a * b, { skill: 'decimaltal gånger decimaltal' }); },
+          () => { const d = R(2, 9) / 10, q = R(3, 12); return num(`${fmt(r6(d * q))} / ${fmt(d)}`, q, { skill: 'division med decimaltal' }); }],
+    },
+    brak: {
+      1: [() => { const n = R(3, 8), k = R(1, n - 1); return frac('Hur stor del av stången är färgad? Skriv som bråk, till exempel 2/5.', k, n, { fig: FIG.bar(n, k), skill: 'bråk som del av helhet' }); },
+          () => { const n = P([3, 4, 5, 6, 8]); const nm = { 3: 'tredjedelar', 4: 'fjärdedelar', 5: 'femtedelar', 6: 'sjättedelar', 8: 'åttondelar' }[n]; return num(`Hur många ${nm} går det på en hel?`, n, { skill: 'stambråk' }); }],
+      2: [() => { const d = P([2, 3, 4, 5]), N = d * R(3, 12); return num(`Vad är {1/${d}} av ${N}?`, N / d, { skill: 'del av antal' }); },
+          () => { const [a, b, c] = shuffle([2, 3, 4, 5, 6, 8, 10]).slice(0, 3); const best = Math.min(a, b, c); return choice('Vilket bråk är störst?', `{1/${best}}`, [a, b, c].filter((x) => x !== best).map((x) => `{1/${x}}`), { skill: 'jämföra stambråk' }); }],
+      3: [() => { const d = R(2, 6), n = R(1, d - 1), m = R(2, 5); return num(`{${n}/${d}} = {?/${d * m}}  Vilket tal ska stå där frågetecknet är?`, n * m, { skill: 'likvärdiga bråk' }); },
+          () => { const d = P([3, 4, 5, 6, 8]), k = R(2, d - 1), N = d * R(3, 10); return num(`Vad är {${k}/${d}} av ${N}?`, (k * N) / d, { skill: 'del av antal' }); }],
+      4: [() => { const d = R(5, 9), a = R(1, d - 1), b = R(1, d - 1); return frac(`{${a}/${d}} + {${b}/${d}}`, a + b, d, { skill: 'addition, lika nämnare' }); },
+          () => { const [a, b, c, d] = P([[1, 2, 1, 4], [1, 2, 1, 8], [1, 3, 1, 6], [3, 4, 1, 8], [1, 2, 3, 8], [2, 3, 1, 6], [1, 4, 3, 8]]); const n = a * d + c * b, m = b * d, g = gcd(n, m); return frac(`{${a}/${b}} + {${c}/${d}}`, n / g, m / g, { skill: 'addition, olika nämnare' }); },
+          () => { const set = shuffle([[3, 4], [2, 3], [5, 8], [3, 5], [7, 10], [1, 2]]).slice(0, 3); const best = set.reduce((m, f) => (f[0] / f[1] > m[0] / m[1] ? f : m)); return choice('Vilket bråk är störst?', `{${best[0]}/${best[1]}}`, set.filter((f) => f !== best).map((f) => `{${f[0]}/${f[1]}}`), { skill: 'jämföra bråk' }); }],
+      5: [() => { for (;;) { const [b, d] = shuffle([3, 4, 5, 6]).slice(0, 2); const a = R(1, b - 1), c = R(1, d - 1); if (gcd(a, b) > 1 || gcd(c, d) > 1) continue; const n = a * d + c * b, m = b * d, g = gcd(n, m); return frac(`{${a}/${b}} + {${c}/${d}}`, n / g, m / g, { skill: 'addition, olika nämnare' }); } },
+          () => { const [n, d] = P([[3, 4], [2, 3], [3, 5], [5, 6], [4, 7], [2, 5]]), k = R(2, 6); return frac(`Förkorta {${n * k}/${d * k}} så långt det går.`, n, d, { simplest: true, skill: 'förkortning' }); },
+          () => { const d = P([3, 4, 5, 6]), k = R(2, d - 1), m = R(2, 6); return num(`{${k}/${d}} · ${d * m}`, k * m, { skill: 'bråk gånger heltal' }); }],
+    },
+    dec: {
+      1: [() => { for (;;) { const a = R(1, 8), b = R(1, 8); if (a + b < 10) return num(`0,${a} + 0,${b}`, (a + b) / 10, { skill: 'tiondelar' }); } },
+          () => { const x = R(3, 8), y = (x - 1) * 10 + R(1, 9), w = R(1, 9); return choice('Vilket tal är störst?', `0,${x}`, [`0,${y}`, `0,0${w}`], { skill: 'storleksordning decimaltal' }); }],
+      2: [() => { const a = R(11, 89) / 10, b = R(11, 89) / 10; return num(`${fmt(a)} + ${fmt(b)}`, a + b, { skill: 'addition med tiondelar' }); },
+          () => { const d = P([10, 100]), n = d === 10 ? R(1, 9) : R(11, 99); return num(`Skriv {${n}/${d}} som decimaltal.`, n / d, { skill: 'bråk till decimaltal' }); }],
+      3: [() => { const a = R(5, 12) + R(1, 9) / 10; let b = R(100, Math.floor(a * 100) - 50); if (b % 10 === 0) b += 3; return num(`${fmt(a)} − ${fmt(b / 100)}`, a - b / 100, { skill: 'subtraktion med decimaltal' }); },
+          () => { const x = R(11, 999) / 100, m = P([10, 100]); return Math.random() < 0.5 ? num(`${fmt(x)} · ${m}`, x * m, { skill: 'gånger 10 och 100' }) : num(`${fmt(x)} / ${m}`, x / m, { skill: 'delat med 10 och 100' }); }],
+      4: [() => { const p = P([50, 10, 25]); const N = p === 50 ? 2 * R(11, 99) : p === 10 ? 10 * R(5, 90) : 4 * R(5, 50); return num(`Vad är ${p} % av ${N}?`, (p * N) / 100, { skill: 'procent av' }); },
+          () => { const x = R(11, 99); return num(`Skriv 0,${x} i procent.`, x, { unit: '%', skill: 'decimaltal till procent' }); }],
+      5: [() => { const p = P([20, 5, 75, 30]); const N = { 20: 5 * R(3, 40), 5: 20 * R(2, 30), 75: 4 * R(3, 30), 30: 10 * R(2, 30) }[p]; return num(`Vad är ${p} % av ${N}?`, (p * N) / 100, { skill: 'procent av' }); },
+          () => { const a = R(2, 9), b = R(2, 9); return num(`0,${a} · 0,${b}`, (a * b) / 100, { skill: 'decimaltal gånger decimaltal' }); },
+          () => { const [n, d] = P([[1, 8], [3, 8], [5, 8], [3, 4], [2, 5], [3, 20], [7, 25]]); return num(`Skriv {${n}/${d}} som decimaltal.`, n / d, { skill: 'bråk till decimaltal' }); }],
+    },
+    geo: {
+      1: [() => { let w = R(3, 9), h = R(2, 6); if (w === h) w++; return num('Vad är rektangelns omkrets?', 2 * (w + h), { unit: 'cm', fig: FIG.rect(w, h), skill: 'omkrets' }); },
+          () => { const [q, a] = P([['hörn', 8], ['kanter', 12], ['sidoytor', 6]]); return num(`Hur många ${q} har en kub?`, a, { skill: 'kroppar' }); },
+          () => { const [c, w] = P([['femhörning', ['fyrhörning', 'sexhörning']], ['sexhörning', ['femhörning', 'åttahörning']]]); const n = c === 'femhörning' ? 'fem' : 'sex'; return choice(`Vad heter en figur med ${n} hörn och ${n} raka sidor?`, c, w, { skill: 'månghörningar' }); }],
+      2: [() => { let w = R(3, 12), h = R(2, 9); if (w === h) w++; return num('Vad är rektangelns area?', w * h, { unit: 'cm²', fig: FIG.rect(w, h), skill: 'area' }); },
+          () => { const s = R(4, 15); return num(`En kvadrat har sidan ${s} cm. Vad är kvadratens omkrets?`, 4 * s, { unit: 'cm', skill: 'omkrets' }); }],
+      3: [() => { const deg = P([R(25, 75), 90, R(105, 160)]); const c = deg < 90 ? 'spetsig' : deg === 90 ? 'rät' : 'trubbig'; return choice('Vilken sorts vinkel är det?', c, ['spetsig', 'rät', 'trubbig'].filter((x) => x !== c), { fixedOrder: ['spetsig', 'rät', 'trubbig'], fig: FIG.angle(deg), skill: 'vinklar' }); },
+          () => { const s = R(4, 15); return num(`En kvadrat har omkretsen ${4 * s} cm. Hur lång är en sida?`, s, { unit: 'cm', skill: 'omkrets baklänges' }); },
+          () => { const a = R(3, 9), b = R(4, 9); return num(`En rektangel har arean ${a * b} cm². Ena sidan är ${a} cm. Hur lång är den andra sidan?`, b, { unit: 'cm', skill: 'area baklänges' }); }],
+      4: [() => { for (;;) { const b = R(4, 14), h = R(3, 10); if ((b * h) % 2 === 0) return num('Vad är triangelns area?', (b * h) / 2, { unit: 'cm²', fig: FIG.tri(b, h), skill: 'triangelns area' }); } },
+          () => { const a = R(30, 80), b = R(30, 80); return num(`I en triangel är två av vinklarna ${a}° och ${b}°. Hur stor är den tredje vinkeln?`, 180 - a - b, { unit: '°', skill: 'vinkelsumma' }); }],
+      5: [() => { const W = R(6, 12), H = R(5, 10), cw = R(2, W - 3), ch = R(2, H - 3); return num('Vad är figurens area? Alla hörn är räta.', W * H - cw * ch, { unit: 'cm²', fig: FIG.lshape(W, H, cw, ch), skill: 'sammansatt area' }); },
+          () => { for (;;) { const a = R(60, 120), b = R(60, 120), c = R(60, 120), d = 360 - a - b - c; if (d >= 40 && d <= 170) return num(`En fyrhörning har tre vinklar som är ${a}°, ${b}° och ${c}°. Hur stor är den fjärde vinkeln?`, d, { unit: '°', skill: 'vinkelsumma' }); } },
+          () => { const l = R(2, 8), b = R(2, 6), h = R(2, 5); return num(`Ett rätblock är ${l} cm långt, ${b} cm brett och ${h} cm högt. Vad är volymen?`, l * b * h, { unit: 'cm³', skill: 'volym' }); }],
+    },
+    mat: {
+      1: [() => { const a = R(2, 9); return num(`Hur många centimeter är ${a} meter?`, 100 * a, { unit: 'cm', skill: 'längdenheter' }); },
+          () => { const h = R(2, 4); return num(`Hur många minuter är ${h} timmar?`, 60 * h, { unit: 'min', skill: 'tid' }); },
+          () => { const a = R(2, 9); return num(`Hur många gram är ${a} kilogram?`, 1000 * a, { unit: 'g', skill: 'viktenheter' }); }],
+      2: [() => { const a = R(2, 9); return num(`Hur många deciliter är ${a} liter?`, 10 * a, { unit: 'dl', skill: 'volymenheter' }); },
+          () => { for (;;) { const h = R(8, 17), m = P([15, 30, 40, 45, 50]), dm = P([20, 30, 45, 50]); const tot = h * 60 + m + 60 + dm; if (m + dm < 60) continue; return time(`Filmen börjar ${pad(h)}:${pad(m)} och är 1 timme och ${dm} minuter lång. Vilken tid slutar den? Skriv som 12:30.`, Math.floor(tot / 60), tot % 60, { skill: 'klockan, sluttid' }); } }],
+      3: [() => { const m = R(11, 95) * 100; return num(`Hur många kilometer är ${fmt(m)} meter?`, m / 1000, { unit: 'km', skill: 'meter till kilometer' }); },
+          () => { const g = R(1, 9) * 100 + 50, kg = R(1, 4) + P([0, 0.5, 0.25]); return num(`Hur mycket väger ${g} g och ${fmt(kg)} kg tillsammans? Svara i gram.`, g + kg * 1000, { unit: 'g', skill: 'blandade enheter' }); },
+          () => { const s = R(8, 14) * 60 + P([5, 20, 35, 50]), d = R(60, 150); const e = s + d; return num(`Lektionen börjar ${pad(Math.floor(s / 60))}:${pad(s % 60)} och slutar ${pad(Math.floor(e / 60))}:${pad(e % 60)}. Hur många minuter är den?`, d, { unit: 'min', skill: 'tidsskillnad' }); }],
+      4: [() => { const x = R(11, 95) / 100; return num(`Hur många deciliter är ${fmt(x)} liter?`, x * 10, { unit: 'dl', skill: 'volymenheter, decimaltal' }); },
+          () => { const h = R(1, 3), m = P([15, 20, 35, 45]); return num(`Hur många minuter är ${h} h ${m} min?`, h * 60 + m, { unit: 'min', skill: 'tid' }); },
+          () => { const x = R(11, 99) / 10; return num(`Hur många centimeter är ${fmt(x)} dm?`, x * 10, { unit: 'cm', skill: 'längdenheter, decimaltal' }); }],
+      5: [() => { for (;;) { const v = P([40, 60, 80, 90, 120]), t = P([15, 30, 45, 90]); if ((v * t) % 60) continue; return num(`En bil kör med farten ${v} km/h. Hur långt kommer den på ${t} minuter?`, (v * t) / 60, { unit: 'km', skill: 'fart, sträcka, tid' }); } },
+          () => { const a = R(2, 9); return num(`Hur många kvadratdecimeter är ${a} m²?`, 100 * a, { unit: 'dm²', skill: 'areaenheter' }); },
+          () => { const km = R(21, 59) / 10, m = R(2, 9) * 100 + 50; return num(`${fmt(km)} km − ${m} m. Svara i meter.`, km * 1000 - m, { unit: 'm', skill: 'blandade enheter' }); }],
+    },
+    alg: {
+      1: [() => { const s = R(1, 20), d = R(2, 9), t = [0, 1, 2, 3].map((i) => s + i * d); return num(`Vilket tal kommer sedan? ${t.join(', ')}, …`, s + 4 * d, { skill: 'talföljd' }); },
+          () => { const s = R(60, 99), d = R(3, 8), t = [0, 1, 2, 3].map((i) => s - i * d); return num(`Vilket tal kommer sedan? ${t.join(', ')}, …`, s - 4 * d, { skill: 'talföljd' }); }],
+      2: [() => { const a = R(12, 79), b = R(12, 59); return num(`Vilket tal ska stå i rutan? &nbsp;□ + ${b} = ${a + b}`, a, { skill: 'obekant tal' }); },
+          () => { const s = R(2, 6), r = P([2, 3]), t = [0, 1, 2, 3].map((i) => s * r ** i); return num(`Vilket tal kommer sedan? ${t.join(', ')}, …`, s * r ** 4, { skill: 'talföljd, gånger' }); }],
+      3: [() => { const a = R(3, 9), x = R(3, 12); return num(`x · ${a} = ${a * x}. Vad är x?`, x, { skill: 'enkel ekvation' }); },
+          () => { const a = R(3, 9), x = R(3, 12); return num(`${a * x} / x = ${a}. Vad är x?`, x, { skill: 'enkel ekvation' }); },
+          () => { const s = R(1, 10), d0 = R(1, 3); const t = [s]; for (let i = 0; i < 4; i++) t.push(t[i] + d0 + i); return num(`Vilket tal kommer sedan? ${t.join(', ')}, …`, t[4] + d0 + 4, { skill: 'talföljd, växande steg' }); }],
+      4: [() => { const a = R(2, 6), x = R(2, 12), b = R(1, 15); return num(`${a}x + ${b} = ${a * x + b}. Vad är x?`, x, { skill: 'ekvation i två steg' }); },
+          () => { const v = R(2, 9), m = R(2, 9), k = R(1, 9); return num(`Om a = ${v}, vad är ${m}a − ${k}?`, m * v - k, { skill: 'uttryck' }); },
+          () => { const s = R(1, 5), t = [s]; for (let i = 0; i < 3; i++) t.push(t[i] * 2 + 1); return num(`Vilket tal kommer sedan? ${t.join(', ')}, …`, t[3] * 2 + 1, { skill: 'talföljd, regel i två steg' }); }],
+      5: [() => { for (;;) { const a = R(3, 7), c = R(1, a - 1), x = R(2, 10), b = R(1, 15), d = (a - c) * x - b; if (d <= 0) continue; return num(`${a}x − ${b} = ${c === 1 ? '' : c}x + ${d}. Vad är x?`, x, { skill: 'ekvation, x på båda sidor' }); } },
+          () => { const m = R(2, 5), k = R(1, 8), x = R(2, 10); return num(`${m}(x + ${k}) = ${m * (x + k)}. Vad är x?`, x, { skill: 'ekvation med parentes' }); },
+          () => { const a = R(2, 5), b = R(0, 3), n = P([10, 20, 50]); return num(`Figur 1 har ${a + b} stickor, figur 2 har ${2 * a + b} och figur 3 har ${3 * a + b}. Mönstret fortsätter likadant. Hur många stickor har figur ${n}?`, n * a + b, { skill: 'mönster, generell regel' }); }],
+    },
+    stat: {
+      1: [() => { const cats = ['Fotboll', 'Simning', 'Spel', 'Bygga']; for (;;) { const v = cats.map(() => R(1, 12)); const i = R(0, 3), j = R(0, 3); if (i === j || v[i] <= v[j]) continue; return num(`Diagrammet visar vad eleverna i en klass gillar mest. Hur många fler valde ${cats[i].toLowerCase()} än ${cats[j].toLowerCase()}?`, v[i] - v[j], { fig: FIG.bars(cats, v), skill: 'läsa stapeldiagram' }); } }],
+      2: [() => { for (;;) { const m = R(2, 9); const rest = []; while (rest.length < 4) { const x = R(1, 10); if (x !== m && rest.filter((y) => y === x).length < 1) rest.push(x); } const list = shuffle([m, m, m].concat(rest)); return num(`Vilket är typvärdet? &nbsp;${list.join(', ')}`, m, { skill: 'typvärde' }); } },
+          () => { const list = Array.from({ length: 6 }, () => R(2, 40)); return num(`Vad är variationsbredden (skillnaden mellan största och minsta värdet)? &nbsp;${list.join(', ')}`, Math.max(...list) - Math.min(...list), { skill: 'variationsbredd' }); }],
+      3: [() => { const n = P([3, 4, 5]), m = R(5, 20); for (;;) { const v = Array.from({ length: n - 1 }, () => m + R(-4, 4)); const last = n * m - v.reduce((a, b) => a + b, 0); if (last < 1 || Math.abs(last - m) > 6) continue; const list = shuffle(v.concat(last)); return num(`Vad är medelvärdet? &nbsp;${list.join(', ')}`, m, { skill: 'medelvärde' }); } }],
+      4: [() => { const v = Array.from({ length: 5 }, () => R(1, 30)); const s = v.slice().sort((a, b) => a - b); return num(`Vad är medianen? &nbsp;${v.join(', ')}`, s[2], { skill: 'median' }); },
+          () => { const [txt, k] = P([['en sexa', 1], ['ett jämnt tal', 3], ['mer än 4', 2], ['en etta eller en tvåa', 2]]); return frac(`Du slår en vanlig tärning. Hur stor är chansen att få ${txt}? Svara med ett bråk.`, k, 6, { skill: 'sannolikhet' }); }],
+      5: [() => { const r = R(2, 8), b = R(2, 8), g = R(1, 5); return frac(`I en påse finns ${r} röda, ${b} blå och ${g} gröna kulor. Du tar en kula utan att titta. Hur stor är chansen att den är röd? Svara med ett bråk.`, r, r + b + g, { skill: 'sannolikhet' }); },
+          () => { for (;;) { const m = R(8, 20), v = [R(4, 25), R(4, 25), R(4, 25)], d = 4 * m - v[0] - v[1] - v[2]; if (d < 1 || d > 40) continue; return num(`Medelvärdet av fyra tal är ${m}. Tre av talen är ${v.join(', ')}. Vilket är det fjärde talet?`, d, { skill: 'medelvärde baklänges' }); } }],
+    },
+    prob: {
+      1: [() => { const n = P(NAMES), have = R(30, 99), cost = R(11, have - 5); return num(`${n} har ${have} kr och köper en glass för ${cost} kr. Hur mycket pengar har ${n} kvar?`, have - cost, { unit: 'kr', skill: 'textuppgift, ett steg' }); },
+          () => { const x = R(3, 6), y = R(4, 9); return num(`I gruvan står ${x} kistor. I varje kista ligger ${y} diamanter. Hur många diamanter är det sammanlagt?`, x * y, { skill: 'textuppgift, ett steg' }); }],
+      2: [() => { const n = P(NAMES), p = R(4, 8), k = R(4, 9), g = R(3, p * k - 5); return num(`Ett paket samlarkort innehåller ${p} kort. ${n} köper ${k} paket och ger bort ${g} kort. Hur många kort har ${n} kvar?`, p * k - g, { skill: 'textuppgift, två steg' }); },
+          () => { const n = P(NAMES), k = R(3, 6), q = R(4, 12); return num(`${n} och ${k - 1} kompisar delar lika på ${k * q} smaragder. Hur många smaragder får var och en?`, q, { skill: 'delning' }); }],
+      3: [() => { const A = R(12, 24) * 5, C = R(6, Math.floor(A / 5) - 1) * 5, na = R(1, 3), nc = R(2, 4); return num(`En biobiljett kostar ${A} kr för vuxna och ${C} kr för barn. Vad kostar det för ${na} ${na === 1 ? 'vuxen' : 'vuxna'} och ${nc} barn?`, na * A + nc * C, { unit: 'kr', skill: 'textuppgift, flera steg' }); },
+          () => { const n = P(NAMES), c = R(15, 55), k = R(2, 3); return num(`${n} köper ${k} böcker som kostar ${c} kr styck och betalar med en 200-lapp. Hur mycket får ${n} tillbaka?`, 200 - k * c, { unit: 'kr', skill: 'växel' }); }],
+      4: [() => { const price = R(8, 40) * 20, p = P([10, 25, 50]); return num(`En tröja kostar ${price} kr. Den sänks med ${p} %. Vad kostar tröjan nu?`, (price * (100 - p)) / 100, { unit: 'kr', skill: 'procent, rabatt' }); },
+          () => { const persons = P([3, 4, 6]), pizzas = R(2, 4), price = R(15, 30) * persons; return num(`${persons} kompisar köper ${pizzas} pizzor för ${price} kr styck och delar lika på notan. Hur mycket betalar var och en?`, (pizzas * price) / persons, { unit: 'kr', skill: 'textuppgift, flera steg' }); },
+          () => { const d = R(2, 5), t = 10 * R(1, 6); return num(`En kran droppar ${d} dl vatten per minut. Hur många liter har droppat efter ${t} minuter?`, (d * t) / 10, { unit: 'liter', skill: 'enheter i problem' }); }],
+      5: [() => { const big = R(20, 60), small = R(5, big - 4); return num(`Två tal har summan ${big + small} och skillnaden ${big - small}. Vilket är det största talet?`, big, { skill: 'resonemang, två villkor' }); },
+          () => { const k = P([2, 3, 4]), b = R(3, 8), word = { 2: 'dubbelt', 3: 'tre gånger', 4: 'fyra gånger' }[k]; return num(`Maja är ${word} så gammal som sin lillebror. Tillsammans är de ${(k + 1) * b} år. Hur gammal är Maja?`, k * b, { unit: 'år', skill: 'resonemang, delar' }); }],
+    },
+  };
+
+  /* ---------- nivå 6: åk 7–8 (används i spelet, inte i kartläggningen) ---------- */
+  T.tal[6] = [
+    () => { const b = P([2, 3, 10]), e = b === 10 ? R(3, 6) : b === 2 ? R(4, 7) : R(2, 4); return num(`Vad är ${b}${sup(e)}?`, b ** e, { skill: 'potenser' }); },
+    () => { const a = R(2, 9), b = R(2, 9), sa = P([-1, 1]), sb = sa === 1 ? -1 : P([-1, 1]); return num(`${sa < 0 ? '(−' + a + ')' : a} · ${sb < 0 ? '(−' + b + ')' : b}`, sa * a * sb * b, { skill: 'negativa tal, multiplikation' }); },
+    () => { const x = R(11, 99) / 10, e = R(2, 4); return num(`Skriv ${fmt(x)} · 10${sup(e)} som ett vanligt tal.`, x * 10 ** e, { skill: 'tiopotenser' }); },
+  ];
+  T.addsub[6] = [
+    () => { const a = R(11, 59) / 10, b = R(101, 999) / 100, c = R(5, 15); return num(`−${fmt(a)} + ${fmt(b)} − ${c}`, -a + b - c, { skill: 'negativa decimaltal' }); },
+    () => { const a = R(5, 20), b = R(2, a - 1); return num(`(−${a}) − (−${b})`, -a + b, { skill: 'subtrahera negativa tal' }); },
+  ];
+  T.tabell[6] = [
+    () => { const a = R(13, 19), b = R(4, 9); return num(`${a} · ${b}`, a * b, { skill: 'tabell 13–19' }); },
+    () => { const a = R(11, 20); return num(`Vilket positivt tal gånger sig självt blir ${a * a}?`, a, { skill: 'kvadrattal' }); },
+  ];
+  T.muldiv[6] = [
+    () => { const a = R(120, 480), b = R(21, 48); return num(`${a} · ${b}`, a * b, { skill: 'flersiffrig multiplikation' }); },
+    () => { const d = R(2, 9) / 100, q = R(3, 12); return num(`${fmt(r6(d * q))} / ${fmt(d)}`, q, { skill: 'division med decimaltal' }); },
+  ];
+  T.brak[6] = [
+    () => { const [a, b, c, d] = P([[2, 3, 3, 4], [1, 2, 2, 5], [3, 4, 2, 3], [2, 5, 5, 6], [3, 8, 4, 9], [4, 5, 1, 2]]); const n = a * c, m = b * d, g = gcd(n, m); return frac(`{${a}/${b}} · {${c}/${d}}`, n / g, m / g, { skill: 'multiplikation av bråk' }); },
+    () => { const w1 = R(1, 3), w2 = R(1, 3); const [n1, d1, n2, d2] = P([[1, 2, 3, 4], [1, 3, 1, 2], [2, 3, 1, 6], [1, 4, 1, 2], [3, 4, 1, 2]]); const n = (w1 * d1 + n1) * d2 + (w2 * d2 + n2) * d1, m = d1 * d2, g = gcd(n, m); return frac(`${w1}{${n1}/${d1}} + ${w2}{${n2}/${d2}}`, n / g, m / g, { skill: 'blandad form' }); },
+    () => { const [a, b, c, d] = P([[3, 4, 1, 2], [2, 3, 1, 6], [5, 6, 1, 3], [1, 2, 1, 4], [4, 5, 2, 5]]); const n = a * d, m = b * c, g = gcd(n, m); return frac(`{${a}/${b}} / {${c}/${d}}`, n / g, m / g, { skill: 'division med bråk' }); },
+  ];
+  T.dec[6] = [
+    () => { const old = R(4, 20) * 20, p = P([10, 20, 25, 50]); return num(`Priset höjs från ${old} kr till ${old * (100 + p) / 100} kr. Med hur många procent höjdes priset?`, p, { unit: '%', skill: 'procentuell förändring' }); },
+    () => { const p = P([15, 35, 45]), N = 20 * R(3, 25); return num(`Vad är ${p} % av ${N}?`, (p * N) / 100, { skill: 'procent av' }); },
+    () => { let n = R(101, 999); if (n % 10 === 5) n++; return num(`Avrunda ${fmt(n / 1000)} till två decimaler.`, Math.round(n / 10) / 100, { skill: 'avrundning decimaltal' }); },
+  ];
+  T.geo[6] = [
+    () => { const d = R(2, 20); return num(`En cirkel har diametern ${d} cm. Vad är omkretsen? Räkna med π ≈ 3,14.`, 3.14 * d, { unit: 'cm', skill: 'cirkelns omkrets' }); },
+    () => { const [a, b, c] = P([[3, 4, 5], [6, 8, 10], [5, 12, 13], [8, 15, 17], [9, 12, 15]]); return num(`En rätvinklig triangel har kateterna ${a} cm och ${b} cm. Hur lång är hypotenusan?`, c, { unit: 'cm', skill: 'Pythagoras sats' }); },
+    () => { const b = R(4, 12), h = R(3, 9); return num(`Ett parallellogram har basen ${b} cm och höjden ${h} cm. Vad är arean?`, b * h, { unit: 'cm²', skill: 'parallellogram' }); },
+  ];
+  T.mat[6] = [
+    () => { const a = R(2, 9); return num(`Hur många liter är ${a} m³?`, 1000 * a, { unit: 'liter', skill: 'volymenheter' }); },
+    () => { const v = P([36, 54, 72, 90, 108]); return num(`En bil kör ${v} km/h. Hur många meter per sekund är det?`, v / 3.6, { unit: 'm/s', skill: 'enhetsbyte fart' }); },
+    () => { const a = R(2, 9); return num(`Hur många kubikcentimeter är ${a} dm³?`, 1000 * a, { unit: 'cm³', skill: 'volymenheter' }); },
+  ];
+  T.alg[6] = [
+    () => { for (;;) { const m = R(2, 4), k = R(1, 6), x = R(3, 12), c = R(1, m - 1), r = m * (x - k) - c * x; if (r <= 0) continue; return num(`${m}(x − ${k}) = ${c === 1 ? '' : c}x + ${r}. Vad är x?`, x, { skill: 'ekvation med parentes' }); } },
+    () => { const x = R(2, 6), a = R(2, 4); return num(`Vad är värdet av ${a}x² om x = ${x}?`, a * x * x, { skill: 'potensuttryck' }); },
+    () => { const a = R(2, 5), b = R(1, 6), c = R(1, a - 1), d = R(1, 6), x = R(2, 9); return num(`Förenkla ${a}x + ${b} − ${c === 1 ? '' : c}x + ${d} och räkna ut värdet när x = ${x}.`, (a - c) * x + b + d, { skill: 'förenkla uttryck' }); },
+  ];
+  T.stat[6] = [
+    () => { const [t, k] = P([['båda visar sexa', 1], ['summan blir 11', 2], ['summan blir 3', 2], ['summan blir 7', 6]]); return frac(`Du slår två vanliga tärningar. Hur stor är chansen att ${t}? Svara med ett bråk.`, k, 36, { skill: 'sannolikhet, två händelser' }); },
+    () => { for (;;) { const m = R(6, 15), rem = R(2, 30), nm = (5 * m - rem) / 4; if (!Number.isInteger(nm) || nm <= 0) continue; return num(`Medelvärdet av 5 tal är ${m}. Talet ${rem} tas bort. Vad blir medelvärdet av de 4 tal som är kvar?`, nm, { skill: 'medelvärde' }); } },
+    () => { const v = Array.from({ length: 6 }, () => R(1, 20)), s = v.slice().sort((a, b) => a - b); return num(`Vad är medianen? &nbsp;${v.join(', ')}`, (s[2] + s[3]) / 2, { skill: 'median, jämnt antal' }); },
+  ];
+  T.prob[6] = [
+    () => { const v = R(4, 12) * 10, t = R(2, 4), t2 = R(5, 8); return num(`Ett tåg kör ${v * t} km på ${t} timmar. Hur långt kör det på ${t2} timmar med samma fart?`, v * t2, { unit: 'km', skill: 'proportionalitet' }); },
+    () => { const p = P([20, 25, 10]), orig = R(6, 30) * 20; return num(`Efter ${p} % rabatt kostar jackan ${orig * (100 - p) / 100} kr. Vad kostade jackan från början?`, orig, { unit: 'kr', skill: 'procent baklänges' }); },
+    () => { const k = R(3, 6), price = R(4, 12), m = R(7, 12); return num(`${k} pennor kostar ${k * price} kr. Vad kostar ${m} pennor?`, m * price, { unit: 'kr', skill: 'proportionalitet' }); },
+  ];
+
+  function generate(areaId, level, avoid) {
+    const pool = T[areaId][level];
+    for (let i = 0; i < 25; i++) {
+      const q = P(pool)();
+      if (!avoid || !avoid.has(plain(q.text))) { q.area = areaId; q.level = level; return q; }
+    }
+    const q = P(pool)(); q.area = areaId; q.level = level; return q;
+  }
+
+  /* ---------- rättning ---------- */
+  function parseNum(raw) {
+    let s = String(raw).trim().replace(/[−–]/g, '-').replace(/[\s ]/g, '').replace(/[a-zA-ZåäöÅÄÖ°%²³]+\.?$/, '').replace(',', '.');
+    if (!/^-?(\d+\.?\d*|\.\d+)$/.test(s)) return null;
+    return Number(s);
+  }
+  function parseFrac(raw) {
+    const s = String(raw).trim().replace(/[−–]/g, '-').replace(',', '.');
+    let m = s.match(/^(-?\d+)\s+(\d+)\s*\/\s*(\d+)$/);
+    if (m) { const w = +m[1], n = +m[2], d = +m[3]; if (!d) return null; return { value: w + n / d, n: w * d + n, d }; }
+    m = s.match(/^(-?\d+)\s*\/\s*(\d+)$/);
+    if (m) { const n = +m[1], d = +m[2]; if (!d) return null; return { value: n / d, n, d }; }
+    const v = parseNum(s); return v === null ? null : { value: v, n: null, d: null };
+  }
+  function check(q, raw) {
+    if (raw === null || raw === undefined || String(raw).trim() === '') return false;
+    if (q.kind === 'choice') return Number(raw) === q.answer;
+    if (q.kind === 'num') { const v = parseNum(raw); return v !== null && Math.abs(v - q.answer) < 1e-9; }
+    if (q.kind === 'frac') {
+      const f = parseFrac(raw); if (!f) return false;
+      const ok = Math.abs(f.value - q.answer.n / q.answer.d) < 1e-9;
+      if (!ok) return false;
+      if (q.simplest) return f.n !== null && f.n === q.answer.n && f.d === q.answer.d;
+      return true;
+    }
+    if (q.kind === 'time') {
+      const m = String(raw).trim().match(/^(\d{1,2})\s*[:.]\s*(\d{2})$/);
+      return !!m && (+m[1] % 24) === q.answer.h && +m[2] === q.answer.m;
+    }
+    return false;
+  }
+  function answerText(q) {
+    if (q.kind === 'choice') return plain(q.choices[q.answer]);
+    if (q.kind === 'frac') return q.answer.n + '/' + q.answer.d;
+    if (q.kind === 'time') return pad(q.answer.h) + ':' + pad(q.answer.m);
+    return fmt(q.answer) + (q.unit ? ' ' + q.unit : '');
+  }
+  function plain(text) {
+    return String(text).replace(/\{([^}]+)\}/g, ' $1 ').replace(/&nbsp;/g, ' ').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  }
+
+  /* ---------- adaptiv logik ---------- */
+  const MIN_Q = 4, MAX_Q = 5;
+  function startLevel(grade) { return Math.max(1, Math.min(5, (Number(grade) || 4) - 2)); }
+  function nextLevel(level, ok) { return ok ? Math.min(5, level + 1) : Math.max(1, level - 1); }
+  function areaDone(asked) {
+    if (asked.length >= MAX_Q) return true;
+    if (asked.length < MIN_Q) return false;
+    const a = asked[asked.length - 1], b = asked[asked.length - 2];
+    return a.ok === b.ok; // två senaste pekar åt samma håll -> klart
+  }
+  function estimate(asked) {
+    if (!asked || !asked.length) return null;
+    let best = 0;
+    for (let L = 1; L <= 5; L++) {
+      const at = asked.filter((x) => x.level === L), c = at.filter((x) => x.ok).length;
+      if (c > 0 && c >= at.length - c) best = L;
+    }
+    const atBest = asked.filter((x) => x.level === best);
+    const correct = asked.filter((x) => x.ok).length;
+    const ms = asked.filter((x) => x.ms).map((x) => x.ms);
+    return {
+      level: best,
+      label: LEVEL_LABELS[best],
+      secure: best > 0 && atBest.every((x) => x.ok),
+      correct, total: asked.length,
+      avgMs: ms.length ? Math.round(ms.reduce((a, b) => a + b, 0) / ms.length) : null,
+    };
+  }
+
+  root.KGQ = { AREAS, LEVEL_LABELS, MAX_LEVEL: 6, generate, check, answerText, plain, fmt, startLevel, nextLevel, areaDone, estimate, _T: T };
+})(typeof window !== 'undefined' ? window : globalThis);
+
+</script>
+<script>
+/* =====================================================================
+   KRISTALLGRUVAN – SPELMOTOR (ren logik, inget DOM, ingen lagring)
+   Spelardokument (schema 'kristallgruvan-spel/1'):
+   { kidId, familyId, crystals, totalCorrect, totalAnswered,
+     skills: { [area]: { level, recent: [0|1] } }, focus: [area], disabled: [area],
+     dailyGoalMin, egg: { progress }, creatures: { [id]: { xp, stage, at } },
+     inventory: { [blockId]: n }, base: { w, h, cells: [''|blockId|'c:'+creatureId] },
+     streak: { count, last, freezes }, chestDay, bossWeek, raceBest,
+     medals: { [id]: isoDate }, today: { day, ms, rounds },
+     requests: [{ id, rewardId, name, cost, at, status }], stats: {...} }
+   ===================================================================== */
+(function (root) {
+  'use strict';
+  const Q = root.KGQ;
+  const MAX = 6;
+  const AREA_IDS = Q.AREAS.map((a) => a.id);
+  const rnd = Math.random;
+
+  /* ---------- datum ---------- */
+  const z = (n) => String(n).padStart(2, '0');
+  function dayKey(d) { d = d || new Date(); return d.getFullYear() + '-' + z(d.getMonth() + 1) + '-' + z(d.getDate()); }
+  function daysBetween(a, b) { return Math.round((Date.parse(b + 'T12:00:00') - Date.parse(a + 'T12:00:00')) / 864e5); }
+  function weekKey(d) {
+    d = d ? new Date(d) : new Date();
+    const t = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+    const day = t.getUTCDay() || 7; t.setUTCDate(t.getUTCDate() + 4 - day);
+    const y0 = new Date(Date.UTC(t.getUTCFullYear(), 0, 1));
+    return t.getUTCFullYear() + '-v' + z(Math.ceil(((t - y0) / 864e5 + 1) / 7));
+  }
+
+  /* ---------- varelser (egna, påhittade) ---------- */
+  const CREATURE_NAMES = {
+    tal: ['Siffrik', 'Nollo', 'Miljonix'], addsub: ['Plusse', 'Minuset', 'Växlo'], tabell: ['Tabbe', 'Gångis', 'Rutan'],
+    muldiv: ['Delbert', 'Multo', 'Kvotis'], brak: ['Bråkis', 'Halvan', 'Nämnis'], dec: ['Decimo', 'Kommis', 'Procentina'],
+    geo: ['Vinkla', 'Kuben', 'Pyra'], mat: ['Metra', 'Klockis', 'Litro'], alg: ['Mönstra', 'Ekvo', 'Gåtan'],
+    stat: ['Staplo', 'Medelix', 'Tärnis'], prob: ['Klurix', 'Ledtråd', 'Lösaren'],
+  };
+  const CREATURES = [];
+  AREA_IDS.forEach((area, ai) => CREATURE_NAMES[area].forEach((name, k) => CREATURES.push({ id: area + '-' + k, name, area, seed: ai * 31 + k * 7 + 3 })));
+  const STAGE_XP = [0, 0, 20, 60]; // steg 2 vid 20 xp, steg 3 vid 60
+
+  function mulberry32(a) { return function () { a |= 0; a = (a + 0x6d2b79f5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+  // 12x12 rutnät. K kontur, B kropp, L ljus, D mörk, A fläckar, W/E ögon, P kristall
+  function creatureGrid(seed, stage) {
+    const r = mulberry32(seed * 9973 + 17), W = 12, H = 12;
+    const g = Array.from({ length: H }, () => Array(W).fill('.'));
+    for (let y = 2; y <= 10; y++) for (let x = 0; x < 6; x++) {
+      const dx = (5.5 - x) / 5, dy = (y - 6.5) / 4.3, e = dx * dx + dy * dy;
+      if (e < 0.72 || (e < 1.05 && r() < 0.5)) { g[y][x] = 'B'; g[y][W - 1 - x] = 'B'; }
+    }
+    for (let y = 2; y <= 10; y++) { const l = g[y].indexOf('B'); if (l >= 0) for (let x = l; x < W - l; x++) g[y][x] = 'B'; } // inga hål
+    for (let y = 4; y <= 8; y++) for (let x = 3; x <= 8; x++) g[y][x] = 'B';
+    if (r() < 0.6) { const ex = 1 + Math.floor(r() * 3); g[1][ex] = g[2][ex] = 'B'; g[1][W - 1 - ex] = g[2][W - 1 - ex] = 'B'; } // öron
+    g[11][3] = g[11][8] = 'D'; if (r() < 0.5) { g[11][4] = g[11][7] = 'D'; }
+    const r2 = mulberry32(seed * 7 + 5);
+    for (let y = 0; y < H; y++) for (let x = 0; x < W / 2; x++) {
+      if (g[y][x] !== 'B') continue;
+      if (y > 0 && g[y - 1][x] === '.') g[y][x] = g[y][W - 1 - x] = 'L';
+      else if (y < H - 1 && (g[y + 1][x] === '.' || g[y + 1][x] === 'D')) g[y][x] = g[y][W - 1 - x] = 'D';
+      else if (stage >= 2 && r2() < 0.22 && !(y >= 5 && y <= 6)) g[y][x] = g[y][W - 1 - x] = 'A';
+    }
+    const ey = 5, ex = r() < 0.5 ? 3 : 4;
+    g[ey][ex] = g[ey][W - 1 - ex] = 'W'; g[ey + 1][ex] = g[ey + 1][W - 1 - ex] = 'E';
+    if (r() < 0.6) { g[8][5] = g[8][6] = 'E'; }
+    if (stage >= 3) { g[0][5] = g[0][6] = 'P'; g[1][5] = g[1][6] = 'P'; if (g[0][4] === '.') g[0][4] = 'p'; if (g[0][7] === '.') g[0][7] = 'p'; }
+    const out = g.map((row) => row.slice());
+    for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
+      if (g[y][x] !== '.') continue;
+      const n = [[0, 1], [1, 0], [0, -1], [-1, 0]].some(([a, b]) => { const c = g[y + a] && g[y + a][x + b]; return c && c !== '.' && c !== 'p' && c !== 'P'; });
+      if (n) out[y][x] = 'K';
+    }
+    return out.map((row) => row.join(''));
+  }
+
+  /* ---------- byggblock ---------- */
+  const BLOCKS = [
+    { id: 'jord', name: 'Jord', cost: 1 }, { id: 'sten', name: 'Sten', cost: 1 }, { id: 'gras', name: 'Gräs', cost: 2 },
+    { id: 'tra', name: 'Plankor', cost: 2 }, { id: 'tegel', name: 'Tegel', cost: 3 }, { id: 'glas', name: 'Glas', cost: 4 },
+    { id: 'fackla', name: 'Fackla', cost: 5 }, { id: 'blomma', name: 'Blomma', cost: 5 }, { id: 'vatten', name: 'Vatten', cost: 6 },
+    { id: 'svamp', name: 'Svamp', cost: 6 }, { id: 'kista', name: 'Kista', cost: 12 }, { id: 'lampa', name: 'Kristallampa', cost: 15 },
+    { id: 'guld', name: 'Guldblock', cost: 30 }, { id: 'diamant', name: 'Diamantblock', cost: 50 },
+  ];
+  const FREEZE_COST = 40, MAX_FREEZES = 2, EXPAND_COST = 120, MAX_W = 16;
+
+  /* ---------- medaljer ---------- */
+  const owned = (p) => Object.keys(p.creatures || {}).length;
+  const MEDALS = [
+    { id: 'forsta', name: 'Första turen', desc: 'Gör din första gruvtur', test: (p) => p.stats.rounds >= 1 },
+    { id: 'rätt100', name: 'Hundra rätt', desc: '100 rätta svar', test: (p) => p.totalCorrect >= 100 },
+    { id: 'rätt500', name: 'Femhundra rätt', desc: '500 rätta svar', test: (p) => p.totalCorrect >= 500 },
+    { id: 'rätt1000', name: 'Tusen rätt', desc: '1 000 rätta svar', test: (p) => p.totalCorrect >= 1000 },
+    { id: 'svit3', name: 'Tre dagar', desc: 'Spela 3 dagar i rad', test: (p) => p.streak.count >= 3 },
+    { id: 'svit7', name: 'En hel vecka', desc: 'Spela 7 dagar i rad', test: (p) => p.streak.count >= 7 },
+    { id: 'svit30', name: 'Gruvveteran', desc: 'Spela 30 dagar i rad', test: (p) => p.streak.count >= 30 },
+    { id: 'varelse1', name: 'Första varelsen', desc: 'Kläck ett ägg', test: (p) => owned(p) >= 1 },
+    { id: 'varelse10', name: 'Samlare', desc: 'Samla 10 varelser', test: (p) => owned(p) >= 10 },
+    { id: 'varelseAlla', name: 'Mästersamlare', desc: `Samla alla ${CREATURES.length} varelser`, test: (p) => owned(p) >= CREATURES.length },
+    { id: 'utveckla', name: 'Utveckling!', desc: 'Utveckla en varelse till steg 3', test: (p) => Object.values(p.creatures).some((c) => c.stage >= 3) },
+    { id: 'niva', name: 'Ny nivå', desc: 'Gå upp en nivå i något område', test: (p) => p.stats.levelUps >= 1 },
+    { id: 'topp', name: 'Toppnivå', desc: 'Nå högsta nivån (åk 7–8) i ett område', test: (p) => AREA_IDS.some((a) => p.skills[a].level >= MAX) },
+    { id: 'boss', name: 'Bossbesegrare', desc: 'Besegra veckobossen', test: (p) => p.stats.bossWins >= 1 },
+    { id: 'race20', name: 'Rälsraket', desc: '20 rätt i ett vagnrace', test: (p) => p.raceBest >= 20 },
+    { id: 'bygg50', name: 'Byggmästare', desc: 'Placera 50 block i basen', test: (p) => p.stats.placed >= 50 },
+  ];
+
+  /* ---------- ny spelare ---------- */
+  function newPlayer(kid, testSession) {
+    const skills = {};
+    const testLv = {};
+    AREA_IDS.forEach((a) => {
+      const r = testSession && testSession.areas[a] && testSession.areas[a].result;
+      testLv[a] = r ? r.level : null;
+      skills[a] = { level: Math.max(1, Math.min(MAX, r ? r.level : Q.startLevel(kid.grade))), recent: [] };
+    });
+    // fokus: de svagaste områdena i kartläggningen (högst två)
+    let focus = [];
+    if (testSession) {
+      const min = Math.min(...AREA_IDS.map((a) => (testLv[a] === null ? 99 : testLv[a])));
+      focus = AREA_IDS.filter((a) => testLv[a] === min).slice(0, 2);
+    }
+    return {
+      kidId: kid.id, familyId: kid.familyId, schema: 'kristallgruvan-spel/1', createdAt: new Date().toISOString(),
+      crystals: 0, totalCorrect: 0, totalAnswered: 0, skills, focus, disabled: [], dailyGoalMin: 20,
+      egg: { progress: 0 }, creatures: {}, inventory: { jord: 6, sten: 6, gras: 4 },
+      base: { w: 10, h: 7, cells: Array(70).fill('') },
+      streak: { count: 0, last: null, freezes: 1 }, chestDay: null, bossWeek: null, raceBest: 0,
+      medals: {}, today: { day: dayKey(), ms: 0, rounds: 0 }, requests: [],
+      stats: { rounds: 0, levelUps: 0, placed: 0, bossWins: 0 },
+    };
+  }
+  function applyTest(p, testSession) {
+    AREA_IDS.forEach((a) => { const r = testSession.areas[a] && testSession.areas[a].result; if (r) p.skills[a] = { level: Math.max(1, Math.min(MAX, r.level)), recent: [] }; });
+  }
+
+  function ensureToday(p) { const d = dayKey(); if (!p.today || p.today.day !== d) p.today = { day: d, ms: 0, rounds: 0 }; }
+  function goalReached(p) { ensureToday(p); return !!p.dailyGoalMin && p.today.ms >= p.dailyGoalMin * 60000; }
+  const mult = (p) => (goalReached(p) ? 0.5 : 1);
+
+  /* ---------- val av uppgifter ---------- */
+  function enabledAreas(p) { const e = AREA_IDS.filter((a) => !p.disabled.includes(a)); return e.length ? e : AREA_IDS.slice(); }
+  function pickArea(p, counts) {
+    const pool = enabledAreas(p).filter((a) => (counts[a] || 0) < 2);
+    const list = pool.length ? pool : enabledAreas(p);
+    const w = list.map((a) => (p.focus.includes(a) ? 3 : 1));
+    let t = rnd() * w.reduce((x, y) => x + y, 0);
+    for (let i = 0; i < list.length; i++) { t -= w[i]; if (t <= 0) return list[i]; }
+    return list[list.length - 1];
+  }
+  function pickLevel(s) {
+    const r = rnd();
+    if (r < 0.1 && s.level < MAX) return s.level + 1; // utmaning
+    if (r < 0.3 && s.level > 1) return s.level - 1;   // repetition
+    return s.level;
+  }
+  // mode: 'tur' (8 blandade), 'omrade' (8 i ett område), 'boss' (5 svåra)
+  function buildRound(p, mode, areaId) {
+    const avoid = new Set(), counts = {}, qs = [];
+    const n = mode === 'boss' ? 5 : 8;
+    for (let i = 0; i < n; i++) {
+      let area, level;
+      if (mode === 'omrade') { area = areaId; level = pickLevel(p.skills[area]); }
+      else if (mode === 'boss') { area = ['prob', 'alg', 'geo', 'prob', 'stat'][i]; if (p.disabled.includes(area)) area = 'prob'; level = Math.min(MAX, p.skills[area].level + 1); }
+      else { area = pickArea(p, counts); level = pickLevel(p.skills[area]); }
+      counts[area] = (counts[area] || 0) + 1;
+      const q = Q.generate(area, level, avoid); avoid.add(Q.plain(q.text));
+      qs.push(q);
+    }
+    return qs;
+  }
+  function raceQuestion(p, avoid) {
+    const s = p.skills.tabell;
+    const area = s.level >= 5 && rnd() < 0.4 ? 'muldiv' : 'tabell';
+    const level = area === 'tabell' ? Math.min(s.level, 6) : Math.min(p.skills.muldiv.level, 3);
+    return Q.generate(area, Math.max(1, level), avoid);
+  }
+
+  /* ---------- registrera ett svar ---------- */
+  // returnerar { crystals, levelChange: {area, from, to}|null, hatched: creature|null, evolved: [..] }
+  function recordAnswer(p, q, ok, ms, ctx) {
+    ensureToday(p);
+    ctx = ctx || {};
+    const ev = { crystals: 0, levelChange: null, hatched: null, evolved: [] };
+    p.totalAnswered++; p.today.ms += Math.min(ms || 0, 180000);
+    const s = p.skills[q.area];
+    const before = s.level;
+    if (q.level === s.level) {
+      s.recent.push(ok ? 1 : 0); if (s.recent.length > 10) s.recent.shift();
+      const sum = s.recent.reduce((a, b) => a + b, 0);
+      const last5 = s.recent.slice(-5).reduce((a, b) => a + b, 0);
+      if (s.recent.length >= 8 && sum >= Math.ceil(s.recent.length * 0.8) && s.level < MAX) { ev.levelChange = { area: q.area, from: s.level, to: s.level + 1 }; s.level++; s.recent = []; p.stats.levelUps++; }
+      else if (s.recent.length >= 5 && last5 <= 1 && s.level > 1) { ev.levelChange = { area: q.area, from: s.level, to: s.level - 1 }; s.level--; s.recent = []; }
+    } else if (q.level > s.level && ok) {
+      // klarad utmaning räknas som två rätt på nuvarande nivå
+      s.recent.push(1, 1); while (s.recent.length > 10) s.recent.shift();
+    }
+    if (!ok) return ev;
+    p.totalCorrect++;
+    let c = ctx.race ? 1 : 3;
+    if (!ctx.race && q.level > before) c += 2;
+    if (!ctx.race && ctx.combo >= 3) c += 1;
+    ev.crystals = Math.max(1, Math.round(c * mult(p)));
+    p.crystals += ev.crystals;
+    // ägg
+    if (owned(p) < CREATURES.length) {
+      p.egg.progress++;
+      if (p.egg.progress >= eggNeed(p)) {
+        const free = CREATURES.filter((c) => !p.creatures[c.id]);
+        const cr = free[Math.floor(rnd() * free.length)];
+        p.creatures[cr.id] = { xp: 0, stage: 1, at: new Date().toISOString() };
+        p.egg.progress = 0; ev.hatched = cr;
+      }
+    }
+    // varelser i samma område får xp
+    CREATURES.filter((c) => c.area === q.area && p.creatures[c.id]).forEach((c) => {
+      const st = p.creatures[c.id]; st.xp++;
+      const ns = st.xp >= STAGE_XP[3] ? 3 : st.xp >= STAGE_XP[2] ? 2 : 1;
+      if (ns > st.stage) { st.stage = ns; ev.evolved.push({ creature: c, stage: ns }); }
+    });
+    return ev;
+  }
+  function eggNeed(p) { return Math.min(40, 10 + 2 * owned(p)); }
+
+  /* ---------- slut på runda ---------- */
+  function finishRound(p, kind) {
+    ensureToday(p);
+    const ev = { bonus: 0, chest: 0, streakUp: false, freezeUsed: 0, freezeEarned: false, medals: [] };
+    p.today.rounds++; p.stats.rounds++;
+    if (kind !== 'race') { ev.bonus = Math.round(5 * mult(p)); p.crystals += ev.bonus; }
+    const today = dayKey();
+    if (p.chestDay !== today) { p.chestDay = today; ev.chest = 20; p.crystals += 20; }
+    const st = p.streak;
+    if (st.last !== today) {
+      const gap = st.last ? daysBetween(st.last, today) : 1;
+      if (gap === 1) st.count++;
+      else if (gap > 1 && gap - 1 <= st.freezes) { st.freezes -= gap - 1; ev.freezeUsed = gap - 1; st.count++; }
+      else st.count = 1;
+      st.last = today; ev.streakUp = true;
+      if (st.count % 7 === 0 && st.freezes < MAX_FREEZES) { st.freezes++; ev.freezeEarned = true; }
+    }
+    ev.medals = checkMedals(p);
+    return ev;
+  }
+  function checkMedals(p) {
+    const got = [];
+    MEDALS.forEach((m) => { if (!p.medals[m.id] && m.test(p)) { p.medals[m.id] = new Date().toISOString(); got.push(m); } });
+    return got;
+  }
+  // visar svit som "bruten" om mer än frysblocken räcker till
+  function streakAlive(p) {
+    const st = p.streak; if (!st.last) return 0;
+    const gap = daysBetween(st.last, dayKey());
+    return gap <= 1 + st.freezes ? st.count : 0;
+  }
+
+  /* ---------- butik och bas ---------- */
+  function buyBlock(p, id, n) {
+    const b = BLOCKS.find((x) => x.id === id); if (!b) return false;
+    const cost = b.cost * n; if (p.crystals < cost) return false;
+    p.crystals -= cost; p.inventory[id] = (p.inventory[id] || 0) + n; return true;
+  }
+  function buyFreeze(p) { if (p.crystals < FREEZE_COST || p.streak.freezes >= MAX_FREEZES) return false; p.crystals -= FREEZE_COST; p.streak.freezes++; return true; }
+  function expandBase(p) {
+    const b = p.base; if (p.crystals < EXPAND_COST || b.w >= MAX_W) return false;
+    p.crystals -= EXPAND_COST;
+    const cells = [];
+    for (let y = 0; y < b.h; y++) { for (let x = 0; x < b.w; x++) cells.push(b.cells[y * b.w + x]); cells.push('', ''); }
+    b.w += 2; b.cells = cells; return true;
+  }
+  function place(p, idx, item) {
+    const b = p.base; if (idx < 0 || idx >= b.cells.length || b.cells[idx]) return false;
+    if (item.startsWith('c:')) {
+      if (!p.creatures[item.slice(2)] || b.cells.includes(item)) return false;
+    } else { if (!p.inventory[item]) return false; p.inventory[item]--; p.stats.placed++; }
+    b.cells[idx] = item; return true;
+  }
+  function pickUp(p, idx) {
+    const b = p.base, it = b.cells[idx]; if (!it) return false;
+    if (!it.startsWith('c:')) p.inventory[it] = (p.inventory[it] || 0) + 1;
+    b.cells[idx] = ''; return true;
+  }
+  function buyReward(p, reward) {
+    if (p.crystals < reward.cost) return null;
+    p.crystals -= reward.cost;
+    const r = { id: 'r' + Date.now().toString(36), rewardId: reward.id, name: reward.name, cost: reward.cost, at: new Date().toISOString(), status: 'pending' };
+    p.requests.push(r); if (p.requests.length > 60) p.requests = p.requests.slice(-60);
+    return r;
+  }
+  function resolveRequest(p, reqId, approve) {
+    const r = p.requests.find((x) => x.id === reqId); if (!r || r.status !== 'pending') return false;
+    r.status = approve ? 'given' : 'declined'; r.doneAt = new Date().toISOString();
+    if (!approve) p.crystals += r.cost;
+    return true;
+  }
+
+  root.KGEngine = {
+    MAX, CREATURES, BLOCKS, MEDALS, STAGE_XP, FREEZE_COST, MAX_FREEZES, EXPAND_COST, MAX_W,
+    dayKey, weekKey, daysBetween, creatureGrid, newPlayer, applyTest, ensureToday, goalReached, mult,
+    buildRound, raceQuestion, recordAnswer, eggNeed, finishRound, checkMedals, streakAlive,
+    buyBlock, buyFreeze, expandBase, place, pickUp, buyReward, resolveRequest, owned,
+  };
+})(typeof window !== 'undefined' ? window : globalThis);
+
+</script>
+<script>
+/* =====================================================================
+   KRISTALLGRUVAN – SPELET (gränssnitt)
+   Använder KGQ (uppgifter), KGEngine (regler) och ctx.store (lagring).
+   ===================================================================== */
+(function (root) {
+  'use strict';
+  const Q = root.KGQ, E = root.KGEngine;
+
+  root.KGGame = function (ctx) {
+    const { view, toast, esc, richText, gemSVG, mossaSVG, shade } = ctx;
+    let kid = null, player = null, family = null, R = null, raceTimer = null, saveT = null, shopTab = 'block', buildSel = null, confirmBuy = null;
+    const areaName = (id) => (Q.AREAS.find((a) => a.id === id) || {}).name || id;
+    const areaGem = (id) => (Q.AREAS.find((a) => a.id === id) || {}).gem || '#ffffff';
+
+    /* ---------- lagring ---------- */
+    function save() { clearTimeout(saveT); saveT = null; return ctx.store.savePlayer(player).catch(() => {}); }
+    function saveSoon() { clearTimeout(saveT); saveT = setTimeout(save, 700); }
+    async function loadFamily() {
+      try { family = await ctx.store.getFamily(kid ? kid.familyId : 'familj-1'); } catch (e) { family = null; }
+      if (!family) family = { id: kid ? kid.familyId : 'familj-1', rewards: [] };
+      return family;
+    }
+
+    /* ---------- pixelgrafik ---------- */
+    function grid2svg(rows, pal, vb) {
+      let r = '';
+      rows.forEach((row, y) => row.split('').forEach((ch, x) => { const c = pal[ch]; if (c) r += `<rect x="${x}" y="${y}" width="1.02" height="1.02" fill="${c}"/>`; }));
+      return r;
+    }
+    function rng(seed) { let a = seed; return () => { a = (a * 1103515245 + 12345) & 0x7fffffff; return a / 0x7fffffff; }; }
+    function noise(seed, p1, p2) { const r = rng(seed); return Array.from({ length: 8 }, () => Array.from({ length: 8 }, () => { const v = r(); return v < p1 ? 'b' : v < p1 + p2 ? 'c' : 'a'; }).join('')); }
+    const TILES = {
+      jord: { rows: noise(11, 0.18, 0.14), pal: { a: '#7a5230', b: '#5e3e22', c: '#93683f' } },
+      sten: { rows: noise(23, 0.2, 0.16), pal: { a: '#7d7a86', b: '#5f5c68', c: '#9a97a3' } },
+      gras: { rows: ['gggggggg', 'gGgggGgg', 'agaagaga'].concat(noise(5, 0.18, 0.12).slice(3)), pal: { g: '#6cbf4a', G: '#93dd6a', a: '#7a5230', b: '#5e3e22', c: '#93683f' } },
+      tra: { rows: ['aaaabaaa', 'aaaabaaa', 'aaaabaaa', 'dddddddd', 'abaaaaaa', 'abaaaaaa', 'abaaaaaa', 'dddddddd'], pal: { a: '#b07a43', b: '#7d5129', d: '#6b4422' } },
+      tegel: { rows: ['aaamaaaa', 'aaamaaaa', 'aaamaaaa', 'mmmmmmmm', 'aaaaaama', 'aaaaaama', 'aaaaaama', 'mmmmmmmm'], pal: { a: '#b5523b', m: '#d9c7b0' } },
+      glas: { rows: ['wwwwwwww', 'w.....sw', 'w....s.w', 'w...s..w', 'w..s...w', 'w......w', 'w......w', 'wwwwwwww'], pal: { w: '#cfeaff', s: '#ffffff', '.': 'rgba(207,234,255,.18)' } },
+      vatten: { rows: ['aaaaaaaa', 'aallaaaa', 'aaaaaall', 'aaaaaaaa', 'aaaallaa', 'llaaaaaa', 'aaaaaaaa', 'aaallaaa'], pal: { a: '#3f7fd6', l: '#6fa6ef' } },
+      fackla: { rows: ['........', '...yy...', '...oy...', '...bb...', '...bb...', '...bb...', '...bb...', '........'], pal: { y: '#ffd166', o: '#ff8a3a', b: '#7d5129' } },
+      blomma: { rows: ['........', '..r.r...', '...y....', '..r.r...', '...g....', '..gg....', '...g....', '........'], pal: { r: '#ff6b8a', y: '#ffd166', g: '#6cbf4a' } },
+      svamp: { rows: ['........', '..rrrr..', '.rwrrwr.', '.rrrrrr.', '...ww...', '...ww...', '..wwww..', '........'], pal: { r: '#e2443a', w: '#f3ead7' } },
+      kista: { rows: ['........', '.kkkkkk.', '.bbbbbb.', '.kkyykk.', '.bbbbbb.', '.bbbbbb.', '.kkkkkk.', '........'], pal: { k: '#4a2f17', b: '#a26a35', y: '#ffd166' } },
+      lampa: { rows: ['...kk...', '...kk...', '..pppp..', '.pPpppp.', '.ppppPp.', '..pppp..', '...kk...', '........'], pal: { k: '#3a3449', p: '#b58cff', P: '#efe4ff' } },
+      guld: { rows: ['dddddddd', 'dallaaad', 'dlaaaaad', 'daaaaaad', 'daaaaaad', 'daaaaaLd', 'daaaaLLd', 'dddddddd'], pal: { a: '#f2c230', d: '#c99a12', l: '#fff1a8', L: '#e0ac1c' } },
+      diamant: { rows: ['dddddddd', 'dallaaad', 'dlaaaaad', 'daaaaaad', 'daaaaaad', 'daaaaaLd', 'daaaaLLd', 'dddddddd'], pal: { a: '#5ee0e0', d: '#2aa5b5', l: '#d6ffff', L: '#3cc6d0' } },
+    };
+    const tileSVG = (id, size) => `<svg class="px" width="${size || 28}" height="${size || 28}" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true">${grid2svg(TILES[id].rows, TILES[id].pal)}</svg>`;
+    function creaturePal(c, stage, silhouette) {
+      if (silhouette) return { K: '#0b0a10', B: '#2b2738', L: '#322e42', D: '#26222f', A: '#2b2738', W: '#2b2738', E: '#2b2738', P: '#2b2738', p: '#2b2738' };
+      const base = areaGem(c.area);
+      return { K: '#0b0a10', B: base, L: shade(base, 0.35), D: shade(base, -0.35), A: stage >= 3 ? '#ffd166' : shade(base, -0.2), W: '#ffffff', E: '#0b0a10', P: '#b58cff', p: '#efe4ff' };
+    }
+    function creatureSVG(c, stage, size, silhouette) {
+      const g = E.creatureGrid(c.seed, silhouette ? 1 : stage);
+      return `<svg class="px cr st${stage}" width="${size}" height="${size}" viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true">${grid2svg(g, creaturePal(c, stage, silhouette))}</svg>`;
+    }
+    const EGG = ['..kkkk..', '.kwwwwk.', 'kwwswwwk', 'kwwwwswk', 'kwswwwwk', 'kwwwwwwk', '.kwwswk.', '..kkkk..'];
+    function eggSVG(size, cracked) {
+      const rows = cracked ? EGG.map((r, y) => (y === 3 ? 'kwkwkwwk' : y === 4 ? 'kwskwkwk' : r)) : EGG;
+      return `<svg class="px egg${cracked ? ' cracked' : ''}" width="${size}" height="${size}" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true">${grid2svg(rows, { k: '#0b0a10', w: '#f3ead7', s: '#b58cff' })}</svg>`;
+    }
+    const MEDAL = ['..rrrr..', '...rr...', '..kkkk..', '.kyyyyk.', '.kyYyyk.', '.kyyyyk.', '..kkkk..', '........'];
+    const medalSVG = (on, size) => `<svg class="px" width="${size}" height="${size}" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true">${grid2svg(MEDAL, on ? { r: '#ff6b6b', k: '#0b0a10', y: '#ffd166', Y: '#fff1a8' } : { r: '#3a3449', k: '#0b0a10', y: '#2b2738', Y: '#322e42' })}</svg>`;
+    const ICE = ['bbbbbbbb', 'bwwbbbbb', 'bwbbbbbb', 'bbbbbbbb', 'bbbbbwbb', 'bbbbbbbb', 'bbbbbbbb', 'bbbbbbbb'];
+    const iceSVG = (size) => `<svg class="px" width="${size}" height="${size}" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true">${grid2svg(ICE, { b: '#8fd3ff', w: '#ffffff' })}</svg>`;
+
+    /* ---------- öppna ---------- */
+    async function open(k, testSession) {
+      kid = k;
+      let p = null;
+      try { p = await ctx.store.getPlayer(k.id); } catch (e) { if (e && e.code === 'not_logged_in') return; p = null; }
+      if (!p) { p = E.newPlayer(k, testSession); player = p; await save(); }
+      player = p;
+      E.ensureToday(player);
+      await loadFamily();
+      showHub();
+    }
+    function reset() { stopRace(); if (saveT) save(); kid = null; player = null; R = null; }
+
+    /* ---------- hem ---------- */
+    function showHub() {
+      stopRace(); R = null; buildSel = null; confirmBuy = null;
+      E.ensureToday(player);
+      const p = player, streak = E.streakAlive(p), today = E.dayKey();
+      const goal = p.dailyGoalMin, mins = Math.floor(p.today.ms / 60000), reached = E.goalReached(p);
+      const allOwned = E.owned(p) >= E.CREATURES.length, need = E.eggNeed(p);
+      const bossDone = p.bossWeek === E.weekKey();
+      const pending = p.requests.filter((r) => r.status === 'pending');
+      view(`
+<header class="hubtop">
+  <div class="who">${mossaSVG(true, 'mid')}<div><p class="eyebrow">Kristallgruvan</p><h1>${esc(kid.name)}</h1></div></div>
+  <div class="statrow">
+    <span class="stat">${gemSVG('#b58cff', true, 26)}<b>${p.crystals}</b><small>kristaller</small></span>
+    <span class="stat">${tileSVG('fackla', 26)}<b>${streak}</b><small>${streak === 1 ? 'dag' : 'dagar'} i rad</small></span>
+    <span class="stat">${iceSVG(22)}<b>${p.streak.freezes}</b><small>frysblock</small></span>
+    ${ctx.publicMode ? `<button class="stat statbtn" data-act="board">${tileSVG('diamant', 26)}<b>Topplista</b><small>se alla spelare</small></button>` : ''}
+  </div>
+</header>
+<section class="panel dayrow">
+  <div class="grow">
+    ${goal ? `<p><b>Dagsmål:</b> ${Math.min(mins, goal)} av ${goal} minuter</p><div class="meter"><span style="width:${Math.min(100, (p.today.ms / (goal * 60000)) * 100)}%"></span></div>` : '<p><b>Idag:</b> ' + mins + ' minuter</p>'}
+    <p class="muted small">${reached ? 'Dagsmålet är klart! Nu ger uppdragen halva kristaller. Kom tillbaka i morgon för full belöning.' : p.chestDay !== today ? 'Dagens kista väntar efter din första tur: +20 kristaller.' : 'Dagens kista är öppnad. Bra jobbat!'}</p>
+  </div>
+  <div class="chest${p.chestDay !== today ? ' ready' : ''}">${tileSVG('kista', 48)}</div>
+</section>
+<section class="panel eggrow">
+  ${allOwned ? `<p>Du har samlat alla ${E.CREATURES.length} varelser!</p>` : `
+  ${eggSVG(64, p.egg.progress >= need * 0.7)}
+  <div class="grow"><p><b>Ägget kläcks om ${need - p.egg.progress} rätta svar</b></p><div class="meter egg-m"><span style="width:${(p.egg.progress / need) * 100}%"></span></div><p class="muted small">${E.owned(p)} av ${E.CREATURES.length} varelser hittade</p></div>`}
+</section>
+${pending.length ? `<section class="panel note"><p><b>Väntar på en vuxen:</b> ${pending.map((r) => esc(r.name)).join(', ')}</p></section>` : ''}
+<section class="modes">
+  <button class="mode main" data-g="go-tur"><span class="m-t">Gruvtur</span><span class="m-d">8 uppgifter · cirka 5 min</span></button>
+  <button class="mode" data-g="go-race">${tileSVG('tra', 30)}<span class="m-t">Vagnrace</span><span class="m-d">60 sekunder tabeller${p.raceBest ? ` · rekord ${p.raceBest}` : ''}</span></button>
+  <button class="mode${bossDone ? ' done' : ' hot'}" data-g="go-boss">${creatureSVG({ seed: 777, area: 'geo' }, 3, 30, false)}<span class="m-t">Veckoboss</span><span class="m-d">${bossDone ? 'Besegrad! Ny boss på måndag.' : '5 kluriga uppgifter · +60'}</span></button>
+  <button class="mode" data-g="pick-area">${tileSVG('lampa', 30)}<span class="m-t">Träna ett område</span><span class="m-d">Välj själv vad du vill öva på</span></button>
+  ${ctx.publicMode ? `<button class="mode" data-act="board">${tileSVG('diamant', 30)}<span class="m-t">Topplista</span><span class="m-d">Veckans poäng, vagnrace och all-time</span></button>` : ''}
+</section>
+<nav class="navgrid">
+  <button class="nav" data-g="collection">${creatureSVG(E.CREATURES[0], 2, 34, E.owned(p) === 0)}<span>Samling</span><small>${E.owned(p)}/${E.CREATURES.length}</small></button>
+  <button class="nav" data-g="base">${tileSVG('tegel', 34)}<span>Min bas</span><small>bygg</small></button>
+  <button class="nav" data-g="shop">${tileSVG('guld', 34)}<span>Butik</span><small>handla</small></button>
+  <button class="nav" data-g="medals">${medalSVG(true, 34)}<span>Medaljer</span><small>${Object.keys(p.medals).length}/${E.MEDALS.length}</small></button>
+</nav>
+<footer class="foot">
+  <button class="link" data-act="home">${ctx.publicMode ? 'Logga ut' : 'Byt spelare'}</button>
+  ${ctx.publicMode ? '<button class="link" data-act="code">Mitt konto</button>' : '<button class="link" data-g="test">Kartläggning</button>'}
+</footer>`);
+    }
+
+    function showAreaPicker() {
+      view(`
+<header class="subhead"><button class="link" data-g="hub">Tillbaka</button><h2>Träna ett område</h2></header>
+<section class="tunnels">
+  ${Q.AREAS.filter((a) => !player.disabled.includes(a.id)).map((a) => `<button class="tunnel" data-g="go-area" data-id="${a.id}">${gemSVG(a.gem, true, 30)}<span class="t-name"><small>${esc(Q.LEVEL_LABELS[player.skills[a.id].level])}</small>${esc(a.name)}</span><span class="t-state">${player.focus.includes(a.id) ? 'Fokus' : 'Träna'}</span></button>`).join('')}
+</section>`);
+    }
+
+    /* ---------- runda ---------- */
+    function startRound(mode, areaId) {
+      if (mode === 'boss' && player.bossWeek === E.weekKey()) { toast('Veckobossen är redan besegrad. En ny kommer på måndag!', 'note'); return; }
+      R = { mode, areaId, qs: E.buildRound(player, mode, areaId), i: 0, results: [], earned: 0, combo: 0, levels: [], hatched: [], evolved: [], waiting: false };
+      R.shownAt = Date.now();
+      renderQ();
+    }
+    function roundTitle() { return R.mode === 'boss' ? 'Veckoboss' : R.mode === 'omrade' ? areaName(R.areaId) : 'Gruvtur'; }
+    function renderQ(feedback) {
+      const q = R.qs[R.i], n = R.qs.length;
+      const dots = R.qs.map((_, i) => `<i class="${i < R.results.length ? (R.results[i] ? 'ok' : 'miss') : i === R.i ? 'now' : ''}"></i>`).join('');
+      const bossHp = R.mode === 'boss' ? Math.max(0, 3 - R.results.filter(Boolean).length) : 0;
+      let input;
+      if (feedback) {
+        input = `<div class="fb ${feedback.ok ? 'good' : 'soft'}"><p><b>${feedback.ok ? 'Rätt!' : 'Inte riktigt.'}</b> ${feedback.ok ? '' : `Rätt svar: <b>${richText(esc(Q.answerText(q)))}</b>`}</p><button class="btn" data-g="next" autofocus>Fortsätt</button></div>`;
+      } else if (q.kind === 'choice') {
+        input = `<div class="choices">${q.choices.map((c, i) => `<button class="btn choice" data-g="choice" data-i="${i}">${richText(c)}</button>`).join('')}</div>`;
+      } else {
+        const hint = q.kind === 'frac' ? 'Skriv bråk med snedstreck, t.ex. 3/4' : q.kind === 'time' ? 'Skriv som 14:05' : '';
+        input = `<form id="gform" class="ansform" autocomplete="off"><label class="sr" for="gans">Ditt svar</label>
+          <div class="ansrow"><input id="gans" ${q.kind === 'num' ? 'inputmode="decimal"' : 'inputmode="text"'} autocomplete="off" autocorrect="off" spellcheck="false" autofocus>${q.unit ? `<span class="unit">${esc(q.unit)}</span>` : ''}</div>
+          ${hint ? `<p class="muted small">${hint}</p>` : ''}<button class="btn big" type="submit">Svara</button></form>`;
+      }
+      const isExpr = /^[\d−\-{0,(]/.test(q.text) && q.text.length < 40;
+      view(`
+<header class="qhead">
+  <button class="link" data-g="quit">Avsluta</button>
+  <span class="qarea">${esc(roundTitle())}</span>
+  <span class="dots">${dots}</span>
+  <span class="earned">${gemSVG('#b58cff', true, 18)} +${R.earned}</span>
+</header>
+${R.mode === 'boss' ? `<section class="bossbar">${creatureSVG({ seed: 777, area: 'geo' }, 3, 64)}<div><p class="eyebrow">Stenjätten</p><p class="hearts">${'<i class="on"></i>'.repeat(bossHp)}${'<i></i>'.repeat(3 - bossHp)}</p><p class="muted small">Klara 3 av 5 för att vinna</p></div></section>` : ''}
+<section class="panel qcard">
+  <p class="eyebrow">${esc(areaName(q.area))}${q.level > player.skills[q.area].level ? ' · utmaning' : ''}</p>
+  <p class="qtext${isExpr ? ' expr' : ''}">${richText(q.text)}${isExpr && !/[?.]$/.test(Q.plain(q.text)) ? ' =' : ''}</p>
+  ${q.fig || ''}
+  ${input}
+  ${feedback ? '' : '<button class="link dunno" data-g="dunno">Vet inte</button>'}
+</section>`);
+      const f = document.getElementById('gform');
+      if (f) f.addEventListener('submit', (e) => { e.preventDefault(); const v = document.getElementById('gans').value; if (!v.trim()) { toast('Skriv ett svar eller tryck på Vet inte.', 'note'); return; } answer(v); });
+    }
+    function answer(raw, dunno) {
+      if (!R || R.waiting) return;
+      R.waiting = true;
+      const q = R.qs[R.i];
+      const ok = !dunno && Q.check(q, raw);
+      R.combo = ok ? R.combo + 1 : 0;
+      const ev = E.recordAnswer(player, q, ok, Date.now() - R.shownAt, { combo: R.combo });
+      if (ok && ctx.onPoints) ctx.onPoints(player, q.level * 10 + (R.combo >= 3 ? 5 : 0));
+      if (ctx.onAnswer) ctx.onAnswer(q, ok, dunno ? '(vet inte)' : q.kind === 'choice' ? Q.plain(q.choices[Number(raw)]) : String(raw).trim());
+      R.results.push(ok); R.earned += ev.crystals;
+      if (ev.levelChange) { R.levels.push(ev.levelChange); if (ev.levelChange.to > ev.levelChange.from) toast(`<b>Ny nivå!</b> ${esc(areaName(ev.levelChange.area))}: ${esc(Q.LEVEL_LABELS[ev.levelChange.to])}`, 'good'); }
+      if (ev.hatched) R.hatched.push(ev.hatched);
+      ev.evolved.forEach((x) => R.evolved.push(x));
+      saveSoon();
+      if (ok) {
+        if (!ev.levelChange) toast(`<b>Rätt!</b> +${ev.crystals}${R.combo >= 3 ? ` · ${R.combo} i rad` : ''}`, 'good');
+        setTimeout(() => { R.waiting = false; nextQ(); }, 850);
+      } else { R.waiting = false; R.fb = true; renderQ({ ok: false }); }
+    }
+    function nextQ() {
+      if (!R) return;
+      R.fb = false; R.i++;
+      if (R.i >= R.qs.length) return endRound();
+      R.shownAt = Date.now(); renderQ();
+    }
+    function endRound() {
+      const wins = R.results.filter(Boolean).length;
+      let bossWin = false;
+      if (R.mode === 'boss' && wins >= 3) { bossWin = true; player.bossWeek = E.weekKey(); player.stats.bossWins++; player.crystals += 60; R.earned += 60; if (ctx.onPoints) ctx.onPoints(player, 100); }
+      const fin = E.finishRound(player, R.mode);
+      save();
+      showSummary({ title: R.mode === 'boss' ? (bossWin ? 'Stenjätten är besegrad!' : 'Stenjätten klarade sig den här gången') : 'Turen är klar!', line: `${wins} av ${R.qs.length} rätt`, earned: R.earned, fin, levels: R.levels, hatched: R.hatched, evolved: R.evolved, again: R.mode === 'boss' ? (bossWin ? null : 'go-boss') : R.mode === 'omrade' ? 'go-area' : 'go-tur', areaId: R.areaId, bossWin });
+      R = null;
+    }
+    function showSummary(s) {
+      const f = s.fin, items = [];
+      items.push(`<li>${gemSVG('#b58cff', true, 20)} <b>+${s.earned}</b> kristaller från uppgifterna</li>`);
+      if (f.bonus) items.push(`<li>${gemSVG('#7ccf5a', true, 20)} <b>+${f.bonus}</b> för att du gjorde klart</li>`);
+      if (f.chest) items.push(`<li>${tileSVG('kista', 20)} <b>+${f.chest}</b> från dagens kista</li>`);
+      if (f.streakUp) items.push(`<li>${tileSVG('fackla', 20)} <b>${player.streak.count}</b> ${player.streak.count === 1 ? 'dag' : 'dagar'} i rad${f.freezeUsed ? ` (ett frysblock räddade sviten)` : ''}</li>`);
+      if (f.freezeEarned) items.push(`<li>${iceSVG(18)} Du fick ett frysblock för en hel vecka!</li>`);
+      const ups = s.levels.filter((l) => l.to > l.from);
+      view(`
+<section class="panel found">
+  <p class="eyebrow">${esc(s.line)}</p>
+  <h2>${esc(s.title)}</h2>
+  ${s.hatched.map((c) => `<div class="hatch">${creatureSVG(c, 1, 120)}<p class="eyebrow">Ett ägg kläcktes!</p><h3>${esc(c.name)}</h3><p class="muted small">${esc(areaName(c.area))}-varelse. Den växer när du tränar ${esc(areaName(c.area).toLowerCase())}.</p></div>`).join('')}
+  ${s.evolved.map((x) => `<div class="hatch">${creatureSVG(x.creature, x.stage, 96)}<p><b>${esc(x.creature.name)}</b> utvecklades till steg ${x.stage}!</p></div>`).join('')}
+  <ul class="gains">${items.join('')}</ul>
+  ${ups.map((l) => `<p class="levelup">Ny nivå i ${esc(areaName(l.area))}: <b>${esc(Q.LEVEL_LABELS[l.to])}</b></p>`).join('')}
+  ${f.medals.map((m) => `<div class="medalwin">${medalSVG(true, 40)}<div><p class="eyebrow">Ny medalj</p><p><b>${esc(m.name)}</b> · ${esc(m.desc)}</p></div></div>`).join('')}
+  ${E.goalReached(player) ? '<p class="muted">Dagsmålet är klart! Du får spela vidare, men uppdragen ger halva kristaller resten av dagen.</p>' : ''}
+  <div class="actions center-a">
+    ${s.again ? `<button class="btn big" data-g="${s.again}" ${s.areaId ? `data-id="${s.areaId}"` : ''} autofocus>${s.again === 'go-boss' ? 'Försök igen' : 'En tur till'}</button>` : ''}
+    <button class="btn ghost" data-g="hub">Hem</button>
+  </div>
+</section>`);
+    }
+
+    /* ---------- vagnrace ---------- */
+    function stopRace() { if (raceTimer) { clearInterval(raceTimer); raceTimer = null; } }
+    function startRace() {
+      stopRace();
+      R = { mode: 'race', end: Date.now() + 60000, count: 0, wrong: 0, avoid: new Set(), earned: 0, levels: [], hatched: [], evolved: [] };
+      raceNext();
+      raceTimer = setInterval(() => {
+        const left = Math.max(0, R.end - Date.now());
+        const bar = document.getElementById('racebar'); if (bar) bar.style.width = (left / 600) + '%';
+        const t = document.getElementById('racet'); if (t) t.textContent = Math.ceil(left / 1000);
+        if (left <= 0) endRace();
+      }, 200);
+    }
+    function raceNext(prev) {
+      R.q = E.raceQuestion(player, R.avoid); R.avoid.add(Q.plain(R.q.text)); R.shownAt = Date.now();
+      view(`
+<header class="qhead"><button class="link" data-g="quit">Avsluta</button><span class="qarea">Vagnrace</span><span class="earned"><b id="racet">${Math.ceil((R.end - Date.now()) / 1000)}</b> s</span></header>
+<div class="track"><span id="racebar" style="width:${Math.max(0, R.end - Date.now()) / 600}%"></span></div>
+<section class="panel qcard race">
+  <p class="racecount">${tileSVG('tra', 22)} <b>${R.count}</b> rätt</p>
+  <p class="qtext expr">${richText(R.q.text)} =</p>
+  <form id="rform" class="ansform" autocomplete="off"><label class="sr" for="rans">Svar</label><div class="ansrow"><input id="rans" inputmode="numeric" autocomplete="off" autofocus></div></form>
+  <p class="muted small">${prev ? esc(prev) : 'Tryck Enter efter varje svar.'}</p>
+</section>`);
+      document.getElementById('rform').addEventListener('submit', (e) => {
+        e.preventDefault(); if (!R || R.mode !== 'race') return;
+        const v = document.getElementById('rans').value; if (!v.trim()) return;
+        const ok = Q.check(R.q, v);
+        const ev = E.recordAnswer(player, R.q, ok, Date.now() - R.shownAt, { race: true });
+        if (ok) { R.count++; R.earned += ev.crystals; if (ctx.onPoints) ctx.onPoints(player, 5); } else R.wrong++;
+        if (ctx.onAnswer) ctx.onAnswer(R.q, ok, String(v).trim());
+        if (ev.hatched) R.hatched.push(ev.hatched); ev.evolved.forEach((x) => R.evolved.push(x));
+        if (ev.levelChange) R.levels.push(ev.levelChange);
+        if (Date.now() >= R.end) return endRace();
+        raceNext(ok ? 'Rätt!' : `${Q.plain(R.q.text)} = ${Q.answerText(R.q)}`);
+      });
+    }
+    function endRace() {
+      if (!R || R.mode !== 'race') return;
+      stopRace();
+      const rec = R.count > player.raceBest; if (rec) player.raceBest = R.count;
+      if (ctx.onRace) ctx.onRace(player, R.count);
+      const fin = E.finishRound(player, 'race');
+      save();
+      showSummary({ title: rec ? 'Nytt rekord!' : 'Racet är slut!', line: `${R.count} rätt på 60 sekunder`, earned: R.earned, fin, levels: R.levels, hatched: R.hatched, evolved: R.evolved, again: 'go-race' });
+      R = null;
+    }
+
+    /* ---------- samling ---------- */
+    function showCollection() {
+      const p = player;
+      view(`
+<header class="subhead"><button class="link" data-g="hub">Tillbaka</button><h2>Samling</h2><span class="muted">${E.owned(p)} av ${E.CREATURES.length}</span></header>
+<p class="muted">Varelserna växer när du tränar deras område. Steg 2 vid ${E.STAGE_XP[2]} rätta svar, steg 3 vid ${E.STAGE_XP[3]}.</p>
+<section class="cards">
+  ${E.CREATURES.map((c) => {
+    const st = p.creatures[c.id];
+    if (!st) return `<div class="card off">${creatureSVG(c, 1, 72, true)}<p class="c-name">???</p><p class="muted small">${esc(areaName(c.area))}</p></div>`;
+    const next = st.stage < 3 ? E.STAGE_XP[st.stage + 1] : null;
+    return `<div class="card">${creatureSVG(c, st.stage, 72)}<p class="c-name">${esc(c.name)}</p><p class="muted small">${esc(areaName(c.area))} · steg ${st.stage}</p>${next ? `<div class="meter thin"><span style="width:${(st.xp / next) * 100}%;background:${areaGem(c.area)}"></span></div><p class="muted tiny">${st.xp}/${next}</p>` : '<p class="tiny gold">Fullt utvecklad</p>'}</div>`;
+  }).join('')}
+</section>`);
+    }
+
+    /* ---------- bas ---------- */
+    function baseSVG() {
+      const b = player.base;
+      const used = new Set(b.cells.filter(Boolean));
+      let defs = '';
+      used.forEach((it) => {
+        if (it.startsWith('c:')) { const c = E.CREATURES.find((x) => x.id === it.slice(2)); const st = player.creatures[c.id]; if (c && st) defs += `<symbol id="s-${it.replace(':', '_')}" viewBox="0 0 12 12">${grid2svg(E.creatureGrid(c.seed, st.stage), creaturePal(c, st.stage))}</symbol>`; }
+        else if (TILES[it]) defs += `<symbol id="s-${it}" viewBox="0 0 8 8">${grid2svg(TILES[it].rows, TILES[it].pal)}</symbol>`;
+      });
+      let cells = '';
+      b.cells.forEach((it, i) => {
+        const x = (i % b.w) * 8, y = Math.floor(i / b.w) * 8;
+        cells += `<rect class="cell" x="${x}" y="${y}" width="8" height="8" data-g="cell" data-i="${i}"/>`;
+        if (it) cells += `<use href="#s-${it.replace(':', '_')}" x="${x}" y="${y}" width="8" height="8" pointer-events="none"/>`;
+      });
+      return `<svg class="basesvg" viewBox="0 0 ${b.w * 8} ${b.h * 8}" shape-rendering="crispEdges" role="img" aria-label="Din bas"><defs>${defs}</defs>${cells}</svg>`;
+    }
+    function showBase() {
+      const p = player, placed = new Set(p.base.cells.filter((c) => c && c.startsWith('c:')));
+      const items = E.BLOCKS.filter((b) => p.inventory[b.id] > 0);
+      const crs = E.CREATURES.filter((c) => p.creatures[c.id] && !placed.has('c:' + c.id));
+      if (buildSel && buildSel !== 'hacka' && !(buildSel.startsWith('c:') ? crs.some((c) => 'c:' + c.id === buildSel) : p.inventory[buildSel] > 0)) buildSel = null;
+      view(`
+<header class="subhead"><button class="link" data-g="hub">Tillbaka</button><h2>Min bas</h2><span class="muted">${gemSVG('#b58cff', true, 18)} ${p.crystals}</span></header>
+<section class="panel basewrap">
+  <div class="basebox">${baseSVG()}</div>
+  <p class="muted small">${buildSel === 'hacka' ? 'Hackan är vald. Tryck på något i basen för att plocka upp det.' : buildSel ? 'Tryck på en tom ruta för att placera.' : 'Välj ett block eller en varelse nedan och tryck sedan på en ruta.'}</p>
+  <div class="hotbar">
+    <button class="slot${buildSel === 'hacka' ? ' sel' : ''}" data-g="sel" data-id="hacka" aria-label="Hacka"><svg class="px" width="28" height="28" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true">${grid2svg(['.ssssss.', 's......s', '...bb...', '...bb...', '...bb...', '...bb...', '...bb...', '........'], { s: '#c9c6d2', b: '#7d5129' })}</svg><small>Hacka</small></button>
+    ${items.map((b) => `<button class="slot${buildSel === b.id ? ' sel' : ''}" data-g="sel" data-id="${b.id}" aria-label="${esc(b.name)}">${tileSVG(b.id, 28)}<small>${p.inventory[b.id]}</small></button>`).join('')}
+    ${crs.map((c) => `<button class="slot${buildSel === 'c:' + c.id ? ' sel' : ''}" data-g="sel" data-id="c:${c.id}" aria-label="${esc(c.name)}">${creatureSVG(c, p.creatures[c.id].stage, 28)}<small>${esc(c.name)}</small></button>`).join('')}
+  </div>
+  ${items.length ? '' : '<p class="muted small">Du har inga block kvar. Köp fler i butiken.</p>'}
+  <button class="btn ghost" data-g="shop">Till butiken</button>
+</section>`);
+    }
+    function clickCell(i) {
+      if (!buildSel) { toast('Välj först ett block nedanför basen.', 'note'); return; }
+      const ok = buildSel === 'hacka' ? E.pickUp(player, i) : E.place(player, i, buildSel);
+      if (ok) { if (buildSel !== 'hacka') { const got = E.checkMedals(player); got.forEach((m) => toast(`<b>Ny medalj:</b> ${esc(m.name)}`, 'good')); } saveSoon(); showBase(); }
+    }
+
+    /* ---------- butik ---------- */
+    function showShop() {
+      const p = player;
+      const tabs = [['block', 'Block'], ['extra', 'Extra']].concat(ctx.publicMode ? [] : [['riktiga', 'Riktiga belöningar']]);
+      let body = '';
+      if (shopTab === 'block') {
+        body = `<div class="shoplist">${E.BLOCKS.map((b) => `<div class="shopitem">${tileSVG(b.id, 36)}<div class="grow"><p><b>${esc(b.name)}</b></p><p class="muted small">${b.cost} ${b.cost === 1 ? 'kristall' : 'kristaller'} styck · du har ${p.inventory[b.id] || 0}</p></div>
+          <div class="buyrow">
+            <button class="btn sm buy" data-g="buy" data-id="${b.id}" data-n="1" ${p.crystals < b.cost ? 'disabled' : ''} aria-label="Köp 1 ${esc(b.name)} för ${b.cost} kristaller">Köp 1<small>${gemSVG('#b58cff', true, 14)}${b.cost}</small></button>
+            <button class="btn sm buy" data-g="buy" data-id="${b.id}" data-n="5" ${p.crystals < b.cost * 5 ? 'disabled' : ''} aria-label="Köp 5 ${esc(b.name)} för ${b.cost * 5} kristaller">Köp 5<small>${gemSVG('#b58cff', true, 14)}${b.cost * 5}</small></button>
+          </div></div>`).join('')}</div>`;
+      } else if (shopTab === 'extra') {
+        body = `<div class="shoplist">
+          <div class="shopitem">${iceSVG(36)}<div class="grow"><p><b>Frysblock</b></p><p class="muted small">Skyddar din svit en dag du inte hinner spela. Du har ${p.streak.freezes} av ${E.MAX_FREEZES}.</p></div><button class="btn sm" data-g="buyfreeze" ${p.crystals < E.FREEZE_COST || p.streak.freezes >= E.MAX_FREEZES ? 'disabled' : ''}>${E.FREEZE_COST}</button></div>
+          <div class="shopitem">${tileSVG('sten', 36)}<div class="grow"><p><b>Större bas</b></p><p class="muted small">Två kolumner till. Basen är ${p.base.w} rutor bred (max ${E.MAX_W}).</p></div><button class="btn sm" data-g="expand" ${p.crystals < E.EXPAND_COST || p.base.w >= E.MAX_W ? 'disabled' : ''}>${E.EXPAND_COST}</button></div>
+        </div>`;
+      } else {
+        const rw = (family && family.rewards) || [];
+        const reqs = p.requests.slice().reverse().slice(0, 8);
+        body = rw.length ? `<div class="shoplist">${rw.map((r) => `<div class="shopitem">${tileSVG('kista', 36)}<div class="grow"><p><b>${esc(r.name)}</b></p><p class="muted small">${r.cost} kristaller</p></div>
+          ${confirmBuy === r.id ? `<button class="btn sm" data-g="realbuy" data-id="${esc(r.id)}">Köp</button><button class="btn sm ghost" data-g="realno">Avbryt</button>` : `<button class="btn sm" data-g="realask" data-id="${esc(r.id)}" ${p.crystals < r.cost ? 'disabled' : ''}>${r.cost}</button>`}</div>`).join('')}</div>`
+          : '<p class="muted">Här kan en vuxen lägga in riktiga belöningar, till exempel extra skärmtid eller att välja middag.</p>';
+        if (reqs.length) body += `<h3>Dina köp</h3><ul class="reqs">${reqs.map((r) => `<li>${esc(r.name)} <span class="pill ${r.status === 'given' ? 'good' : r.status === 'pending' ? 'mid' : 'none'}">${r.status === 'given' ? 'fått' : r.status === 'pending' ? 'väntar på vuxen' : 'nekad, kristaller tillbaka'}</span></li>`).join('')}</ul>`;
+      }
+      view(`
+<header class="subhead"><button class="link" data-g="hub">Tillbaka</button><h2>Butik</h2><span class="stat inline">${gemSVG('#b58cff', true, 22)}<b>${p.crystals}</b></span></header>
+<div class="chips">${tabs.map(([id, n]) => `<button class="chip${shopTab === id ? ' on' : ''}" data-g="tab" data-id="${id}">${n}</button>`).join('')}</div>
+<section class="panel">${body}</section>`);
+    }
+
+    /* ---------- medaljer ---------- */
+    function showMedals() {
+      view(`
+<header class="subhead"><button class="link" data-g="hub">Tillbaka</button><h2>Medaljer</h2><span class="muted">${Object.keys(player.medals).length} av ${E.MEDALS.length}</span></header>
+<section class="cards">${E.MEDALS.map((m) => `<div class="card${player.medals[m.id] ? '' : ' off'}">${medalSVG(!!player.medals[m.id], 48)}<p class="c-name">${esc(m.name)}</p><p class="muted small">${esc(m.desc)}</p></div>`).join('')}</section>`);
+    }
+
+    /* ---------- föräldradel ---------- */
+    let pPlayer = null, pKid = null;
+    async function parentSection(k) {
+      pKid = k;
+      try { pPlayer = await ctx.store.getPlayer(k.id); } catch (e) { pPlayer = null; }
+      const fam = (await ctx.store.getFamily(k.familyId).catch(() => null)) || { id: k.familyId, rewards: [] };
+      family = fam;
+      const rewardsHtml = `
+  <h3>Riktiga belöningar</h3>
+  <p class="muted small">Gäller alla barn i familjen. Barnet köper med kristaller, och du bekräftar här när belöningen är given.</p>
+  ${fam.rewards.length ? `<ul class="rlist">${fam.rewards.map((r) => `<li><span>${esc(r.name)}</span><span class="muted">${r.cost} kristaller</span><button class="link" data-g="p-delrew" data-id="${esc(r.id)}">Ta bort</button></li>`).join('')}</ul>` : '<p class="muted">Inga belöningar än.</p>'}
+  <form id="rewform" class="row" autocomplete="off">
+    <label class="fld"><span>Belöning</span><input id="rname" maxlength="40" required placeholder="t.ex. 30 min extra skärmtid"></label>
+    <label class="fld" style="flex:0 1 120px"><span>Kristaller</span><input id="rcost" type="number" min="1" max="5000" required value="150"></label>
+    <button class="btn" type="submit">Lägg till</button>
+  </form>
+  <p class="muted small">Riktmärke: en gruvtur ger ungefär 25–35 kristaller, och 20 minuter om dagen ger cirka 100–150.</p>`;
+      if (!pPlayer) return `<section class="panel"><h2>Spelet</h2><p class="muted">${esc(k.name)} kommer till spelet när kartläggningen är klar.</p>${rewardsHtml}</section>`;
+      const p = pPlayer; E.ensureToday(p);
+      const pending = p.requests.filter((r) => r.status === 'pending');
+      return `
+<section class="panel">
+  <h2>Spelet</h2>
+  <div class="sumgrid">
+    <div><p class="eyebrow">Kristaller</p><p class="big-v">${p.crystals}</p></div>
+    <div><p class="eyebrow">Rätta svar</p><p class="big-v">${p.totalCorrect} <small>av ${p.totalAnswered}</small></p></div>
+    <div><p class="eyebrow">Svit</p><p class="big-v">${E.streakAlive(p)} <small>dagar</small></p></div>
+    <div><p class="eyebrow">Idag</p><p class="big-v">${Math.round(p.today.ms / 60000)} <small>min</small></p></div>
+    <div><p class="eyebrow">Varelser</p><p class="big-v">${E.owned(p)} <small>av ${E.CREATURES.length}</small></p></div>
+  </div>
+  ${pending.length ? `<h3>Väntar på dig</h3><ul class="rlist">${pending.map((r) => `<li><span><b>${esc(r.name)}</b> <span class="muted small">${r.cost} kristaller · ${new Date(r.at).toLocaleDateString('sv-SE')}</span></span><button class="btn sm" data-g="p-approve" data-id="${esc(r.id)}">Given</button><button class="btn sm ghost" data-g="p-decline" data-id="${esc(r.id)}">Neka</button></li>`).join('')}</ul>` : ''}
+</section>
+<section class="panel">
+  <h2>Nivåer i spelet</h2>
+  <p class="muted small">Nivån går upp automatiskt vid 8 rätt av de 10 senaste svaren på nivån och ner om det går tungt. Du kan ändra själv. <b>Fokus</b> gör att området kommer tre gånger oftare.</p>
+  <div class="tablewrap"><table class="lv">
+    <thead><tr><th>Område</th><th>Nivå</th><th class="num">Senaste</th><th>Fokus</th><th>Med</th></tr></thead>
+    <tbody>${Q.AREAS.map((a) => { const s = p.skills[a.id], sum = s.recent.reduce((x, y) => x + y, 0); return `<tr><td>${esc(a.name)}</td>
+      <td class="lvcell"><button class="btn sm ghost" data-g="p-lv" data-id="${a.id}" data-d="-1" ${s.level <= 1 ? 'disabled' : ''} aria-label="Sänk">−</button><span>${esc(Q.LEVEL_LABELS[s.level])}</span><button class="btn sm ghost" data-g="p-lv" data-id="${a.id}" data-d="1" ${s.level >= E.MAX ? 'disabled' : ''} aria-label="Höj">+</button></td>
+      <td class="num">${s.recent.length ? `${sum}/${s.recent.length}` : '–'}</td>
+      <td><input type="checkbox" data-g="p-focus" data-id="${a.id}" ${p.focus.includes(a.id) ? 'checked' : ''} aria-label="Fokus ${esc(a.name)}"></td>
+      <td><input type="checkbox" data-g="p-on" data-id="${a.id}" ${p.disabled.includes(a.id) ? '' : 'checked'} aria-label="Med ${esc(a.name)}"></td></tr>`; }).join('')}</tbody>
+  </table></div>
+  <div class="row">
+    <label class="fld inline"><span>Dagsmål</span><select data-g="p-goal">${[[0, 'Ingen gräns'], [15, '15 min'], [20, '20 min'], [30, '30 min'], [45, '45 min']].map(([v, n]) => `<option value="${v}" ${p.dailyGoalMin === v ? 'selected' : ''}>${n}</option>`).join('')}</select></label>
+    <button class="btn ghost" data-g="p-fromtest">Hämta nivåer från senaste kartläggningen</button>
+  </div>
+</section>
+<section class="panel">${rewardsHtml}</section>`;
+    }
+    function bindParent() {
+      const f = document.getElementById('rewform');
+      if (f) f.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const name = document.getElementById('rname').value.trim(), cost = Math.max(1, Math.round(Number(document.getElementById('rcost').value) || 0));
+        if (!name) return;
+        family.rewards.push({ id: 'rw' + Date.now().toString(36), name, cost });
+        await ctx.store.saveFamily(family).catch(() => {});
+        ctx.rerenderParent();
+      });
+    }
+    async function savePP() { await ctx.store.savePlayer(pPlayer).catch(() => {}); ctx.rerenderParent(); }
+
+    /* ---------- händelser ---------- */
+    document.addEventListener('click', async (e) => {
+      const b = e.target.closest('[data-g]'); if (!b || b.disabled) return;
+      const g = b.dataset.g, id = b.dataset.id;
+      if (g === 'cell') return clickCell(Number(b.dataset.i));
+      if (g.startsWith('p-') && pPlayer === null && !['p-delrew'].includes(g)) return;
+      switch (g) {
+        case 'hub': return showHub();
+        case 'go-tur': return startRound('tur');
+        case 'go-area': return startRound('omrade', id);
+        case 'go-boss': return startRound('boss');
+        case 'go-race': return startRace();
+        case 'pick-area': return showAreaPicker();
+        case 'choice': return answer(b.dataset.i);
+        case 'dunno': return answer('', true);
+        case 'next': return nextQ();
+        case 'quit': stopRace(); if (saveT) save(); R = null; return showHub();
+        case 'collection': return showCollection();
+        case 'base': return showBase();
+        case 'shop': return showShop();
+        case 'medals': return showMedals();
+        case 'test': if (saveT) save(); return ctx.openTest(kid);
+        case 'sel': buildSel = buildSel === id ? null : id; return showBase();
+        case 'tab': shopTab = id; confirmBuy = null; return showShop();
+        case 'buy': if (E.buyBlock(player, id, Number(b.dataset.n))) { saveSoon(); toast('Köpt!', 'good'); } return showShop();
+        case 'buyfreeze': if (E.buyFreeze(player)) { saveSoon(); toast('Frysblock köpt', 'good'); } return showShop();
+        case 'expand': if (E.expandBase(player)) { saveSoon(); toast('Basen blev större!', 'good'); } return showShop();
+        case 'realask': confirmBuy = id; return showShop();
+        case 'realno': confirmBuy = null; return showShop();
+        case 'realbuy': {
+          const rw = family.rewards.find((r) => r.id === id); confirmBuy = null;
+          if (rw && E.buyReward(player, rw)) { await save(); toast('Köpt! Nu väntar det på en vuxen.', 'good'); }
+          return showShop();
+        }
+        case 'p-approve': E.resolveRequest(pPlayer, id, true); return savePP();
+        case 'p-decline': E.resolveRequest(pPlayer, id, false); return savePP();
+        case 'p-lv': { const s = pPlayer.skills[id]; s.level = Math.max(1, Math.min(E.MAX, s.level + Number(b.dataset.d))); s.recent = []; return savePP(); }
+        case 'p-fromtest': {
+          const ss = await ctx.store.listSessions(pKid.id); const fin = ss.find((s) => s.finishedAt);
+          if (!fin) { toast('Ingen klar kartläggning hittades.', 'note'); return; }
+          E.applyTest(pPlayer, fin); toast('Nivåerna är uppdaterade.', 'good'); return savePP();
+        }
+        case 'p-delrew': family.rewards = family.rewards.filter((r) => r.id !== id); await ctx.store.saveFamily(family).catch(() => {}); return ctx.rerenderParent();
+      }
+    });
+    document.addEventListener('change', (e) => {
+      const b = e.target.closest('[data-g]'); if (!b || !pPlayer) return;
+      const g = b.dataset.g, id = b.dataset.id;
+      if (g === 'p-focus') { pPlayer.focus = b.checked ? pPlayer.focus.concat(id) : pPlayer.focus.filter((x) => x !== id); savePP(); }
+      else if (g === 'p-on') { pPlayer.disabled = b.checked ? pPlayer.disabled.filter((x) => x !== id) : pPlayer.disabled.concat(id); savePP(); }
+      else if (g === 'p-goal') { pPlayer.dailyGoalMin = Number(b.value); savePP(); }
+    });
+    document.addEventListener('visibilitychange', () => { if (document.hidden && saveT) save(); });
+
+    return { open, reset, parentSection, bindParent, eggSVG, creatureSVG, showHub, getPlayer: () => player };
+  };
+})(typeof window !== 'undefined' ? window : globalThis);
+
+</script>
+<script>
+/* =====================================================================
+   KRISTALLGRUVAN – LAGRING (version 3: gemensamt konto för portalen)
+   Inloggningen sköts av ../konto/konto.js (CyberKonto). Här sparas bara
+   Kristallgruvans framsteg och poäng, via databasfunktionerna load_game,
+   save_game och get_leaderboard med spelnamnet 'kristallgruvan'.
+   Framstegen speglas också i webbläsaren, så spelet tål korta avbrott.
+   Utan inställningar i konto/config.js körs spelet helt lokalt.
+   ===================================================================== */
+(function (root) {
+  'use strict';
+  const SPEL = 'kristallgruvan';
+  const KEY = 'kristallgruvan.v3';
+  const clone = (x) => JSON.parse(JSON.stringify(x));
+  const E = () => root.KGEngine;
+  const K = () => root.CyberKonto;
+
+  class PublicStore {
+    constructor() {
+      this.mode = K() && K().online ? 'online' : 'local';
+      this.profile = null; // { id, name, grade, token }
+      this.q = Promise.resolve();
+      this.status = 'ok';
+      this.onStatus = null;
+      this.onLoggedOut = null;
+      this.answers = [];
+    }
+    static message(code) { return K() ? K().message(code) : 'Något gick fel.'; }
+
+    /* ---- lokal spegel ---- */
+    _get() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return this._mem || {}; } }
+    _set(m) { this._mem = m; try { localStorage.setItem(KEY, JSON.stringify(m)); } catch (e) { /* bara i minnet */ } }
+    _mirror(p) { const m = this._get(); m.players = m.players || {}; m.players[p.kidId] = clone(p); this._set(m); }
+    _forget(id) { const m = this._get(); if (m.players) delete m.players[id]; if (m.profiles) delete m.profiles[id]; this._set(m); }
+    localProfiles() { return Object.values(this._get().profiles || {}); }
+    saveLocalProfile(p) { const m = this._get(); m.profiles = m.profiles || {}; m.profiles[p.id] = { id: p.id, name: p.name, grade: p.grade }; this._set(m); }
+    legacyProfiles() { return []; }
+    markMigrated() {}
+    // inloggningen ägs av CyberKonto (delas med alla spel)
+    rememberSession() { /* sparas redan av CyberKonto vid inloggning */ }
+    savedSession() { return this.mode === 'online' ? K().session() : null; }
+    clearSession() { if (this.mode === 'online') K().clear(); }
+    setStatus(s) { if (s !== this.status) { this.status = s; if (this.onStatus) this.onStatus(s); } }
+
+    /* ---- konto ---- */
+    async register(name, password, grade, remember) {
+      if (this.mode !== 'online') return { id: (root.crypto && crypto.randomUUID) ? crypto.randomUUID() : String(Date.now()), name, grade, token: null };
+      return K().register(name, password, grade, remember);
+    }
+    async login(name, password, remember) {
+      if (this.mode !== 'online') {
+        const p = this.localProfiles().find((x) => x.name.toLowerCase() === name.toLowerCase());
+        if (!p) throw Object.assign(new Error('wrong_login'), { code: 'wrong_login' });
+        return { id: p.id, name: p.name, grade: p.grade, token: null };
+      }
+      return K().login(name, password, remember);
+    }
+    async changePassword(oldp, newp) { await K().changePassword(oldp, newp); }
+    async logout() {
+      try { await this.q; } catch (e) { /* */ }
+      if (this.mode === 'online') await K().logout();
+      if (this.profile) { const m = this._get(); if (m.players) delete m.players[this.profile.id]; this._set(m); }
+      this.profile = null; this.answers = [];
+    }
+    async deletePlayer() {
+      if (this.mode === 'online') await K().deleteAccount();
+      this._forget(this.profile.id); this.profile = null;
+    }
+    _lostSession() { this.clearSession(); if (this.onLoggedOut) this.onLoggedOut(); }
+
+    /* ---- gränssnitt som spelet använder ---- */
+    async getPlayer(id) {
+      const local = (this._get().players || {})[id] || null;
+      if (this.mode !== 'online') return local ? clone(local) : null;
+      try {
+        const rows = await K().rpc('load_game', { p_token: this.profile.token, p_spel: SPEL });
+        const row = rows && rows[0];
+        if (!row) return local ? clone(local) : null;
+        const server = row.r_state && row.r_state.skills && row.r_state.creatures ? clone(row.r_state) : null; // bara ett giltigt sparat spel
+        if (server) server.kidId = id;
+        const best = !local || (server && (server.totalAnswered || 0) >= (local.totalAnswered || 0)) ? server || (local && clone(local)) : clone(local);
+        if (best) best.pts = { pending: (local && local.pts && local.pts.pending) || 0, week: row.r_week, total: row.r_total, race: row.r_best };
+        if (row.r_name && this.profile) this.profile.name = row.r_name;
+        this.setStatus('ok');
+        return best;
+      } catch (e) {
+        if (e.code === 'not_logged_in') { this._lostSession(); throw Object.assign(new Error('not_logged_in'), { code: 'not_logged_in' }); }
+        this.setStatus('offline'); return local ? clone(local) : null;
+      }
+    }
+    addAnswer(a) { this.answers.push(a); if (this.answers.length > 200) this.answers.splice(0, this.answers.length - 200); }
+    savePlayer(p) {
+      p.pts = p.pts || { pending: 0, week: 0, total: 0, race: 0 };
+      if (this.mode !== 'online') {
+        const wk = E().weekKey();
+        if (p.pts.weekKey !== wk) { p.pts.week = 0; p.pts.weekKey = wk; }
+        p.pts.week += p.pts.pending; p.pts.total += p.pts.pending; p.pts.pending = 0; p.pts.race = p.raceBest || 0;
+        this.answers = [];
+        this._mirror(p);
+        return Promise.resolve();
+      }
+      this._mirror(p);
+      const prof = this.profile;
+      this.q = this.q.then(async () => {
+        if (!prof || !prof.token || this.profile !== prof) return;
+        const add = p.pts.pending || 0;
+        const ans = this.answers.slice(0, 40);
+        const state = clone(p); delete state.pts;
+        try {
+          const res = await K().rpc('save_game', { p_token: prof.token, p_spel: SPEL, p_grade: prof.grade, p_state: state, p_add_points: add, p_best: p.raceBest || 0, p_answers: ans });
+          const r = res && res[0];
+          p.pts.pending = Math.max(0, (p.pts.pending || 0) - add);
+          this.answers.splice(0, ans.length);
+          if (r) { p.pts.week = r.out_week; p.pts.total = r.out_total; p.pts.race = r.out_best; }
+          this._mirror(p);
+          this.setStatus('ok');
+        } catch (e) {
+          if (e.code === 'not_logged_in') this._lostSession(); else this.setStatus('offline');
+        }
+      });
+      return this.q;
+    }
+    flush() { return this.q; }
+    async leaderboard(kind, myId) {
+      if (this.mode !== 'online') {
+        const m = this._get(), wk = E().weekKey();
+        const rows = Object.values(m.players || {}).map((p) => {
+          const pr = (m.profiles || {})[p.kidId] || { name: '?' };
+          const pts = p.pts || {};
+          const score = kind === 'week' ? (pts.weekKey === wk ? pts.week || 0 : 0) : kind === 'race' ? p.raceBest || 0 : pts.total || 0;
+          return { name: pr.name, score, me: p.kidId === myId };
+        }).filter((r) => r.score > 0).sort((a, b) => b.score - a.score);
+        let rank = 0, last = null;
+        return rows.map((r, i) => { if (r.score !== last) { rank = i + 1; last = r.score; } return Object.assign(r, { rank }); }).slice(0, 20);
+      }
+      const s = K().session();
+      const rows = await K().rpc('get_leaderboard', { p_spel: SPEL, p_kind: kind === 'race' ? 'best' : kind, p_token: (s && s.token) || null });
+      return (rows || []).map((r) => ({ rank: r.r_rank, name: r.r_name, score: r.r_score, me: r.r_me }));
+    }
+    async getFamily() { return null; }
+    async saveFamily() {}
+    async listSessions() { return []; }
+  }
+
+  root.KGPublicStore = PublicStore;
+})(typeof window !== 'undefined' ? window : globalThis);
+
+</script>
+<script>
+/* =====================================================================
+   KRISTALLGRUVAN PUBLIK – INLOGGNING, KONTO OCH TOPPLISTA
+   Spelet självt finns i game.js (samma som i familjeversionen).
+   ===================================================================== */
+(function () {
+  'use strict';
+  const $app = document.getElementById('app');
+  const store = new window.KGPublicStore();
+  let game = null, profile = null, boardKind = 'week', confirmDelete = false;
+
+  /* ---------- hjälp (samma som i familjeversionen) ---------- */
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const richText = (t) => String(t).replace(/\{(-?[\d?]+)\/(\d+)\}/g, '<span class="fr"><span>$1</span><span>$2</span></span>');
+  const MOSSA = ['......pP........', '.....pPPP.......', '......PPp.......', '..KKKKKKKKKKKK..', '.KLLLGGGGGgGGGK.', '.KLGGGGgGGGGGGK.', '.KGGGGGGGGGgGGK.', '.KGGabGGGGabGGK.', '.KGGcdGGGGcdGGK.', '.KGBBGGGGGGBBGK.', '.KGGGGGMMGGGGGK.', '.KGgGGGGGGGGgGK.', '.KGGGGgGGGGGGGK.', '..KKKKKKKKKKKK..', '...KK......KK...', '................'];
+  const MCOL = { K: '#1d2b17', G: '#6cbf4a', L: '#93dd6a', g: '#4c9a35', P: '#9b6bff', p: '#d6c2ff', B: '#f08aa0', M: '#2c4a20', W: '#ffffff', E: '#1d2b17' };
+  function mossaSVG(awake, cls) {
+    const eyes = awake ? { a: 'W', b: 'E', c: 'E', d: 'E' } : { a: 'G', b: 'G', c: 'E', d: 'E' };
+    let r = '';
+    MOSSA.forEach((row, y) => row.split('').forEach((ch, x) => { const k = eyes[ch] || ch; if (k !== '.') r += `<rect x="${x}" y="${y}" width="1.02" height="1.02" fill="${MCOL[k]}"/>`; }));
+    return `<span class="mossa ${awake ? 'awake' : 'sleep'} ${cls || ''}"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true">${r}</svg>${awake ? '' : '<span class="zzz" aria-hidden="true">z<i>z</i><b>z</b></span>'}</span>`;
+  }
+  const GEM = ['..XXXX..', '.XHLLLX.', 'XHLLLLLX', 'XLLLLLDX', '.XLLLDX.', '..XLDX..', '...XX...'];
+  function shade(hex, f) { const n = parseInt(hex.slice(1), 16); const c = [n >> 16, (n >> 8) & 255, n & 255].map((v) => Math.round(f < 0 ? v * (1 + f) : v + (255 - v) * f)); return '#' + c.map((v) => v.toString(16).padStart(2, '0')).join(''); }
+  function gemSVG(color, on, size) {
+    const col = on ? { X: '#0b0a10', H: '#ffffff', L: color, D: shade(color, -0.35) } : { X: '#0b0a10', H: '#4a4459', L: '#38334a', D: '#2a2638' };
+    let r = '';
+    GEM.forEach((row, y) => row.split('').forEach((ch, x) => { if (ch !== '.') r += `<rect x="${x}" y="${y}" width="1.02" height="1.02" fill="${col[ch]}"/>`; }));
+    return `<svg class="gem${on ? ' on' : ''}" width="${size || 32}" height="${(size || 32) * 7 / 8}" viewBox="0 0 8 7" shape-rendering="crispEdges" aria-hidden="true">${r}</svg>`;
+  }
+  function view(html) { $app.innerHTML = html; window.scrollTo(0, 0); const f = $app.querySelector('[autofocus]'); if (f) setTimeout(() => f.focus(), 30); }
+  let toastT = null;
+  function toast(msg, kind) {
+    const t = document.getElementById('toast');
+    t.className = 'toast show ' + (kind || ''); t.innerHTML = msg;
+    clearTimeout(toastT); toastT = setTimeout(() => { t.className = 'toast'; }, kind === 'note' ? 4200 : 1300);
+  }
+  const uuid = () => (window.crypto && crypto.randomUUID ? crypto.randomUUID() : 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => { const r = (Math.random() * 16) | 0; return (c === 'x' ? r : (r & 3) | 8).toString(16); }));
+
+  /* ---------- smeknamn: samma regler som i databasen ---------- */
+  const BAD = ['kuk', 'fitt', 'jävl', 'javl', 'hora', 'neger', 'nazi', 'hitler', 'fuck', 'shit', 'bitch', 'cunt', 'dick', 'porn', 'penis', 'slyna', 'bög', 'knull', 'rasist'];
+  function nameProblem(n) {
+    if (!/^[A-Za-zÅÄÖåäöÉéÜü0-9 _-]{2,16}$/.test(n)) return 'Smeknamnet ska vara 2–16 tecken: bokstäver, siffror, mellanslag, - eller _.';
+    const l = n.toLowerCase();
+    if (BAD.some((w) => l.includes(w)) || /(^|[^a-zåäö])(sex|fan|skit|arsle)([^a-zåäö]|$)/.test(l)) return 'Välj ett annat smeknamn.';
+    return null;
+  }
+
+  /* ---------- start och inloggning ---------- */
+  const online = () => store.mode === 'online';
+  const pwField = (id, label, auto) => `<label class="fld"><span>${label}</span><input id="${id}" type="password" minlength="${online() ? 4 : 0}" maxlength="64" ${online() ? 'required' : ''} autocomplete="${auto}"></label>`;
+  function errBox() { return '<p id="err" class="small errtxt" hidden></p>'; }
+  function showErr(msg) { const el = document.getElementById('err'); if (el) { el.textContent = msg; el.hidden = false; } }
+  function busyBtn(form, on) { const b = form.querySelector('button[type=submit]'); if (b) { b.disabled = on; } }
+
+  function showStart(mode) {
+    if (game) game.reset();
+    confirmDelete = false;
+    const legacy = online() ? store.legacyProfiles() : [];
+    if (!mode && legacy.length) mode = 'claim';
+    if (!mode) mode = online() || store.localProfiles().length ? 'login' : 'new';
+    let panel = '';
+    if (mode === 'claim') {
+      const lp = legacy[0];
+      panel = `<section class="panel">
+  <h2>Välj ett lösenord, ${esc(lp.name)}</h2>
+  <p class="muted">Nu loggar man in med smeknamn och lösenord. Välj ett lösenord för <b>${esc(lp.name)}</b>, så finns allt du har samlat kvar.</p>
+  <form id="claimform" class="newkid" autocomplete="off" style="border:0;padding:0">
+    <div class="row">${pwField('pw1', 'Nytt lösenord', 'new-password')}${pwField('pw2', 'Skriv lösenordet igen', 'new-password')}<button class="btn" type="submit">Spara</button></div>
+    ${errBox()}
+  </form>
+  <button class="link" data-act="skipclaim" data-id="${esc(lp.id)}">Det här är inte jag</button>
+</section>`;
+    } else if (mode === 'login') {
+      panel = `<section class="panel">
+  <h2>Logga in</h2>
+  <form id="loginform" class="newkid" autocomplete="on" style="border:0;padding:0">
+    <div class="row">
+      <label class="fld"><span>Smeknamn</span><input id="lname" maxlength="16" required autocomplete="username" autofocus></label>
+      ${online() ? pwField('lpw', 'Lösenord', 'current-password') : ''}
+      <button class="btn" type="submit">Logga in</button>
+    </div>
+    ${online() ? '<label class="check"><input type="checkbox" id="remember"> Håll mig inloggad på den här enheten</label>' : ''}
+    ${errBox()}
+  </form>
+  <div class="row"><button class="link" data-act="newform">Ny spelare? Skapa ett konto</button></div>
+  ${online() ? '<p class="muted small">Glömt lösenordet? Be din lärare eller en vuxen att ge dig ett nytt.</p>' : ''}
+</section>`;
+    } else {
+      panel = `<section class="panel">
+  <h2>Ny spelare</h2>
+  <form id="newform" class="newkid" autocomplete="off" style="border:0;padding:0">
+    <div class="row">
+      <label class="fld"><span>Smeknamn</span><input id="pname" maxlength="16" required placeholder="t.ex. Blockkungen" autocomplete="username" autofocus></label>
+      <label class="fld" style="flex:0 1 130px"><span>Årskurs</span><select id="pgrade">${[3, 4, 5, 6].map((g) => `<option value="${g}"${g === 4 ? ' selected' : ''}>åk ${g}</option>`).join('')}</select></label>
+    </div>
+    ${online() ? `<div class="row">${pwField('pw1', 'Lösenord (minst 4 tecken)', 'new-password')}${pwField('pw2', 'Skriv lösenordet igen', 'new-password')}</div>
+    <label class="check"><input type="checkbox" id="remember"> Håll mig inloggad på den här enheten</label>` : ''}
+    <button class="btn" type="submit" style="align-self:flex-start">Skapa och börja spela</button>
+    ${errBox()}
+  </form>
+  <p class="muted small">Skriv ett påhittat smeknamn, inte ditt riktiga namn. Smeknamnet syns på topplistan.${online() ? ' Kom ihåg ditt lösenord.' : ''}</p>
+  <button class="link" data-act="loginform">Har du redan ett konto? Logga in</button>
+</section>`;
+    }
+    view(`
+<header class="hero">
+  ${mossaSVG(false, 'big')}
+  <div class="hero-txt">
+    <p class="eyebrow">Ett mattespel för åk 3–6</p>
+    <h1>Kristallgruvan</h1>
+    <p class="lead">Mossa sover djupt nere i gruvan. Lös matteuppdrag, samla kristaller, kläck egna varelser och bygg din bas. Klättra på topplistan!</p>
+    <div class="herobtns"><button class="btn ghost" data-act="board">Se topplistan</button><a class="btn ghost" href="foraldrar.html">För föräldrar</a></div>
+  </div>
+</header>
+${panel}
+<footer class="foot"><span class="muted small">${online() ? 'Vi sparar bara ditt smeknamn, ditt lösenord (krypterat), din årskurs, dina poäng och dina framsteg i spelet. Hur många som svarar rätt och fel på olika uppgifter sparas utan namn.' : 'Spelet sparas bara i den här webbläsaren.'}</span><span class="row"><a class="link" href="../">Alla spel</a><a class="link" href="larare.html">För lärare</a></span></footer>`);
+
+    const f = document.getElementById('loginform') || document.getElementById('newform') || document.getElementById('claimform');
+    if (!f) return;
+    f.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const remember = !!(document.getElementById('remember') || {}).checked;
+      busyBtn(f, true);
+      try {
+        if (f.id === 'loginform') {
+          const pr = await store.login(document.getElementById('lname').value.trim(), online() ? document.getElementById('lpw').value : '', remember);
+          play(pr, remember);
+        } else if (f.id === 'newform') {
+          const name = document.getElementById('pname').value.trim().replace(/\s+/g, ' ');
+          const err = nameProblem(name); if (err) throw Object.assign(new Error(err), { text: err });
+          if (online()) {
+            const a = document.getElementById('pw1').value, b = document.getElementById('pw2').value;
+            if (a.length < 4) throw Object.assign(new Error(), { code: 'weak_password' });
+            if (a !== b) throw Object.assign(new Error(), { text: 'Lösenorden är inte likadana.' });
+            const pr = await store.register(name, a, Number(document.getElementById('pgrade').value), remember);
+            play(pr, remember);
+          } else {
+            if (store.localProfiles().some((p) => p.name.toLowerCase() === name.toLowerCase())) throw Object.assign(new Error(), { code: 'name_taken' });
+            const pr = await store.register(name, '', Number(document.getElementById('pgrade').value));
+            store.saveLocalProfile(pr);
+            play(pr, false);
+          }
+        } else {
+          const lp = store.legacyProfiles()[0];
+          const a = document.getElementById('pw1').value, b = document.getElementById('pw2').value;
+          if (a.length < 4) throw Object.assign(new Error(), { code: 'weak_password' });
+          if (a !== b) throw Object.assign(new Error(), { text: 'Lösenorden är inte likadana.' });
+          const pr = await store.claim(lp.id, a);
+          store.markMigrated(lp.id);
+          play(pr, false);
+        }
+      } catch (err) {
+        showErr(err.text || window.KGPublicStore.message(err.code));
+        busyBtn(f, false);
+      }
+    });
+  }
+
+  async function play(pr, remember) {
+    profile = { id: pr.id, name: pr.name, grade: pr.grade || 4, token: pr.token || null };
+    store.profile = profile;
+    if (online()) store.rememberSession(profile, remember);
+    try {
+      await game.open({ id: profile.id, familyId: 'public', name: profile.name, grade: profile.grade }, null);
+    } catch (e) {
+      if (e && e.code === 'not_logged_in') return; // hanteras av onLoggedOut
+      console.error(e);
+      toast('Något gick fel när spelet skulle laddas. Försök igen.', 'note');
+      showStart('login');
+    }
+  }
+
+  /* ---------- topplista ---------- */
+  async function showBoard() {
+    const tabs = [['week', 'Veckans poäng'], ['race', 'Vagnrace'], ['total', 'All-time']];
+    const back = game.getPlayer() ? '<button class="link" data-g="hub">Tillbaka</button>' : '<button class="link" data-act="start">Tillbaka</button>';
+    const head = `<header class="subhead">${back}<h2>Topplista</h2></header>
+<div class="chips">${tabs.map(([id, n]) => `<button class="chip${boardKind === id ? ' on' : ''}" data-act="btab" data-id="${id}">${n}</button>`).join('')}</div>`;
+    view(head + '<section class="panel"><p class="muted">Hämtar…</p></section>');
+    const p = game.getPlayer();
+    try { await store.flush(); } catch (e) { /* ingen fara */ }
+    let rows = [];
+    try { rows = await store.leaderboard(boardKind, p && p.kidId); } catch (e) { rows = null; }
+    const note = { week: 'Poäng för rätta svar den här veckan. Svårare uppgifter ger mer. Nollställs varje måndag.', race: 'Flest rätt på 60 sekunder i vagnracet.', total: 'Alla poäng sedan du började spela.' }[boardKind];
+    const body = rows === null ? '<p>Kunde inte hämta topplistan just nu. Försök igen om en stund.</p>'
+      : !rows.length ? '<p class="muted">Ingen har poäng här än. Bli först!</p>'
+      : `<ol class="board">${rows.map((r) => `<li class="${r.me ? 'me' : ''}${r.rank <= 3 ? ' top' + r.rank : ''}"><span class="b-rank">${r.rank}</span><span class="b-name">${esc(r.name)}${r.me ? ' <small>(du)</small>' : ''}</span><span class="b-score">${r.score}</span></li>`).join('')}</ol>`;
+    view(head + `<section class="panel">${body}<p class="muted small">${note}${online() ? '' : ' Topplistan visar bara spelare på den här enheten.'}</p></section>`);
+  }
+
+  /* ---------- mitt konto ---------- */
+  function showAccount() {
+    view(`
+<header class="subhead"><button class="link" data-g="hub">Tillbaka</button><h2>Mitt konto</h2></header>
+<section class="panel">
+  <p>Du är inloggad som <b>${esc(profile.name)}</b> (åk ${esc(profile.grade)}). Kontot gäller i alla spel på portalen.</p>
+  <div class="actions"><button class="btn ghost" data-act="home">Logga ut</button></div>
+</section>
+${online() ? `<section class="panel">
+  <h3>Byt lösenord</h3>
+  <form id="pwform" class="newkid" autocomplete="off" style="border:0;padding:0">
+    <div class="row">${pwField('opw', 'Nuvarande lösenord', 'current-password')}${pwField('npw', 'Nytt lösenord', 'new-password')}<button class="btn" type="submit">Byt</button></div>
+    ${errBox()}
+  </form>
+</section>` : ''}
+<section class="panel">
+  <h3>Radera mig</h3>
+  <p class="muted small">Tar bort ditt konto, dina poäng och allt du samlat i alla spel. Det går inte att ångra.</p>
+  ${confirmDelete ? '<div class="actions"><button class="btn" style="background:var(--soft)" data-act="delyes">Ja, radera allt</button><button class="btn ghost" data-act="delno">Avbryt</button></div>' : '<button class="btn ghost" data-act="delask">Radera mig</button>'}
+</section>`);
+    const f = document.getElementById('pwform');
+    if (f) f.addEventListener('submit', async (e) => {
+      e.preventDefault(); busyBtn(f, true);
+      try { await store.changePassword(document.getElementById('opw').value, document.getElementById('npw').value); toast('Lösenordet är bytt.', 'good'); showAccount(); }
+      catch (err) { showErr(window.KGPublicStore.message(err.code)); busyBtn(f, false); }
+    });
+  }
+
+  /* ---------- händelser ---------- */
+  document.addEventListener('click', async (e) => {
+    const b = e.target.closest('[data-act]'); if (!b) return;
+    const act = b.dataset.act;
+    if (act === 'home') { if (game) game.reset(); await store.logout(); profile = null; showStart('login'); }
+    else if (act === 'start') showStart();
+    else if (act === 'newform') showStart('new');
+    else if (act === 'loginform') showStart('login');
+    else if (act === 'skipclaim') { store.markMigrated(b.dataset.id); showStart('login'); }
+    else if (act === 'board') showBoard();
+    else if (act === 'btab') { boardKind = b.dataset.id; showBoard(); }
+    else if (act === 'code') { confirmDelete = false; showAccount(); }
+    else if (act === 'delask') { confirmDelete = true; showAccount(); }
+    else if (act === 'delno') { confirmDelete = false; showAccount(); }
+    else if (act === 'delyes') {
+      try { if (game) game.reset(); await store.deletePlayer(); profile = null; toast('Allt är raderat.', 'good'); showStart('new'); }
+      catch (err) { toast('Kunde inte radera just nu. Försök igen om en stund.', 'note'); }
+    }
+  });
+
+  /* ---------- start ---------- */
+  game = window.KGGame({
+    store, view, toast, esc, richText, gemSVG, mossaSVG, shade, publicMode: true,
+    openTest: () => {}, rerenderParent: () => {},
+    onPoints: (p, n) => { p.pts = p.pts || { pending: 0, week: 0, total: 0, race: 0 }; p.pts.pending += n; },
+    onAnswer: (q, ok, given) => {
+      if (!online()) return;
+      store.addAnswer({ area: q.area, skill: q.skill || '', level: q.level, ok, q: window.KGQ.plain(q.text), given: ok ? '' : String(given).slice(0, 40), correct: ok ? '' : window.KGQ.answerText(q) });
+    },
+  });
+  store.onStatus = (s) => { if (s === 'offline') toast('Kunde inte nå servern. Spelet sparas på enheten så länge.', 'note'); };
+  store.onLoggedOut = () => { if (game) game.reset(); profile = null; toast('Du har blivit utloggad. Logga in igen.', 'note'); showStart('login'); };
+  const saved = online() ? store.savedSession() : null;
+  if (saved && saved.token) play(saved, !!(function () { try { return localStorage.getItem('kristallgruvan.session'); } catch (e) { return null; } })());
+  else showStart();
+})();
+
+</script>
+<!-- Default Statcounter code for Kristallgruvan
+https://matte.cyberdyne.se -->
+<script type="text/javascript">
+var sc_project=13361654; 
+var sc_invisible=1; 
+var sc_security="9d62ecd1"; 
+var sc_client_storage="disabled"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/13361654/0/9d62ecd1/1/"
+alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+</body>
+</html>
