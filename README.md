@@ -7,6 +7,7 @@ Gratis lärospel för mellanstadiet på **https://www.cyberdyne.se**. Allt ligge
 | Spel | Adress | Mapp | Spelnamn i databasen | Topplista | Status |
 |---|---|---|---|---|---|
 | Kristallgruvan | www.cyberdyne.se/kristallgruvan/ | `kristallgruvan/` | `kristallgruvan` | ja | i drift |
+| Nördlig | www.cyberdyne.se/nordlig/ | `nordlig/` | – (ingen inloggning, statistik sparas i webbläsaren) | nej | i drift |
 
 | Del | Var | Kommentar |
 |---|---|---|
@@ -33,6 +34,7 @@ Gratis lärospel för mellanstadiet på **https://www.cyberdyne.se**. Allt ligge
 ├── konto/             gemensam inloggning
 ├── kristallgruvan/    spelet + lärarsida + föräldrasida
 │   └── kalla/         källkoden till Kristallgruvan
+├── nordlig/           Nördlig, en fristående fil (ändras direkt, inget bygge)
 ├── databas/           SQL för Supabase
 └── .github/workflows/ pulsjobbet
 ```
@@ -111,5 +113,6 @@ GitHub Pages: repo-inställningar → **Pages** → Custom domain `www.cyberdyne
 
 | Datum | Ändring |
 |---|---|
+| 2026-10-29 | Nördlig tillagt i `nordlig/` och på startsidan. |
 | 2026-10-29 | Lärarhandledningen (`kristallgruvan/lararhandledning.pdf`) länkas från lärarsidan, även före inloggning. |
 | 2026-10-29 | Portalen skapad. Gemensam inloggning (databas v3). Kristallgruvan flyttad från matte.cyberdyne.se. |

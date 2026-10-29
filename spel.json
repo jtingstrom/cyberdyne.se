@@ -11,6 +11,17 @@
     "status": "klar"
   },
   {
+    "id": "nordlig",
+    "namn": "Nördlig",
+    "beskrivning": "Gissa den dolda uträkningen på sex försök. Färgerna visar vilka siffror och tecken som stämmer.",
+    "adress": "nordlig/",
+    "amne": "Matte",
+    "arskurs": "åk 4–6",
+    "farg": "#d9b51f",
+    "topplista": false,
+    "status": "klar"
+  },
+  {
     "id": "nasta-spel",
     "namn": "Nästa spel",
     "beskrivning": "Ett nytt spel är på gång.",

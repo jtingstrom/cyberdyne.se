@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nördlig</title>
+<meta name="description" content="Gissa den dolda uträkningen på sex försök. Ett mattepussel med siffror och räknesätt.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Atkinson+Hyperlegible:wght@400;700&family=Chakra+Petch:wght@600;700&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-size:14px}
+[hidden]{display:none!important}
+
+/* Layout: one-screen app — header, 6×8 tile grid, on-screen keypad pinned to bottom. Single dark "arcade calculator" look by choice. */
+:root {
+  color-scheme: dark;
+  --bg: #1c1626;
+  --panel: #2a2236;
+  --line: #3f344f;
+  --fg: #f1ecf7;
+  --muted: #a99cbb;
+  --key: #4a405a;
+  --good: #3fa34d;
+  --close: #d9b51f;
+  --miss: #c8413b;
+  --accent: #b48cff;
+  --f-logo: "Silkscreen", "Courier New", monospace;
+  --f-tile: "Chakra Petch", "Atkinson Hyperlegible", system-ui, sans-serif;
+  --f-body: "Atkinson Hyperlegible", system-ui, sans-serif;
+}
+html, body { height: 100%; }
+body {
+  background: var(--bg); color: var(--fg); font-family: var(--f-body);
+  display: flex; flex-direction: column; overflow: hidden;
+  padding-left: max(12px, env(safe-area-inset-left, 0px));
+  padding-right: max(12px, env(safe-area-inset-right, 0px));
+  box-sizing: border-box;
+}
+@media (min-width: 360px) { body { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); } }
+.app { flex: 1; display: flex; flex-direction: column; max-width: 520px; width: 100%; margin: 0 auto; min-height: 0; }
+header { display: flex; align-items: center; justify-content: space-between; padding-block: 12px; border-bottom: 1px solid var(--line); }
+h1 { font-family: var(--f-logo); font-weight: 700; font-size: 1.6rem; margin: 0; letter-spacing: .02em; }
+h1 span { color: var(--accent); }
+.hl { display: flex; align-items: center; gap: 10px; }
+.home { text-decoration: none; display: grid; place-items: center; }
+.hbtns { display: flex; gap: 8px; }
+.hbtn { background: var(--panel); color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 7px 12px; font: 700 .85rem var(--f-body); cursor: pointer; }
+.hbtn:hover { border-color: var(--accent); }
+.hbtn.hard { background: var(--miss); border-color: var(--miss); }
+button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.board-wrap { flex: 1; display: flex; align-items: center; justify-content: center; min-height: 0; padding-block: 12px; }
+.board { display: grid; grid-template-rows: repeat(6, 1fr); gap: 6px; width: min(100%, 440px); }
+.row { display: grid; grid-template-columns: repeat(var(--cols, 8), 1fr); gap: 5px; }
+.board.wide { width: min(100%, 500px); }
+.board.wide .tile { font-size: clamp(1rem, 4.8vw, 1.6rem); }
+.tile {
+  aspect-ratio: 1; max-width: 100%; display: grid; place-items: center;
+  font: 700 clamp(1.1rem, 5.5vw, 1.7rem) var(--f-tile); border-radius: 5px;
+  background: transparent; border: 2px solid var(--line); color: var(--fg);
+}
+.tile.filled { border-color: var(--muted); }
+.tile.good, .tile.close, .tile.miss { border-color: transparent; }
+.tile.good { background: var(--good); }
+.tile.close { background: var(--close); color: #2a2106; }
+.tile.miss { background: var(--miss); }
+.tile.flip { animation: flip .4s ease both; }
+@keyframes flip { 0% { transform: rotateX(0) } 50% { transform: rotateX(90deg) } 100% { transform: rotateX(0) } }
+.row.shake { animation: shake .35s; }
+@keyframes shake { 20%,60% { transform: translateX(-6px) } 40%,80% { transform: translateX(6px) } }
+@media (prefers-reduced-motion: reduce) { .tile.flip, .row.shake { animation: none; } }
+
+.keys { display: flex; flex-direction: column; gap: 6px; padding-block: 8px 14px; }
+.krow { display: grid; gap: 5px; }
+.krow.digits { grid-template-columns: repeat(10, 1fr); }
+.krow.ops { grid-template-columns: repeat(5, 1fr) 1.6fr 1.6fr; }
+.key {
+  height: 52px; border: 0; border-radius: 6px; background: var(--key); color: var(--fg);
+  font: 700 1.15rem var(--f-tile); cursor: pointer; touch-action: manipulation; padding: 0;
+}
+.key.wide { font: 700 .85rem var(--f-body); text-transform: uppercase; letter-spacing: .06em; }
+.key.enter { background: var(--accent); color: #1c1626; }
+.key.good { background: var(--good); }
+.key.close { background: var(--close); color: #2a2106; }
+.key.miss { background: var(--miss); opacity: .55; }
+
+.toast {
+  position: fixed; left: 50%; top: calc(70px + env(safe-area-inset-top, 0px)); transform: translateX(-50%);
+  background: var(--fg); color: var(--bg); padding: 10px 16px; border-radius: 6px;
+  font-weight: 700; max-width: calc(100% - 32px); text-align: center; z-index: 20;
+}
+.overlay { position: fixed; inset: 0; background: rgba(10,6,16,.75); display: grid; place-items: center; z-index: 30;
+  padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+.modal { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 22px; max-width: 460px; width: 100%; max-height: 100%; overflow-y: auto; box-sizing: border-box; line-height: 1.5; }
+.modal h2 { font-family: var(--f-logo); margin: 0 0 10px; font-size: 1.2rem; text-wrap: balance; }
+.modal p { margin: 0 0 10px; color: var(--fg); }
+.modal ul { margin: 0 0 14px; padding-left: 20px; color: var(--muted); }
+.legend { display: flex; flex-direction: column; gap: 8px; margin: 12px 0; }
+.legend div { display: flex; align-items: center; gap: 10px; }
+.sw { width: 28px; height: 28px; border-radius: 4px; flex: none; display: grid; place-items: center; font: 700 1rem var(--f-tile); }
+.sw.good { background: var(--good); } .sw.close { background: var(--close); color: #2a2106; } .sw.miss { background: var(--miss); }
+.answer { font: 700 1.6rem var(--f-tile); letter-spacing: .12em; margin: 6px 0 14px; color: var(--accent); }
+.mbtns { display: flex; gap: 8px; flex-wrap: wrap; }
+.mbtn { flex: 1; padding: 12px; border-radius: 6px; border: 0; background: var(--accent); color: #1c1626; font: 700 1rem var(--f-body); cursor: pointer; }
+.mbtn.ghost { background: var(--key); color: var(--fg); }
+.stats { display: flex; gap: 18px; margin: 4px 0 16px; font-variant-numeric: tabular-nums; }
+.stats b { display: block; font: 700 1.5rem var(--f-tile); }
+.stats span { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <header>
+    <div class="hl"><a class="hbtn home" href="../" aria-label="Till alla spel">←</a><h1>Nörd<span>lig</span></h1></div>
+    <div class="hbtns">
+      <button class="hbtn" id="helpBtn" aria-label="Så här spelar du">?</button>
+      <button class="hbtn" id="levelBtn" aria-label="Byt svårighetsgrad">Normal</button>
+      <button class="hbtn" id="newBtn">Nytt</button>
+    </div>
+  </header>
+  <div class="board-wrap"><div class="board" id="board"></div></div>
+  <div class="keys" id="keys">
+    <div class="krow digits"></div>
+    <div class="krow ops"></div>
+  </div>
+</div>
+<div class="toast" id="toast" hidden></div>
+<div class="overlay" id="overlay" hidden><div class="modal" id="modal"></div></div>
+
+<script>
+const ROWS = 6, OPS = ['+','−','×','÷'];
+const LEVELS = {
+  normal: { len: 8,  ops: [1, 2],    max: [99, 30] },
+  svar:   { len: 10, ops: [2, 3],    max: [99, 40] }
+};
+let level = 'normal';
+try { if (LEVELS[localStorage.getItem('nordlig-level')]) level = localStorage.getItem('nordlig-level'); } catch (e) {}
+let LEN = LEVELS[level].len;
+let answer, guesses, cur, over, keyState, stats;
+function loadStats() {
+  stats = { played: 0, won: 0, streak: 0 };
+  try { stats = JSON.parse(localStorage.getItem('nordlig-stats-' + level)) || stats; } catch (e) {}
+}
+const saveStats = () => { try { localStorage.setItem('nordlig-stats-' + level, JSON.stringify(stats)); } catch (e) {} };
+loadStats();
+
+/* ---------- equation logic ---------- */
+function evaluate(expr) {
+  // tokenize: numbers & ops; returns number or null if invalid
+  const toks = expr.match(/\d+|[+−×÷]/g);
+  if (!toks || toks.join('') !== expr) return null;
+  for (let i = 0; i < toks.length; i++) {
+    const isNum = /^\d+$/.test(toks[i]);
+    if ((i % 2 === 0) !== isNum) return null;           // must alternate num/op, start with num
+    if (isNum && toks[i].length > 1 && toks[i][0] === '0') return null; // no leading zeros
+  }
+  if (toks.length % 2 === 0) return null;                // must end with a number
+  // × and ÷ first
+  const st = [Number(toks[0])];
+  const ops = [];
+  for (let i = 1; i < toks.length; i += 2) {
+    const op = toks[i], n = Number(toks[i + 1]);
+    if (op === '×') st[st.length - 1] *= n;
+    else if (op === '÷') { if (n === 0) return null; st[st.length - 1] /= n; }
+    else { ops.push(op); st.push(n); }
+  }
+  let r = st[0];
+  ops.forEach((op, i) => { r = op === '+' ? r + st[i + 1] : r - st[i + 1]; });
+  return r;
+}
+
+function checkGuess(g) {
+  if (g.length !== LEN) return 'Fyll i alla ' + LEN + ' brickor.';
+  const parts = g.split('=');
+  if (parts.length !== 2) return 'Uträkningen måste innehålla exakt ett "=".';
+  const [left, right] = parts;
+  if (!/^\d+$/.test(right)) return 'Efter "=" får det bara stå siffror.';
+  if (right.length > 1 && right[0] === '0') return 'Svaret får inte börja med 0.';
+  const v = evaluate(left);
+  if (v === null) return 'Vänsterledet är inte en giltig uträkning.';
+  if (Math.abs(v - Number(right)) > 1e-9) return 'Det räknar inte rätt: vänster blir ' + (Number.isInteger(v) ? v : v.toFixed(2)) + '.';
+  return null;
+}
+
+function rnd(a, b) { return a + Math.floor(Math.random() * (b - a + 1)); }
+function makeAnswer() {
+  const L = LEVELS[level];
+  for (let tries = 0; tries < 200000; tries++) {
+    const oi = Math.random() < 0.5 ? 0 : 1;
+    const nOps = L.ops[oi];
+    const nums = [], ops = [];
+    for (let i = 0; i <= nOps; i++) nums.push(rnd(1, L.max[oi]));
+    for (let i = 0; i < nOps; i++) ops.push(OPS[rnd(0, 3)]);
+    if (level === 'svar' && !ops.some(o => o === '×' || o === '÷')) continue; // svår: alltid minst ett × eller ÷
+    // keep every division exact for nicer puzzles
+    let ok = true, term = nums[0];
+    for (let i = 0; i < nOps; i++) {
+      const n = nums[i + 1];
+      if (ops[i] === '×') term *= n;
+      else if (ops[i] === '÷') { if (n === 1 || term % n !== 0) { ok = false; break; } term /= n; }
+      else term = n;
+    }
+    if (!ok) continue;
+    let expr = String(nums[0]);
+    for (let i = 0; i < nOps; i++) expr += ops[i] + nums[i + 1];
+    const v = evaluate(expr);
+    if (v === null || v < 0 || !Number.isInteger(v)) continue;
+    const eq = expr + '=' + v;
+    if (eq.length === LEN && !checkGuess(eq)) return eq;
+  }
+  return level === 'svar' ? '12×6−18=54' : '9×20=180';
+}
+
+function score(g) {
+  const res = Array(LEN).fill('miss'), left = {};
+  for (let i = 0; i < LEN; i++) if (g[i] === answer[i]) res[i] = 'good'; else left[answer[i]] = (left[answer[i]] || 0) + 1;
+  for (let i = 0; i < LEN; i++) if (res[i] !== 'good' && left[g[i]] > 0) { res[i] = 'close'; left[g[i]]--; }
+  return res;
+}
+
+/* ---------- UI ---------- */
+const board = document.getElementById('board');
+function buildBoard() {
+  board.innerHTML = '';
+  board.style.setProperty('--cols', LEN);
+  board.classList.toggle('wide', LEN > 8);
+  for (let r = 0; r < ROWS; r++) {
+    const row = document.createElement('div'); row.className = 'row';
+    for (let c = 0; c < LEN; c++) { const t = document.createElement('div'); t.className = 'tile'; row.appendChild(t); }
+    board.appendChild(row);
+  }
+}
+function renderRow(r, text, res) {
+  const tiles = board.children[r].children;
+  for (let c = 0; c < LEN; c++) {
+    const t = tiles[c]; t.textContent = text[c] || '';
+    t.className = 'tile' + (text[c] ? ' filled' : '');
+    if (res) { t.style.animationDelay = (c * 70) + 'ms'; t.classList.add('flip', res[c]); }
+  }
+}
+
+const KEYS = {};
+function buildKeys() {
+  const d = document.querySelector('.digits'), o = document.querySelector('.ops');
+  '1234567890'.split('').forEach(k => d.appendChild(mkKey(k)));
+  [...OPS, '='].forEach(k => o.appendChild(mkKey(k)));
+  o.appendChild(mkKey('⌫', 'Radera', 'wide'));
+  o.appendChild(mkKey('↵', 'Gissa', 'wide enter'));
+}
+function mkKey(k, label, cls) {
+  const b = document.createElement('button');
+  b.className = 'key ' + (cls || ''); b.textContent = label || k; b.dataset.k = k;
+  if (label) b.setAttribute('aria-label', label);
+  b.addEventListener('click', () => press(k));
+  if (!label) KEYS[k] = b;
+  return b;
+}
+function paintKeys() {
+  const rank = { miss: 1, close: 2, good: 3 };
+  Object.entries(KEYS).forEach(([k, b]) => { b.className = 'key ' + (keyState[k] || ''); });
+}
+
+let toastT;
+function toast(msg, ms = 1800) {
+  const t = document.getElementById('toast'); t.textContent = msg; t.hidden = false;
+  clearTimeout(toastT); toastT = setTimeout(() => t.hidden = true, ms);
+}
+
+function press(k) {
+  if (over) return;
+  if (k === '⌫') cur = cur.slice(0, -1);
+  else if (k === '↵') return submit();
+  else if (cur.length < LEN) cur += k;
+  renderRow(guesses.length, cur);
+}
+
+function submit() {
+  const err = checkGuess(cur);
+  if (err) {
+    toast(err);
+    const row = board.children[guesses.length];
+    row.classList.remove('shake'); void row.offsetWidth; row.classList.add('shake');
+    return;
+  }
+  const res = score(cur);
+  renderRow(guesses.length, cur, res);
+  const rank = { miss: 1, close: 2, good: 3 };
+  for (let i = 0; i < LEN; i++) if (!keyState[cur[i]] || rank[res[i]] > rank[keyState[cur[i]]]) keyState[cur[i]] = res[i];
+  guesses.push(cur);
+  const won = cur === answer;
+  cur = '';
+  setTimeout(paintKeys, LEN * 70 + 300);
+  if (won || guesses.length === ROWS) {
+    over = true;
+    stats.played++;
+    if (won) { stats.won++; stats.streak++; } else stats.streak = 0;
+    saveStats();
+    setTimeout(() => endModal(won), LEN * 70 + 700);
+  }
+}
+
+function openModal(html) { document.getElementById('modal').innerHTML = html; document.getElementById('overlay').hidden = false; }
+function closeModal() { document.getElementById('overlay').hidden = true; }
+document.getElementById('overlay').addEventListener('click', e => { if (e.target.id === 'overlay') closeModal(); });
+
+function endModal(won) {
+  const pct = stats.played ? Math.round(100 * stats.won / stats.played) : 0;
+  openModal(`
+    <h2>${won ? 'Rätt på ' + guesses.length + (guesses.length === 1 ? ' försök!' : ' försök!') : 'Slut på försök'}</h2>
+    <p>${won ? 'Snyggt räknat.' : 'Rätt uträkning var:'}</p>
+    ${won ? '' : `<div class="answer">${answer}</div>`}
+    <div class="stats">
+      <div><b>${stats.played}</b><span>Spelade</span></div>
+      <div><b>${pct}%</b><span>Vunna</span></div>
+      <div><b>${stats.streak}</b><span>Svit</span></div>
+    </div>
+    <div class="mbtns"><button class="mbtn" id="againBtn">Nytt spel</button><button class="mbtn ghost" id="closeBtn">Stäng</button></div>`);
+  document.getElementById('againBtn').onclick = () => { closeModal(); newGame(); };
+  document.getElementById('closeBtn').onclick = closeModal;
+}
+
+function helpModal() {
+  openModal(`
+    <h2>Så här spelar du Nördlig</h2>
+    <p>Gissa den dolda uträkningen på sex försök. Varje gissning måste vara en korrekt uträkning med ${LEN} tecken, till exempel <b>${level === 'svar' ? '12×6−18=54' : '9×20=180'}</b>.</p>
+    <p><b>Normal:</b> 8 tecken. <b>Svår:</b> 10 tecken, 2–3 räknesätt och alltid minst ett × eller ÷. Byt nivå med knappen uppe till höger.</p>
+    <div class="legend">
+      <div><span class="sw good">9</span> Rätt tecken på rätt plats.</div>
+      <div><span class="sw close">2</span> Finns med, men på fel plats.</div>
+      <div><span class="sw miss">8</span> Finns inte med alls.</div>
+    </div>
+    <ul>
+      <li>Du kan använda 0–9, + − × ÷ och =.</li>
+      <li>Efter "=" får det bara stå siffror.</li>
+      <li>× och ÷ räknas före + och −: 3+2×5=13, inte 25.</li>
+      <li>Du kan också skriva på tangentbordet: * för ×, / för ÷.</li>
+    </ul>
+    <div class="mbtns"><button class="mbtn" id="closeBtn">Spela</button></div>`);
+  document.getElementById('closeBtn').onclick = closeModal;
+}
+
+function newGame() {
+  if (guesses && guesses.length && !over) { stats.played++; stats.streak = 0; saveStats(); }
+  LEN = LEVELS[level].len;
+  const lb = document.getElementById('levelBtn');
+  lb.textContent = level === 'svar' ? 'Svår' : 'Normal'; lb.classList.toggle('hard', level === 'svar');
+  answer = makeAnswer(); guesses = []; cur = ''; over = false; keyState = {};
+  buildBoard(); paintKeys();
+}
+
+document.addEventListener('keydown', e => {
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
+  if (!document.getElementById('overlay').hidden) { if (e.key === 'Escape' || e.key === 'Enter') closeModal(); return; }
+  const map = { '*': '×', 'x': '×', '/': '÷', '-': '−', 'Enter': '↵', 'Backspace': '⌫' };
+  const k = map[e.key] || e.key;
+  if (/^[0-9+=×÷−↵⌫]$/.test(k)) { e.preventDefault(); press(k); }
+});
+document.getElementById('newBtn').onclick = () => newGame();
+document.getElementById('levelBtn').onclick = () => {
+  if (guesses && guesses.length && !over) { stats.played++; stats.streak = 0; saveStats(); guesses = []; }
+  level = level === 'svar' ? 'normal' : 'svar';
+  try { localStorage.setItem('nordlig-level', level); } catch (e) {}
+  loadStats(); newGame();
+  toast(level === 'svar' ? 'Svår nivå: 10 tecken' : 'Normal nivå: 8 tecken', 1400);
+};
+document.getElementById('helpBtn').onclick = helpModal;
+
+buildKeys();
+newGame();
+let seen = false; try { seen = localStorage.getItem('nordlig-seen'); localStorage.setItem('nordlig-seen', '1'); } catch (e) {}
+if (!seen) helpModal();
+</script>
+<!-- Default Statcounter code for Nördlig
+https://www.cyberdyne.se/nordlig/ -->
+<script type="text/javascript">
+var sc_project=13361654; 
+var sc_invisible=1; 
+var sc_security="9d62ecd1"; 
+var sc_client_storage="disabled"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/13361654/0/9d62ecd1/1/"
+alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+</body>
+</html>
