@@ -38,6 +38,8 @@ Gratis lärospel för mellanstadiet på **https://www.cyberdyne.se**. Allt ligge
 │   └── kalla/         källkoden till Kristallgruvan
 ├── kodknackaren/      Kodknäckaren, en fristående fil (ändras direkt, inget bygge)
 ├── fingerfard/        Fingerfärd, tangentbordsträning (en fil, ändras direkt, använder ../stil.css)
+│   ├── foraldrar.html information till föräldrar
+│   └── lararhandledning.pdf  lärarhandledning (exporterad från dokumentet "Fingerfärd – information till lärare")
 ├── databas/           SQL för Supabase
 └── .github/workflows/ pulsjobbet
 ```
@@ -117,7 +119,8 @@ GitHub Pages: repo-inställningar → **Pages** → Custom domain `www.cyberdyne
 
 | Datum | Ändring |
 |---|---|
-| 2026-10-30 | Fingerfärd borttaget från startsidan under test (nås via direktlänk, `noindex`). Lägg tillbaka blocket i `spel.json` när det är klart. |
+| 2026-10-30 | Fingerfärd: lärarhandledning (PDF) och föräldrasida, länkade från spelets startsida. |
+| 2026-10-30 | Fingerfärd borttaget från startsidan under test (nås via direktlänk, `noindex`). Lägg tillbaka blocket i `spel.json` när det är klart, med `"lankar"` till `fingerfard/lararhandledning.pdf` och `fingerfard/foraldrar.html`. |
 | 2026-10-30 | Nytt spel: Fingerfärd (tangentbordsträning med fingersättning) i `fingerfard/`. |
 | 2026-10-30 | Nördlig bytte namn till Kodknäckaren och flyttade till `kodknackaren/`. Den gamla adressen är borttagen. |
 | 2026-10-30 | Nördlig har samma design som Kristallgruvan (färger, typsnitt, stenblock). |
