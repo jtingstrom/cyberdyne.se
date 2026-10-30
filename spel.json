@@ -21,10 +21,10 @@
     ]
   },
   {
-    "id": "nordlig",
-    "namn": "Nördlig",
-    "beskrivning": "Gissa den dolda uträkningen på sex försök. Färgerna visar vilka siffror och tecken som stämmer.",
-    "adress": "nordlig/",
+    "id": "kodknackaren",
+    "namn": "Kodknäckaren",
+    "beskrivning": "Knäck den hemliga uträkningen på sex försök. Färgerna visar vilka siffror och tecken som stämmer.",
+    "adress": "kodknackaren/",
     "amne": "Matte",
     "arskurs": "åk 4–6",
     "farg": "#d9b51f",
