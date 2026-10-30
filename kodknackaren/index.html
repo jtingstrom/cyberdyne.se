@@ -149,8 +149,6 @@ h1 span { color: var(--gold); }
 <div class="overlay" id="overlay" hidden><div class="modal" id="modal"></div></div>
 
 <script>
-// Spelet hette tidigare Nördlig: flytta sparad nivå och statistik till de nya nycklarna.
-try { ['level', 'seen', 'stats-normal', 'stats-svar'].forEach((k) => { const v = localStorage.getItem('nordlig-' + k); if (v !== null && localStorage.getItem('kodknackaren-' + k) === null) localStorage.setItem('kodknackaren-' + k, v); }); } catch (e) {}
 const ROWS = 6, OPS = ['+','−','×','÷'];
 const LEVELS = {
   normal: { len: 8,  ops: [1, 2],    max: [99, 30] },

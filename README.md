@@ -36,7 +36,6 @@ Gratis lärospel för mellanstadiet på **https://www.cyberdyne.se**. Allt ligge
 ├── kristallgruvan/    spelet + lärarsida + föräldrasida
 │   └── kalla/         källkoden till Kristallgruvan
 ├── kodknackaren/      Kodknäckaren, en fristående fil (ändras direkt, inget bygge)
-├── nordlig/           gamla adressen till Kodknäckaren, skickar vidare
 ├── databas/           SQL för Supabase
 └── .github/workflows/ pulsjobbet
 ```
@@ -116,7 +115,7 @@ GitHub Pages: repo-inställningar → **Pages** → Custom domain `www.cyberdyne
 
 | Datum | Ändring |
 |---|---|
-| 2026-10-30 | Nördlig bytte namn till Kodknäckaren och flyttade till `kodknackaren/`. `nordlig/` skickar vidare, och sparad statistik följer med. |
+| 2026-10-30 | Nördlig bytte namn till Kodknäckaren och flyttade till `kodknackaren/`. Den gamla adressen är borttagen. |
 | 2026-10-30 | Nördlig har samma design som Kristallgruvan (färger, typsnitt, stenblock). |
 | 2026-10-29 | Om-sida (`om.html`), länkad i sidfoten vid kontaktadressen. |
 | 2026-10-29 | Länkarna för lärare och föräldrar flyttade från sidfoten till Kristallgruvans kort (`lankar` i `spel.json`). |
