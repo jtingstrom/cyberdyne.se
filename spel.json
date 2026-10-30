@@ -32,17 +32,6 @@
     "status": "klar"
   },
   {
-    "id": "fingerfard",
-    "namn": "Fingerfärd",
-    "beskrivning": "Lär dig skriva på tangentbordet med rätt finger på rätt tangent. Från grundraden till hela meningar.",
-    "adress": "fingerfard/",
-    "amne": "Tangentbord",
-    "arskurs": "åk 3–6",
-    "farg": "#6ec6ff",
-    "topplista": false,
-    "status": "klar"
-  },
-  {
     "id": "nasta-spel",
     "namn": "Nästa spel",
     "beskrivning": "Ett nytt spel är på gång.",
