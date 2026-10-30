@@ -115,6 +115,7 @@ GitHub Pages: repo-inställningar → **Pages** → Custom domain `www.cyberdyne
 
 | Datum | Ändring |
 |---|---|
+| 2026-10-30 | Nördlig har samma design som Kristallgruvan (färger, typsnitt, stenblock). |
 | 2026-10-29 | Om-sida (`om.html`), länkad i sidfoten vid kontaktadressen. |
 | 2026-10-29 | Länkarna för lärare och föräldrar flyttade från sidfoten till Kristallgruvans kort (`lankar` i `spel.json`). |
 | 2026-10-29 | Nördlig tillagt i `nordlig/` och på startsidan. |
