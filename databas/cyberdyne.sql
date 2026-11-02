@@ -142,12 +142,12 @@ drop function if exists public.teacher_stats(uuid, int, int);
 
 /* ---------- hjälpfunktioner ---------- */
 create or replace function public.kg_week() returns text
-language sql stable as $$ select to_char(now() at time zone 'Europe/Stockholm', 'IYYY-"v"IW') $$;
+language sql stable set search_path = public, pg_temp as $$ select to_char(now() at time zone 'Europe/Stockholm', 'IYYY-"v"IW') $$;
 create or replace function public.kg_today() returns date
-language sql stable as $$ select (now() at time zone 'Europe/Stockholm')::date $$;
+language sql stable set search_path = public, pg_temp as $$ select (now() at time zone 'Europe/Stockholm')::date $$;
 
 create or replace function public.kg_name_ok(n text) returns boolean
-language plpgsql immutable as $$
+language plpgsql immutable set search_path = public, pg_temp as $$
 declare
   l text := lower(coalesce(n, ''));
   bad text[] := array['kuk','fitt','jävl','javl','hora','neger','nazi','hitler','fuck','shit',
@@ -163,10 +163,10 @@ begin
 end $$;
 
 create or replace function public.kg_pass_ok(p text) returns boolean
-language sql immutable as $$ select p is not null and char_length(p) between 4 and 64 $$;
+language sql immutable set search_path = public, pg_temp as $$ select p is not null and char_length(p) between 4 and 64 $$;
 
 create or replace function public.kg_spel_ok(s text) returns boolean
-language sql immutable as $$ select s ~ '^[a-z0-9-]{2,30}$' $$;
+language sql immutable set search_path = public, pg_temp as $$ select s ~ '^[a-z0-9-]{2,30}$' $$;
 
 create or replace function public.kg_konto(p_token uuid) returns uuid
 language plpgsql security definer set search_path = public as $$

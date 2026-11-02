@@ -79,7 +79,9 @@ Projekt: `bvpjitpyzfzkijkqzfru` (Europa). Hela databasen beskrivs i `databas/cyb
 | `answer_stats`, `mistakes` | statistik för lärare, per spel | **nej** |
 | `teacher_config`, `teacher_sessions` | lärarlösenord och inloggningar | nej |
 
-Ingen kan läsa tabellerna direkt. Allt går via funktionerna i SQL-filen. De gamla tabellerna `players` och `player_sessions` från Kristallgruvan version 2 finns kvar som säkerhetskopia och används inte längre. De kan tas bort när allt fungerat ett tag.
+Ingen kan läsa tabellerna direkt. Allt går via funktionerna i SQL-filen. De gamla tabellerna `players` och `player_sessions` från Kristallgruvan version 2 togs bort 2026-11-02, efter kontroll att alla konton fanns i `konton` och `spelstatus`.
+
+Supabase säkerhetsgranskning (Advisors) visar två saker som är **avsiktliga** och inte ska "rättas": att tabellerna har RLS utan regler (ingen ska läsa dem direkt) och att funktionerna kan anropas utan Supabase-inloggning (spelen anropar dem, och varje funktion kontrollerar själv spelarens eller lärarens token). Hjälpfunktioner som `kg_konto` och `set_teacher_password` kan inte anropas utifrån.
 
 ### Vanliga uppgifter (SQL Editor i Supabase)
 
@@ -119,6 +121,7 @@ GitHub Pages: repo-inställningar → **Pages** → Custom domain `www.cyberdyne
 
 | Datum | Ändring |
 |---|---|
+| 2026-11-02 | Databasen: fast `search_path` på hjälpfunktionerna, gamla tabeller från version 2 borttagna, utgångna lärarinloggningar rensade. |
 | 2026-11-02 | Fingerfärd: frivillig inloggning, topplista (vecka, snabbast, all-time) och diamanter till Tangentverkstan. Poäng = tecken × (0,25 + 0,25 × stjärnor); bästa fart (minst två stjärnor) sparas som `best`. |
 | 2026-10-30 | Fingerfärd: lärarhandledning (PDF) och föräldrasida, länkade från spelets startsida. |
 | 2026-10-30 | Fingerfärd borttaget från startsidan under test (nås via direktlänk, `noindex`). Lägg tillbaka blocket i `spel.json` när det är klart, med `"lankar"` till `fingerfard/lararhandledning.pdf` och `fingerfard/foraldrar.html`. |
