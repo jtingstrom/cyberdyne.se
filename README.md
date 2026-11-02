@@ -18,7 +18,7 @@ Gratis lärospel för mellanstadiet på **https://www.cyberdyne.se**. Allt ligge
 | Databas | `databas/cyberdyne.sql` | Supabase, ett projekt för alla spel |
 | Pulsjobb | `.github/workflows/supabase-puls.yml` | Håller Supabase vaket varje dag |
 | Domän | `CNAME` | `www.cyberdyne.se` |
-| Besöksstatistik | Statcounter, projekt 13361654 | Utan kakor |
+| Besöksstatistik | `statistik.js` (Statcounter, projekt 13361654) | Ett projekt för hela sajten, utan kakor. Varje sida har `<script src="/statistik.js"></script>` sist i `<body>`. Räknar bara på cyberdyne.se, inte vid test på egen dator. |
 | Kontakt | info@tingstrom.se | |
 
 **Hemligheter skrivs aldrig i repot**, eftersom det är publikt. Det gäller lärarlösenordet, databaslösenordet och Supabase-nyckeln som heter "secret". De sparas i en lösenordshanterare. Den publika nyckeln i `konto/config.js` får synas.
@@ -32,6 +32,7 @@ Gratis lärospel för mellanstadiet på **https://www.cyberdyne.se**. Allt ligge
 ├── portal.js          inloggning, spellista och gemensam topplista
 ├── spel.json          listan över spel
 ├── stil.css           gemensam stil (byggs)
+├── statistik.js       gemensam besöksstatistik (Statcounter)
 ├── bygg.py            bygger färdiga filer från källkoden
 ├── konto/             gemensam inloggning
 ├── kristallgruvan/    spelet + lärarsida + föräldrasida
@@ -63,6 +64,7 @@ Portalens egna filer (`index.html`, `portal.js`, `spel.json`) ändras direkt, ut
    - Spara med `CyberKonto.rpc('save_game', { p_token, p_spel: 'ordjakten', p_grade, p_state, p_add_points, p_best, p_answers })`.
    - Läs med `CyberKonto.rpc('load_game', { p_token, p_spel: 'ordjakten' })`.
    - Topplistan hämtas med `CyberKonto.rpc('get_leaderboard', { p_spel: 'ordjakten', p_kind: 'week' | 'best' | 'total', p_token })`.
+   - Lägg `<script src="/statistik.js"></script>` sist i `<body>`, så räknas spelet i besöksstatistiken.
    - Spelnamnet får bara innehålla små bokstäver a–z, siffror och bindestreck. **Ingen ny SQL behövs.**
 4. Skicka med svar i `p_answers` (`{area, skill, level, ok, q, given, correct}`), så kan lärarsidan visa statistik för spelet. Det sparas utan namn.
 5. Lägg till en rad i översiktstabellen ovan.
@@ -121,6 +123,7 @@ GitHub Pages: repo-inställningar → **Pages** → Custom domain `www.cyberdyne
 
 | Datum | Ändring |
 |---|---|
+| 2026-11-02 | Gemensam besöksstatistik i `statistik.js` i stället för inklistrad Statcounter-kod på varje sida. |
 | 2026-11-02 | Databasen: fast `search_path` på hjälpfunktionerna, gamla tabeller från version 2 borttagna, utgångna lärarinloggningar rensade. |
 | 2026-11-02 | Fingerfärd: frivillig inloggning, topplista (vecka, snabbast, all-time) och diamanter till Tangentverkstan. Poäng = tecken × (0,25 + 0,25 × stjärnor); bästa fart (minst två stjärnor) sparas som `best`. |
 | 2026-10-30 | Fingerfärd: lärarhandledning (PDF) och föräldrasida, länkade från spelets startsida. |
