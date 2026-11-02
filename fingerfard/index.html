@@ -32,6 +32,45 @@
   .ff-kb.tint .ff-k[data-f$="m"] { background: color-mix(in srgb, var(--f-m) 26%, var(--rock-2)); }
   .ff-kb.tint .ff-k[data-f$="i"] { background: color-mix(in srgb, var(--f-i) 26%, var(--rock-2)); }
   .ff-kb.tint .ff-k[data-f$="t"] { background: color-mix(in srgb, var(--f-t) 26%, var(--rock-2)); }
+  /* fingerfärg som variabel, används av diamanter och teman */
+  .ff-k[data-f$="p"] { --fc: var(--f-p); } .ff-k[data-f$="r"] { --fc: var(--f-r); } .ff-k[data-f$="m"] { --fc: var(--f-m); }
+  .ff-k[data-f$="i"] { --fc: var(--f-i); } .ff-k[data-f$="t"] { --fc: var(--f-t); }
+  .ff-k .kl { position: relative; z-index: 2; white-space: nowrap; }
+  .ff-k::before { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 1; }
+  /* diamanttangenter: fasetterad diamant i fingrets färg */
+  .ff-kb .ff-k.dia, .ff-kb.tint .ff-k.dia { color: var(--edge); border-color: #f4fdff;
+    background: linear-gradient(135deg, color-mix(in srgb, var(--fc, #9fe3ff) 45%, #fff) 0%, color-mix(in srgb, var(--fc, #9fe3ff) 80%, #fff) 28%, #ffffff 42%, color-mix(in srgb, var(--fc, #9fe3ff) 60%, #fff) 58%, color-mix(in srgb, var(--fc, #9fe3ff) 90%, #222) 100%);
+    box-shadow: inset 0 -3px 0 color-mix(in srgb, var(--fc, #9fe3ff) 70%, #000), 0 0 8px color-mix(in srgb, var(--fc, #9fe3ff) 60%, transparent); }
+  .ff-kb .ff-k.dia::before { background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,.95) 45%, transparent 60%); background-size: 300% 100%; background-position: 150% 0; animation: ffshine 3.4s ease-in-out infinite; animation-delay: var(--sd, 0s); mix-blend-mode: soft-light; }
+  .ff-kb .ff-k.dia .kl { color: var(--edge); }
+  @keyframes ffshine { 0%, 60% { background-position: 150% 0; } 100% { background-position: -50% 0; } }
+  /* tangentmaterial */
+  .ff-kb.skin-guld { background: #1c1405; }
+  .ff-kb.skin-guld .ff-k:not(.dia) { border-color: #c9971f; }
+  .ff-kb.skin-guld .ff-k:not(.dia)::before { background: linear-gradient(160deg, rgba(255,232,160,.45), rgba(255,209,102,.08) 45%, rgba(110,70,0,.35)); }
+  .ff-kb.skin-is { background: #0b1820; }
+  .ff-kb.skin-is .ff-k:not(.dia) { border-color: #8fd8f5; }
+  .ff-kb.skin-is .ff-k:not(.dia)::before { background: linear-gradient(160deg, rgba(225,248,255,.5), transparent 45%, rgba(110,198,255,.25)); }
+  .ff-kb.skin-lava { background: #1d0906; }
+  .ff-kb.skin-lava .ff-k:not(.dia) { border-color: #3a0f06; }
+  .ff-kb.skin-lava .ff-k:not(.dia)::before { background: radial-gradient(120% 70% at 50% 120%, rgba(255,110,40,.75), rgba(255,60,20,.15) 60%, transparent 75%); animation: fflava 2.6s ease-in-out infinite alternate; animation-delay: var(--sd, 0s); }
+  @keyframes fflava { to { opacity: .45; } }
+  .ff-kb.skin-neon { background: #06060c; }
+  .ff-kb.skin-neon .ff-k:not(.dia) { background: #0b0b16; border-color: var(--fc, var(--f-t)); box-shadow: 0 0 6px color-mix(in srgb, var(--fc, var(--f-t)) 70%, transparent), inset 0 0 6px color-mix(in srgb, var(--fc, var(--f-t)) 40%, transparent); }
+  .ff-kb.skin-neon .ff-k:not(.dia) .kl { color: color-mix(in srgb, var(--fc, #fff) 60%, #fff); text-shadow: 0 0 6px var(--fc, #fff); }
+  .ff-kb.skin-regnbage .ff-k:not(.dia)::before { background: linear-gradient(120deg, rgba(255,70,70,.32), rgba(255,200,40,.32), rgba(60,210,110,.32), rgba(60,160,255,.32), rgba(190,80,255,.32), rgba(255,70,70,.32)); background-size: 400% 100%; animation: ffrain 6s linear infinite; }
+  @keyframes ffrain { to { background-position: 400% 0; } }
+  /* ramar */
+  .ff-kb.frame-tra { border: 7px solid #7a4a25; background-color: #2a1a0e; box-shadow: inset 0 0 0 2px #a46a3a, 0 0 0 3px var(--edge); }
+  .ff-kb.frame-metall { border: 7px solid #8c93a3; box-shadow: inset 0 2px 0 #cfd4de, 0 0 0 3px var(--edge), inset 0 0 0 2px #5d6372; }
+  .ff-kb.frame-neon { border: 3px solid var(--f-t); box-shadow: 0 0 10px var(--f-t), 0 0 22px color-mix(in srgb, var(--f-i) 70%, transparent), inset 0 0 10px color-mix(in srgb, var(--f-t) 50%, transparent); }
+  .ff-kb.frame-guld { border: 7px solid #d9a52b; box-shadow: inset 0 2px 0 #ffe7a0, 0 0 0 3px var(--edge), 0 0 14px rgba(255,209,102,.35); }
+  .ff-kb { position: relative; }
+  .ff-spname { font: 700 clamp(.6rem, 2.2vw, .95rem) var(--f-display); color: var(--fg); letter-spacing: .06em; opacity: .9; }
+  /* tryckeffekter */
+  .ff-pt { position: absolute; pointer-events: none; z-index: 5; font: 700 14px var(--f-body); line-height: 1; animation: ffpt .65s ease-out forwards; }
+  @keyframes ffpt { from { transform: translate(-50%, -50%) scale(1); opacity: 1; } to { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(.4) rotate(var(--rot, 0deg)); opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .ff-kb .ff-k::before { animation: none !important; } .ff-pt { display: none; } }
   .ff-k.bump::after { content: ""; position: absolute; bottom: 18%; left: 35%; right: 35%; height: 2px; background: currentColor; border-radius: 2px; opacity: .8; }
   .ff-kb .ff-k.next { color: var(--edge); transform: translateY(-2px); box-shadow: 0 0 0 3px var(--fg), 0 4px 0 var(--edge); z-index: 1; overflow: visible; }
   .ff-kb .ff-k.next[data-f$="p"] { background: var(--f-p); } .ff-kb .ff-k.next[data-f$="r"] { background: var(--f-r); }
@@ -115,13 +154,34 @@
   .ff-qkey.wide { width: 5em; font-size: 1.6rem; height: 2.6em; }
   .ff-center { text-align: center; }
   .ff-notice { border-color: var(--gold); }
+  /* konto, diamanter, verkstad, topplista */
+  .ff-acct { flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+  .ff-acct form { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; width: 100%; }
+  .ff-acct .fld { flex: 1 1 140px; }
+  .ff-acct .check { display: inline-flex; gap: 8px; align-items: center; font-size: .9rem; color: var(--muted); }
+  .ff-gems { display: inline-flex; align-items: center; gap: 6px; font: 700 1.15rem var(--f-display); color: #bfefff; white-space: nowrap; }
+  .ff-gems svg { flex: none; }
+  .ff-cats { display: flex; flex-direction: column; gap: 18px; }
+  .ff-items { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; }
+  .ff-item { background: var(--rock-2); border: 3px solid var(--edge); border-radius: 4px; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+  .ff-item.on { border-color: var(--f-i); }
+  .ff-item h3 { font-family: var(--f-body); font-weight: 800; font-size: 1.05rem; }
+  .ff-item p { font-size: .9rem; color: var(--muted); }
+  .ff-item .btn { align-self: flex-start; margin-top: auto; font-size: .95rem; padding: 7px 12px; }
+  .ff-item .btn[disabled] { opacity: .45; cursor: not-allowed; }
+  .ff-sw { height: 34px; border: 3px solid var(--edge); border-radius: 4px; }
+  .ff-earn { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; font-weight: 800; }
+  .ff-earn .ff-gems { font-size: 1.3rem; }
+  .ff-lock { color: var(--muted); font-size: .85rem; }
+
 </style>
 </head>
 <body>
 <main id="app"></main>
 <div id="toast" class="toast" role="status" aria-live="assertive"></div>
 <noscript><p style="padding:16px">Sidan behöver JavaScript.</p></noscript>
-
+<script src="../konto/config.js"></script>
+<script src="../konto/konto.js"></script>
 <script>
 (() => {
   'use strict';
@@ -155,13 +215,22 @@
     ['shl', ...'<zxcvbnm,.-', 'shr'],
     ['gap', 'space', 'gap']
   ];
-  function keyboardHTML(tint) {
-    return `<div class="ff-kb${tint ? ' tint' : ''}" id="kb" aria-hidden="true">${LAYOUT.map((row) => `<div class="ff-kr">${row.map((k) => {
+  // look: { skin, frame, diaKeys:Set, name } – det inloggade kontots tangentbord
+  function keyboardHTML(tint, look) {
+    const L = look || {};
+    const dk = L.diaKeys || new Set();
+    const cls = ['ff-kb', tint ? 'tint' : '', L.skin ? 'skin-' + L.skin : '', L.frame ? 'frame-' + L.frame : ''].filter(Boolean).join(' ');
+    let n = 0;
+    const sd = () => `--sd:${((n++ * 0.37) % 3.4).toFixed(2)}s`;
+    return `<div class="${cls}" id="kb" aria-hidden="true">${LAYOUT.map((row) => `<div class="ff-kr">${row.map((k) => {
       if (SPECIAL[k]) {
         const [label, span, f] = SPECIAL[k];
-        return `<div class="ff-k fx${k === 'gap' ? ' sp0' : ''}" data-k="${k}" data-f="${f}" style="grid-column: span ${span}">${label}</div>`;
+        const dia = k !== 'gap' && (dk.has('*') || dk.has(k));
+        const lab = k === 'space' && L.name ? `<span class="kl ff-spname">${esc(L.name)}</span>` : `<span class="kl">${label}</span>`;
+        return `<div class="ff-k fx${k === 'gap' ? ' sp0' : ''}${dia ? ' dia' : ''}" data-k="${k}" data-f="${f}" style="grid-column: span ${span};${sd()}">${lab}</div>`;
       }
-      return `<div class="ff-k${k === 'f' || k === 'j' ? ' bump' : ''}" data-k="${esc(k)}" data-f="${FINGER_OF[k]}">${esc(k.toUpperCase())}</div>`;
+      const dia = dk.has('*') || dk.has(k);
+      return `<div class="ff-k${k === 'f' || k === 'j' ? ' bump' : ''}${dia ? ' dia' : ''}" data-k="${esc(k)}" data-f="${FINGER_OF[k]}" style="${sd()}"><span class="kl">${esc(k.toUpperCase())}</span></div>`;
     }).join('')}</div>`).join('')}</div>`;
   }
   const keyEl = (k) => document.querySelector(`#kb [data-k="${CSS.escape(k)}"]`);
@@ -272,14 +341,121 @@
     return s;
   }
 
-  /* ---------- sparat i webbläsaren ---------- */
+  /* ---------- sparat: på kontot (inloggad) eller i webbläsaren ---------- */
+  const K = window.CyberKonto && window.CyberKonto.online ? window.CyberKonto : null;
+  const SPEL = 'fingerfard';
   const SKEY = 'fingerfard-v1';
-  let save = { les: {}, quiz: 0, blind: false };
-  try { save = Object.assign(save, JSON.parse(localStorage.getItem(SKEY)) || {}); } catch (e) { /* */ }
-  const store = () => { try { localStorage.setItem(SKEY, JSON.stringify(save)); } catch (e) { /* */ } };
+  const DEFAULT_EQUIP = { skin: '', frame: '', fx: '', dia: [], name: false };
+  function norm(o) {
+    const v = Object.assign({ les: {}, quiz: 0, blind: false, dia: 0, owned: [], quizDay: '' }, o || {});
+    v.equip = Object.assign({}, DEFAULT_EQUIP, v.equip || {});
+    if (!Array.isArray(v.owned)) v.owned = [];
+    if (!Array.isArray(v.equip.dia)) v.equip.dia = [];
+    v.dia = Math.max(0, Number(v.dia) || 0);
+    return v;
+  }
+  function loadLocal() { try { return norm(JSON.parse(localStorage.getItem(SKEY))); } catch (e) { return norm(); } }
+  let sess = null;            // inloggad spelare { id, name, grade, token } eller null
+  let acct = null;            // { week, total, best } från servern
+  let save = loadLocal();
+  let pendingPts = 0, pendingBest = 0, saveChain = Promise.resolve(), saveT = null;
+
+  // Sparar. Inloggad: till kontot (poäng och bästa fart följer med). Utloggad: i webbläsaren.
+  function store(addPts = 0, best = 0, now = false) {
+    if (!sess) { try { localStorage.setItem(SKEY, JSON.stringify(save)); } catch (e) { /* */ } return Promise.resolve(); }
+    pendingPts += addPts; pendingBest = Math.max(pendingBest, best);
+    clearTimeout(saveT);
+    if (!addPts && !best && !now) { saveT = setTimeout(() => store(0, 0, true), 1200); return Promise.resolve(); }
+    saveChain = saveChain.then(async () => {
+      if (!sess) return;
+      const pts = pendingPts, b = Math.floor(pendingBest);
+      try {
+        const rows = await K.rpc('save_game', { p_token: sess.token, p_spel: SPEL, p_grade: sess.grade, p_state: save, p_add_points: pts, p_best: b, p_answers: [] });
+        pendingPts -= pts; if (b >= Math.floor(pendingBest)) pendingBest = 0;
+        const r = rows && rows[0]; if (r) acct = { week: r.out_week, total: r.out_total, best: r.out_best };
+      } catch (e) {
+        if (e.code === 'not_logged_in') { K.clear(); sess = null; save = loadLocal(); toast('Du har blivit utloggad. Logga in igen för att spara.', 4000); if (view === 'home') showHome(); }
+        else toast('Kunde inte spara just nu. Det sparas nästa gång.', 3000);
+      }
+    });
+    return saveChain;
+  }
+  async function useAccount(s) {
+    sess = s || null; acct = null; pendingPts = 0; pendingBest = 0;
+    if (!sess) { save = loadLocal(); return; }
+    try {
+      const rows = await K.rpc('load_game', { p_token: sess.token, p_spel: SPEL });
+      const r = rows && rows[0];
+      save = norm(r && r.r_state);
+      if (r) acct = { week: r.r_week, total: r.r_total, best: r.r_best };
+    } catch (e) {
+      if (e.code === 'not_logged_in') { K.clear(); sess = null; save = loadLocal(); }
+      else { save = norm(); toast('Kunde inte hämta ditt konto just nu.', 3000); }
+    }
+  }
   const starsOf = (i) => (save.les[i] && save.les[i].stars) || 0;
   const starStr = (n, max = 3) => '★'.repeat(n) + `<i>${'★'.repeat(max - n)}</i>`;
   const nextLesson = () => { const i = LESSONS.findIndex((_, j) => !starsOf(j)); return i < 0 ? LESSONS.length - 1 : i; };
+
+  /* ---------- Tangentverkstan: belöningar ---------- */
+  // cat: dia (diamanttangenter, flera kan användas), skin (material), frame (ram), fx (effekt), name
+  const SHOP = [
+    { id: 'dia-fj', cat: 'dia', n: 'F och J i diamant', d: 'Hemtangenterna blir glittrande diamanter.', p: 15, keys: ['f', 'j'] },
+    { id: 'dia-space', cat: 'dia', n: 'Diamantmellanslag', d: 'Mellanslaget blir en lång diamant.', p: 25, keys: ['space'] },
+    { id: 'dia-grund', cat: 'dia', n: 'Grundraden i diamant', d: 'A S D F G H J K L Ö Ä i diamant.', p: 45, keys: [...'asdfghjklöä'], req: 'dia-fj' },
+    { id: 'dia-ovre', cat: 'dia', n: 'Översta bokstavsraden i diamant', d: 'Q W E R T Y U I O P Å i diamant.', p: 60, keys: [...'qwertyuiopå'], req: 'dia-grund' },
+    { id: 'dia-nedre', cat: 'dia', n: 'Nedersta raden i diamant', d: 'Z X C V B N M och skiljetecken i diamant.', p: 60, keys: [...'<zxcvbnm,.-'], req: 'dia-grund' },
+    { id: 'dia-all', cat: 'dia', n: 'Hela tangentbordet i diamant', d: 'Varenda tangent glittrar. Det finaste som finns.', p: 200, keys: ['*'], req: 'dia-ovre' },
+    { id: 'skin-is', cat: 'skin', n: 'Is', d: 'Kalla, blanka tangenter.', p: 20, sw: 'linear-gradient(160deg,#e1f8ff,#6ec6ff)' },
+    { id: 'skin-lava', cat: 'skin', n: 'Lava', d: 'Tangenterna glöder underifrån.', p: 25, sw: 'radial-gradient(120% 80% at 50% 120%,#ff6e28,#3a0f06)' },
+    { id: 'skin-guld', cat: 'skin', n: 'Guld', d: 'Guldkantade tangenter med glans.', p: 35, sw: 'linear-gradient(160deg,#ffe8a0,#c9971f 60%,#6e4600)' },
+    { id: 'skin-neon', cat: 'skin', n: 'Neon', d: 'Mörka tangenter som lyser i fingrarnas färger.', p: 45, sw: 'linear-gradient(90deg,#ff9f8a,#ffd166,#7ccf5a,#6ec6ff,#b58cff)' },
+    { id: 'skin-regnbage', cat: 'skin', n: 'Regnbåge', d: 'Färger som sakta glider över tangenterna.', p: 70, sw: 'linear-gradient(120deg,#ff4646,#ffc828,#3cd26e,#3ca0ff,#be50ff)' },
+    { id: 'frame-tra', cat: 'frame', n: 'Träram', d: 'En varm ram av trä.', p: 15, sw: 'repeating-linear-gradient(90deg,#7a4a25 0 8px,#8d5a2e 8px 14px)' },
+    { id: 'frame-metall', cat: 'frame', n: 'Metallram', d: 'Blank, borstad metall.', p: 20, sw: 'linear-gradient(180deg,#cfd4de,#8c93a3 50%,#5d6372)' },
+    { id: 'frame-neon', cat: 'frame', n: 'Neonram', d: 'Ramen lyser lila och blått.', p: 30, sw: 'linear-gradient(90deg,#b58cff,#6ec6ff)' },
+    { id: 'frame-guld', cat: 'frame', n: 'Guldram', d: 'En ram av rent guld.', p: 50, sw: 'linear-gradient(180deg,#ffe7a0,#d9a52b 50%,#8a6210)' },
+    { id: 'fx-gnistor', cat: 'fx', n: 'Gnistor', d: 'Det sprakar när du trycker rätt.', p: 20, chars: ['•', '·', '✦'], colors: ['#ffd166', '#fff3c4', '#ff9f8a'] },
+    { id: 'fx-kristaller', cat: 'fx', n: 'Kristaller', d: 'Små kristaller i fingrets färg flyger ut.', p: 30, chars: ['◆', '♦'], colors: null },
+    { id: 'fx-stjarnor', cat: 'fx', n: 'Stjärnfall', d: 'Stjärnor regnar från tangenten.', p: 40, chars: ['★', '✦'], colors: ['#ffd166', '#ffffff', '#b58cff'] },
+    { id: 'name', cat: 'name', n: 'Ditt namn på mellanslaget', d: 'Smeknamnet syns på mellanslagstangenten.', p: 25 }
+  ];
+  const CATS = [['dia', 'Diamanttangenter', 'Köp i ordning: först F och J, sedan grundraden och vidare. Diamanterna behåller fingrets färg.'],
+    ['skin', 'Material', 'Ett material i taget. Fingerfärgerna syns kvar.'], ['frame', 'Ram', 'Ramen runt tangentbordet.'],
+    ['fx', 'Effekt', 'Visas när du trycker på rätt tangent.'], ['name', 'Mellanslaget', '']];
+  const item = (id) => SHOP.find((x) => x.id === id);
+  const owns = (id) => save.owned.includes(id);
+  function look() {
+    if (!sess) return null;
+    const e = save.equip, dk = new Set();
+    e.dia.forEach((id) => { const it = item(id); if (it && owns(id)) it.keys.forEach((k) => dk.add(k)); });
+    const on = (id) => (id && owns(id) ? id.split('-').slice(1).join('-') : '');
+    return { skin: on(e.skin), frame: on(e.frame), diaKeys: dk, name: e.name && owns('name') ? sess.name : '' };
+  }
+  function gemSVG(size = 22) {
+    const G = ['..XXXX..', '.XHLLLX.', 'XHLLLLLX', 'XLLLLLDX', '.XLLLDX.', '..XLDX..', '...XX...'];
+    const col = { X: '#0b0a10', H: '#ffffff', L: '#9fe3ff', D: '#4aa8d8' };
+    let r = '';
+    G.forEach((row, y) => [...row].forEach((ch, x) => { if (ch !== '.') r += `<rect x="${x}" y="${y}" width="1.02" height="1.02" fill="${col[ch]}"/>`; }));
+    return `<svg width="${size}" height="${size * 7 / 8}" viewBox="0 0 8 7" shape-rendering="crispEdges" aria-hidden="true">${r}</svg>`;
+  }
+  const gems = (n, size) => `<span class="ff-gems">${gemSVG(size)}${n}</span>`;
+  // effekt vid rätt tryck
+  function burst(k) {
+    if (!sess || !save.equip.fx || !owns(save.equip.fx)) return;
+    const it = item(save.equip.fx), e = keyEl(k), kb = $('kb'); if (!it || !e || !kb) return;
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const r = e.getBoundingClientRect(), b = kb.getBoundingClientRect();
+    const fc = getComputedStyle(e).getPropertyValue('--fc').trim() || '#9fe3ff';
+    for (let i = 0; i < 7; i++) {
+      const sp = document.createElement('span'); sp.className = 'ff-pt';
+      sp.textContent = pick(it.chars);
+      const a = Math.random() * Math.PI * 2, d = 22 + Math.random() * 28;
+      const fall = it.id === 'fx-stjarnor';
+      sp.style.cssText = `left:${r.left - b.left + r.width / 2}px;top:${r.top - b.top + r.height / 2}px;color:${it.colors ? pick(it.colors) : fc};--dx:${Math.cos(a) * d}px;--dy:${fall ? 20 + Math.random() * 40 : Math.sin(a) * d}px;--rot:${rnd(180)}deg;font-size:${10 + rnd(8)}px`;
+      kb.appendChild(sp); setTimeout(() => sp.remove(), 700);
+    }
+  }
 
   /* ---------- toast ---------- */
   let toastT;
@@ -290,7 +466,8 @@
 
   /* ---------- vyer ---------- */
   let view = 'home';
-  const head = (extra = '') => `<header class="ff-head"><div><p class="eyebrow">Tangentbordsträning</p><h1>Finger<span>färd</span></h1></div><div class="ff-headbtns">${extra}<a class="btn ghost" href="../">Alla spel</a></div></header>`;
+  const head = (extra = '') => `<header class="ff-head"><div><p class="eyebrow">Tangentbordsträning</p><h1>Finger<span>färd</span></h1></div><div class="ff-headbtns">${sess ? `<button class="btn ghost" data-a="shop" title="Tangentverkstan">${gems(save.dia, 18)}</button>` : ''}${extra}<a class="btn ghost" href="../">Alla spel</a></div></header>`;
+  let mode = 'login', boardKind = 'week';
   const coarse = window.matchMedia && matchMedia('(hover: none) and (pointer: coarse)').matches;
 
   function showHome() {
@@ -299,10 +476,11 @@
     $('app').innerHTML = `${head('<button class="btn ghost" data-a="help">Så spelar du</button>')}
 <p class="lead">Lär dig skriva utan att titta på tangenterna. Varje finger har sina egna tangenter, och färgerna visar vilket finger som ska trycka.</p>
 ${coarse ? '<section class="panel ff-notice"><p><b>Du behöver ett tangentbord.</b> Spelet fungerar på en dator, eller på en surfplatta med tangentbord.</p></section>' : ''}
+<section class="panel ff-acct" id="acct" aria-live="polite"></section>
 <section class="panel">
   <h2>Så sitter fingrarna</h2>
   <p class="muted">Lägg vänster hand på <b>A S D F</b> och höger hand på <b>J K L Ö</b>. Det är grundraden. Känn efter de små knopparna på F och J, så hittar du hem utan att titta. Tummarna vilar på mellanslaget.</p>
-  ${keyboardHTML(true)}
+  ${keyboardHTML(true, look())}
   ${handsHTML({})}
   ${legendHTML()}
 </section>
@@ -319,7 +497,106 @@ ${coarse ? '<section class="panel ff-notice"><p><b>Du behöver ett tangentbord.<
   <p class="muted">Ett snabbt quiz: du ser en tangent och klickar på fingret som ska trycka på den. ${save.quiz ? `Ditt bästa: <b>${save.quiz} av 10</b>.` : ''}</p>
   <button class="btn" data-a="quiz">Starta quiz</button>
 </section>
-<footer class="foot"><span class="row" style="gap:4px 16px"><a class="link small" href="foraldrar.html">För föräldrar</a><a class="link small" href="lararhandledning.pdf" target="_blank" rel="noopener">För lärare (PDF)</a></span><span class="row" style="gap:4px 16px;align-items:center"><span class="muted small">Stjärnorna sparas i den här webbläsaren.</span><button class="link small" data-a="reset">Börja om från början</button></span></footer>`;
+${K ? '<section class="panel" id="board"></section>' : ''}
+<footer class="foot"><span class="row" style="gap:4px 16px"><a class="link small" href="foraldrar.html">För föräldrar</a><a class="link small" href="lararhandledning.pdf" target="_blank" rel="noopener">För lärare (PDF)</a></span><span class="row" style="gap:4px 16px;align-items:center">${sess ? '<span class="muted small">Stjärnor och diamanter sparas på ditt konto.</span>' : '<span class="muted small">Stjärnorna sparas i den här webbläsaren.</span><button class="link small" data-a="reset">Börja om från början</button>'}</span></footer>`;
+    renderAcct(); loadBoard();
+  }
+
+  /* ---------- konto ---------- */
+  function renderAcct() {
+    const box = $('acct'); if (!box) return;
+    if (!K) { box.remove(); return; }
+    if (sess) {
+      box.innerHTML = `<p>Inloggad som <b>${esc(sess.name)}</b>. Du har ${gems(save.dia)} diamanter att pimpa ditt tangentbord med.</p>
+        <span class="row" style="gap:10px"><button class="btn" data-a="shop">Tangentverkstan</button><button class="btn ghost" data-a="logout">Logga ut</button></span>`;
+      return;
+    }
+    const isNew = mode === 'new';
+    box.innerHTML = `<p style="width:100%"><b>Logga in</b> för att komma med på topplistan och samla diamanter till ditt eget tangentbord. Samma konto som i de andra spelen.</p>
+      <form id="aform" autocomplete="${isNew ? 'off' : 'on'}">
+        <label class="fld"><span>Smeknamn</span><input id="aname" maxlength="16" required autocomplete="username"></label>
+        <label class="fld"><span>Lösenord</span><input id="apw" type="password" required minlength="4" maxlength="64" autocomplete="${isNew ? 'new-password' : 'current-password'}"></label>
+        ${isNew ? `<label class="fld" style="flex:0 1 110px"><span>Årskurs</span><select id="agrade">${[3, 4, 5, 6].map((g) => `<option value="${g}"${g === 4 ? ' selected' : ''}>åk ${g}</option>`).join('')}</select></label>` : ''}
+        <button class="btn" type="submit">${isNew ? 'Skapa konto' : 'Logga in'}</button>
+      </form>
+      <label class="check"><input type="checkbox" id="aremember"> Håll mig inloggad på den här enheten</label>
+      <p id="aerr" class="small errtxt" hidden></p>
+      <button class="link" id="aswitch" type="button">${isNew ? 'Har du redan ett konto? Logga in' : 'Ny här? Skapa ett konto'}</button>
+      ${isNew ? '<p class="muted small" style="width:100%">Välj ett påhittat smeknamn, inte ditt riktiga namn. Smeknamnet syns på topplistorna.</p>' : ''}`;
+    $('aswitch').onclick = () => { mode = isNew ? 'login' : 'new'; renderAcct(); };
+    $('aform').onsubmit = async (e) => {
+      e.preventDefault();
+      const err = $('aerr'), btn = e.target.querySelector('button'), name = $('aname').value.trim().replace(/\s+/g, ' ');
+      const remember = $('aremember').checked;
+      btn.disabled = true; err.hidden = true;
+      try {
+        let s;
+        if (isNew) {
+          const pr = K.nameProblem(name); if (pr) throw Object.assign(new Error(pr), { text: pr });
+          s = await K.register(name, $('apw').value, Number($('agrade').value), remember);
+        } else s = await K.login(name, $('apw').value, remember);
+        await useAccount(s); showHome(); toast(`Välkommen, <b>${esc(s.name)}</b>!`);
+      } catch (x) { err.textContent = x.text || K.message(x.code); err.hidden = false; btn.disabled = false; }
+    };
+  }
+
+  /* ---------- topplista ---------- */
+  async function loadBoard() {
+    const box = $('board'); if (!box || !K) return;
+    const tabs = [['week', 'Veckans poäng'], ['best', 'Snabbast (tecken/min)'], ['total', 'All-time']];
+    box.innerHTML = `<div class="ff-bar"><h2>Topplista</h2>${sess && acct ? `<span class="muted small">Du: ${acct.week} poäng i veckan</span>` : ''}</div>
+      <div class="chips">${tabs.map(([id, n]) => `<button class="chip${boardKind === id ? ' on' : ''}" data-kind="${id}">${n}</button>`).join('')}</div>
+      <div id="brows"><p class="muted">Hämtar…</p></div>
+      <p class="muted small">${boardKind === 'best' ? 'Bästa fart på en lektion med minst två stjärnor.' : 'Poäng får du för klarade lektioner. Färre fel ger mer poäng.'}${sess ? '' : ' Logga in för att vara med.'}</p>`;
+    box.querySelectorAll('[data-kind]').forEach((b) => { b.onclick = () => { boardKind = b.dataset.kind; loadBoard(); }; });
+    try {
+      const rows = await K.rpc('get_leaderboard', { p_spel: SPEL, p_kind: boardKind, p_token: (sess && sess.token) || null });
+      if (!$('brows')) return;
+      $('brows').innerHTML = rows && rows.length
+        ? `<ol class="board">${rows.map((r) => `<li class="${r.r_me ? 'me' : ''}${r.r_rank <= 3 ? ' top' + r.r_rank : ''}"><span class="b-rank">${r.r_rank}</span><span class="b-name">${esc(r.r_name)}${r.r_me ? ' <small>(du)</small>' : ''}</span><span class="b-score">${r.r_score}</span></li>`).join('')}</ol>`
+        : '<p class="muted">Ingen har kommit med på listan än. Bli först!</p>';
+    } catch (e) { if ($('brows')) $('brows').innerHTML = '<p class="muted">Kunde inte hämta topplistan just nu.</p>'; }
+  }
+
+  /* ---------- Tangentverkstan ---------- */
+  function showShop() {
+    view = 'shop'; stopPlay();
+    if (!sess) { showHome(); toast('Logga in för att samla diamanter och använda Tangentverkstan.', 3500); return; }
+    const e = save.equip;
+    const isOn = (it) => (it.cat === 'dia' ? e.dia.includes(it.id) : it.cat === 'name' ? e.name : e[it.cat] === it.id);
+    $('app').innerHTML = `${head()}
+<section class="panel">
+  <div class="ff-bar"><h2>Tangentverkstan</h2>${gems(save.dia, 24)}</div>
+  <p class="muted">Pimpa ditt tangentbord med diamanterna du tjänar. Varje klarad lektion ger en diamant per stjärna, och en ny stjärna på en lektion ger 5 extra. Alla rätt på quizet ger 3 diamanter en gång per dag.</p>
+  <div id="prev">${keyboardHTML(true, look())}</div>
+</section>
+<div class="ff-cats">${CATS.map(([cat, title, txt]) => `<section class="panel">
+  <h2>${title}</h2>${txt ? `<p class="muted small">${txt}</p>` : ''}
+  <div class="ff-items">${(cat === 'skin' || cat === 'frame' || cat === 'fx' ? [{ id: '', cat, n: cat === 'skin' ? 'Sten' : cat === 'frame' ? 'Ingen ram' : 'Ingen effekt', d: 'Som från början.', p: 0, sw: cat === 'skin' ? 'linear-gradient(160deg,#3a3449,#221f2c)' : 'var(--well)' }] : []).concat(SHOP.filter((x) => x.cat === cat)).map((it) => {
+    const own = !it.id || owns(it.id), on = it.id ? isOn(it) : !e[cat];
+    const locked = it.req && !owns(it.req);
+    let btn;
+    if (own) btn = it.cat === 'dia' || it.cat === 'name' ? `<button class="btn${on ? ' ghost' : ''}" data-a="equip" data-id="${it.id}">${on ? 'Ta av' : 'Använd'}</button>` : (on ? '<button class="btn ghost" disabled>Används</button>' : `<button class="btn" data-a="equip" data-cat="${cat}" data-id="${it.id}">Använd</button>`);
+    else if (locked) btn = `<span class="ff-lock">Köp först: ${esc(item(it.req).n)}</span>`;
+    else btn = `<button class="btn" data-a="buy" data-id="${it.id}" ${save.dia < it.p ? 'disabled' : ''}>Köp ${gemSVG(16)} ${it.p}</button>`;
+    return `<div class="ff-item${on && own ? ' on' : ''}">${it.sw ? `<div class="ff-sw" style="background:${it.sw}"></div>` : ''}<h3>${esc(it.n)}</h3><p>${esc(it.d)}</p>${btn}</div>`;
+  }).join('')}</div>
+</section>`).join('')}</div>
+<div class="ff-acts"><button class="btn ghost" data-a="home">Tillbaka till lektionerna</button></div>`;
+  }
+  function buy(id) {
+    const it = item(id); if (!it || owns(id) || save.dia < it.p || (it.req && !owns(it.req))) return;
+    save.dia -= it.p; save.owned.push(id);
+    equip(it.cat, id, true);
+    toast(`Du köpte <b>${esc(it.n)}</b>!`);
+  }
+  function equip(cat, id, quiet) {
+    const it = item(id), e = save.equip;
+    if (it && it.cat === 'dia') { e.dia = e.dia.includes(id) ? e.dia.filter((x) => x !== id) : e.dia.concat(id); }
+    else if (it && it.cat === 'name') e.name = !e.name;
+    else e[cat] = id || '';
+    store(); const y = window.scrollY; showShop(); window.scrollTo(0, y);
+    if (!quiet) toast('Sparat.', 1200);
   }
 
   function helpPanel() {
@@ -356,7 +633,7 @@ ${coarse ? '<section class="panel ff-notice"><p><b>Du behöver ett tangentbord.<
     <div class="ff-start" id="start"><div>Lägg fingrarna på grundraden: <b>A S D F</b> och <b>J K L Ö</b>.<br>Tryck på <b>mellanslag</b> med tummen för att börja.</div></div>
   </div>
   <div class="ff-hint" id="hint"></div>
-  <div id="kbwrap">${save.blind ? '<p class="ff-blindmsg">Tangentbordet är dolt. Lita på fingrarna!</p>' : keyboardHTML(true) + handsHTML({ focus: true })}</div>
+  <div id="kbwrap">${save.blind ? '<p class="ff-blindmsg">Tangentbordet är dolt. Lita på fingrarna!</p>' : keyboardHTML(true, look()) + handsHTML({ focus: true })}</div>
   <div class="ff-tools">
     <label><input type="checkbox" id="blind" ${save.blind ? 'checked' : ''}> Dölj tangentbordet</label>
     <span class="row" style="gap:8px"><button class="btn ghost" data-a="restart">Ny text</button><button class="btn ghost" data-a="home">Avbryt</button></span>
@@ -364,7 +641,7 @@ ${coarse ? '<section class="panel ff-notice"><p><b>Du behöver ett tangentbord.<
 </section>`;
     $('blind').addEventListener('change', (e) => {
       save.blind = e.target.checked; store();
-      $('kbwrap').innerHTML = save.blind ? '<p class="ff-blindmsg">Tangentbordet är dolt. Lita på fingrarna!</p>' : keyboardHTML(true) + handsHTML({ focus: true });
+      $('kbwrap').innerHTML = save.blind ? '<p class="ff-blindmsg">Tangentbordet är dolt. Lita på fingrarna!</p>' : keyboardHTML(true, look()) + handsHTML({ focus: true });
       e.target.blur(); paint();
     });
     paint();
@@ -431,7 +708,7 @@ ${coarse ? '<section class="panel ff-notice"><p><b>Du behöver ett tangentbord.<
     const want = P.text[P.pos];
     const pressed = e.key === ' ' ? 'space' : e.key.toLowerCase();
     if (e.key === want) {
-      flashKey(pressed, 'hit');
+      flashKey(pressed, 'hit'); burst(pressed);
       const c = $('c' + P.pos); c.classList.add(P.missAt.has(P.pos) ? 'miss' : 'done');
       P.pos++;
       if (P.pos >= P.text.length) return finish();
@@ -454,7 +731,12 @@ ${coarse ? '<section class="panel ff-notice"><p><b>Du behöver ett tangentbord.<
     const prev = save.les[P.li] || { stars: 0, cpm: 0, acc: 0 };
     const rec = cpm > prev.cpm && stars > 0;
     save.les[P.li] = { stars: Math.max(prev.stars, stars), cpm: stars ? Math.max(prev.cpm, cpm) : prev.cpm, acc: Math.max(prev.acc, acc) };
-    store();
+    // belöning (bara inloggad): en diamant per stjärna, 5 extra per ny stjärna på lektionen
+    const newStars = Math.max(0, stars - prev.stars);
+    const gemsWon = sess ? stars + 5 * newStars : 0;
+    const pts = sess ? Math.round(P.text.length * (0.25 + 0.25 * stars)) : 0;
+    save.dia += gemsWon;
+    store(pts, stars >= 2 && cpm <= 1200 ? cpm : 0); // över 1200 tecken/min är inte rimligt för ett barn
     const weak = Object.entries(P.keyErr).sort((a, b) => b[1] - a[1]).slice(0, 3);
     const li = P.li;
     view = 'result';
@@ -469,12 +751,14 @@ ${coarse ? '<section class="panel ff-notice"><p><b>Du behöver ett tangentbord.<
     <div><b>${cpm}</b><span>Tecken/min</span></div>
     <div><b>${P.errors}</b><span>Fel</span></div>
   </div>
+  ${sess ? `<div class="ff-earn"><span>+${pts} poäng</span>${gemsWon ? `<span>+${gems(gemsWon)}${newStars ? ` <span class="small muted">(varav ${5 * newStars} för ${newStars === 1 ? 'ny stjärna' : 'nya stjärnor'})</span>` : ''}</span>` : ''}</div>` : (K ? '<p class="muted small">Logga in för att få poäng på topplistan och diamanter till ditt tangentbord.</p>' : '')}
   ${rec && prev.cpm ? '<p><b>Nytt fartrekord</b> på den här lektionen!</p>' : ''}
   ${weak.length ? `<div style="text-align:left"><h3>Öva lite extra på</h3><ul class="ff-weak">${weak.map(([k, n]) => `<li><span class="ff-cap" style="background:${COLOR[fingerOf(k)[1]]}">${k === ' ' ? '␣' : esc(k.toUpperCase())}</span> ${k === ' ' ? 'mellanslag med tummen' : FINGERS[fingerOf(k)]} <span class="muted small">(${n} fel)</span></li>`).join('')}</ul></div>` : ''}
   <div class="ff-acts" style="justify-content:center">
     <button class="btn" data-a="again">Igen</button>
     ${stars && li < LESSONS.length - 1 ? `<button class="btn" data-a="next">Nästa lektion</button>` : ''}
     <button class="btn ghost" data-a="home">Alla lektioner</button>
+    ${sess ? '<button class="btn ghost" data-a="shop">Tangentverkstan</button>' : ''}
   </div>
   <p class="muted small">Tryck <b>Enter</b> för att köra igen.</p>
 </section>`;
@@ -530,12 +814,17 @@ ${coarse ? '<section class="panel ff-notice"><p><b>Du behöver ett tangentbord.<
   }
   function nextQ() {
     if (Q.i < 9) { Q.i++; showQ(); return; }
-    const best = Q.ok > (save.quiz || 0); if (best) { save.quiz = Q.ok; store(); }
+    const best = Q.ok > (save.quiz || 0); if (best) save.quiz = Q.ok;
+    const today = new Date().toISOString().slice(0, 10);
+    const qGems = sess && Q.ok === 10 && save.quizDay !== today ? 3 : 0;
+    if (qGems) { save.dia += qGems; save.quizDay = today; }
+    if (best || qGems) store();
     view = 'quizdone';
     $('app').innerHTML = `${head()}
 <section class="panel ff-center">
   <h2>${Q.ok} av 10 rätt</h2>
   <p>${Q.ok === 10 ? 'Du kan fingrarna utantill!' : Q.ok >= 7 ? 'Bra! Snart kan du alla.' : 'Titta på fingerkartan och försök igen.'}${best && Q.ok ? ' <b>Nytt rekord!</b>' : ''}</p>
+  ${qGems ? `<div class="ff-earn"><span>+${gems(qGems)}</span></div>` : ''}
   <div class="ff-acts" style="justify-content:center"><button class="btn" data-a="quiz">Igen</button><button class="btn ghost" data-a="home">Till lektionerna</button></div>
 </section>`;
   }
@@ -549,11 +838,15 @@ ${coarse ? '<section class="panel ff-notice"><p><b>Du behöver ett tangentbord.<
     if (a === 'home') showHome();
     else if (a === 'help') helpPanel();
     else if (a === 'quiz') startQuiz();
+    else if (a === 'shop') showShop();
+    else if (a === 'buy') buy(b.dataset.id);
+    else if (a === 'equip') equip(b.dataset.cat, b.dataset.id);
+    else if (a === 'logout') { (async () => { await saveChain; clearTimeout(saveT); if (sess) { await store(0, 0, true); } await K.logout(); await useAccount(null); showHome(); toast('Du är utloggad.'); })(); }
     else if (a === 'restart') startLesson(P.li);
     else if (a === 'again') startLesson(P.li);
     else if (a === 'next') startLesson(P.li + 1);
     else if (a === 'reset') {
-      if (b.dataset.sure) { save = { les: {}, quiz: 0, blind: save.blind }; store(); showHome(); toast('Allt är nollställt.'); }
+      if (b.dataset.sure) { save = norm({ blind: save.blind }); store(); showHome(); toast('Allt är nollställt.'); }
       else { b.dataset.sure = '1'; b.textContent = 'Säker? Klicka igen för att nollställa'; }
     }
   });
@@ -569,6 +862,13 @@ ${coarse ? '<section class="panel ff-notice"><p><b>Du behöver ett tangentbord.<
   });
 
   showHome();
+  (async () => {
+    if (!K || !K.session()) return;
+    const s = await K.info();
+    await useAccount(s);
+    if (view === 'home') showHome();
+  })();
+  window.addEventListener('pagehide', () => { if (sess && saveT) { clearTimeout(saveT); store(0, 0, true); } });
 })();
 </script>
 <!-- Default Statcounter code for Fingerfärd

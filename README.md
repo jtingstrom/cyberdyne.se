@@ -8,7 +8,7 @@ Gratis lärospel för mellanstadiet på **https://www.cyberdyne.se**. Allt ligge
 |---|---|---|---|---|---|
 | Kristallgruvan | www.cyberdyne.se/kristallgruvan/ | `kristallgruvan/` | `kristallgruvan` | ja | i drift |
 | Kodknäckaren | www.cyberdyne.se/kodknackaren/ | `kodknackaren/` | – (ingen inloggning, statistik sparas i webbläsaren) | nej | i drift |
-| Fingerfärd | www.cyberdyne.se/fingerfard/ | `fingerfard/` | – (ingen inloggning, stjärnor sparas i webbläsaren) | nej | test, inte på startsidan |
+| Fingerfärd | www.cyberdyne.se/fingerfard/ | `fingerfard/` | `fingerfard` (inloggning frivillig; utloggad sparas stjärnor i webbläsaren) | ja | test, inte på startsidan |
 
 | Del | Var | Kommentar |
 |---|---|---|
@@ -119,6 +119,7 @@ GitHub Pages: repo-inställningar → **Pages** → Custom domain `www.cyberdyne
 
 | Datum | Ändring |
 |---|---|
+| 2026-11-02 | Fingerfärd: frivillig inloggning, topplista (vecka, snabbast, all-time) och diamanter till Tangentverkstan. Poäng = tecken × (0,25 + 0,25 × stjärnor); bästa fart (minst två stjärnor) sparas som `best`. |
 | 2026-10-30 | Fingerfärd: lärarhandledning (PDF) och föräldrasida, länkade från spelets startsida. |
 | 2026-10-30 | Fingerfärd borttaget från startsidan under test (nås via direktlänk, `noindex`). Lägg tillbaka blocket i `spel.json` när det är klart, med `"lankar"` till `fingerfard/lararhandledning.pdf` och `fingerfard/foraldrar.html`. |
 | 2026-10-30 | Nytt spel: Fingerfärd (tangentbordsträning med fingersättning) i `fingerfard/`. |
