@@ -423,7 +423,7 @@ ${K ? '<section class="panel mk-acct" id="acct" aria-live="polite"></section>' :
 </section>
 ${save.bestStreak ? `<section class="panel"><p>Felfri svit just nu: <b>${save.streak}</b> · Din bästa: <b>${save.bestStreak}</b></p></section>` : ''}
 ${K ? '<section class="panel" id="board"></section>' : ''}
-<footer class="foot"><span class="muted small">${sess ? 'Mynt och resultat sparas på ditt konto.' : 'Resultaten sparas i den här webbläsaren.'}</span>${sess ? '' : '<button class="link small" data-a="reset">Börja om från början</button>'}</footer>`;
+<footer class="foot"><span class="row" style="gap:4px 16px"><a class="link small" href="foraldrar.html">För föräldrar</a><a class="link small" href="lararhandledning.pdf" target="_blank" rel="noopener">För lärare (PDF)</a></span><span class="row" style="gap:4px 16px;align-items:center"><span class="muted small">${sess ? 'Mynt och resultat sparas på ditt konto.' : 'Resultaten sparas i den här webbläsaren.'}</span>${sess ? '' : '<button class="link small" data-a="reset">Börja om från början</button>'}</span></footer>`;
     renderAcct(); loadBoard();
   }
 
@@ -432,11 +432,11 @@ ${K ? '<section class="panel" id="board"></section>' : ''}
 <section class="panel">
   <h2>Så spelar du</h2>
   <div class="mk-center"><div class="mk-example" aria-hidden="true">
-    <span class="n">4</span><span class="o">+</span><span class="b">5</span><span class="o">=</span><span class="n">9</span>
+    <span class="n">2</span><span class="o">+</span><span class="b">5</span><span class="o">=</span><span class="n">7</span>
     <span class="o">×</span><span></span><span class="o">+</span><span></span><span class="o">+</span>
     <span class="n">2</span><span class="o">+</span><span class="b">1</span><span class="o">=</span><span class="b">3</span>
     <span class="o">=</span><span></span><span class="o">=</span><span></span><span class="o">=</span>
-    <span class="b">8</span><span class="o">+</span><span class="n">6</span><span class="o">=</span><span class="n">14</span>
+    <span class="b">4</span><span class="o">+</span><span class="n">6</span><span class="o">=</span><span class="n">10</span>
   </div></div>
   <ol class="mk-rules">
     <li><b>Varje rad och varje kolumn är en uträkning.</b> Läs raderna från vänster till höger och kolumnerna uppifrån och ned.</li>

@@ -43,6 +43,8 @@ Gratis lärospel för mellanstadiet på **https://www.cyberdyne.se**. Allt ligge
 │   ├── foraldrar.html information till föräldrar
 │   └── lararhandledning.pdf  lärarhandledning (exporterad från dokumentet "Fingerfärd – information till lärare")
 ├── talvaven/          Talväven, räknepussel där uträkningar korsar varandra (en fil, ändras direkt, använder ../stil.css)
+│   ├── foraldrar.html information till föräldrar
+│   └── lararhandledning.pdf  lärarhandledning (exporterad från dokumentet "Talväven – information till lärare")
 ├── databas/           SQL för Supabase
 └── .github/workflows/ pulsjobbet
 ```
@@ -125,6 +127,7 @@ GitHub Pages: repo-inställningar → **Pages** → Custom domain `www.cyberdyne
 
 | Datum | Ändring |
 |---|---|
+| 2026-11-04 | Talväven: lärarhandledning (PDF) och föräldrasida, länkade från spelets startsida. Exemplet i "Så spelar du" rättat så att alla uträkningar stämmer. |
 | 2026-11-04 | Mattekorsord bytte namn till Talväven (`talvaven/`, spelnamn `talvaven`, butiken heter Vävstugan). Namnet Mattekorsord används för ett nytt, traditionellt korsord. |
 | 2026-11-04 | Nytt spel: Mattekorsord i `mattekorsord/` (räknekorsord i tre nivåer, dagens korsord, topplista, mynt och Korsordsverkstan). Poäng 30/60/120 per korsord minus 10 % per fel och 20 % per ledtråd. `best` = längsta felfria svit. Dolt från startsidan under test. |
 | 2026-11-02 | Gemensam besöksstatistik i `statistik.js` i stället för inklistrad Statcounter-kod på varje sida. |
