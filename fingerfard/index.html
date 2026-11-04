@@ -475,6 +475,7 @@
     const nx = nextLesson();
     $('app').innerHTML = `${head('<button class="btn ghost" data-a="help">Så spelar du</button>')}
 <p class="lead">Lär dig skriva utan att titta på tangenterna. Varje finger har sina egna tangenter, och färgerna visar vilket finger som ska trycka.</p>
+<p class="row" style="gap:8px 10px"><a class="btn ghost" style="font-size:.95rem;padding:7px 12px" href="lararhandledning.pdf" target="_blank" rel="noopener">För lärare (PDF)</a><a class="btn ghost" style="font-size:.95rem;padding:7px 12px" href="foraldrar.html">För föräldrar</a></p>
 ${coarse ? '<section class="panel ff-notice"><p><b>Du behöver ett tangentbord.</b> Spelet fungerar på en dator, eller på en surfplatta med tangentbord.</p></section>' : ''}
 <section class="panel ff-acct" id="acct" aria-live="polite"></section>
 <section class="panel">
