@@ -10,6 +10,7 @@ Gratis lärospel för mellanstadiet på **https://www.cyberdyne.se**. Allt ligge
 | Kodknäckaren | www.cyberdyne.se/kodknackaren/ | `kodknackaren/` | – (ingen inloggning, statistik sparas i webbläsaren) | nej | i drift |
 | Fingerfärd | www.cyberdyne.se/fingerfard/ | `fingerfard/` | `fingerfard` (inloggning frivillig; utloggad sparas stjärnor i webbläsaren) | ja | test, inte på startsidan |
 | Talväven | www.cyberdyne.se/talvaven/ | `talvaven/` | `talvaven` (inloggning frivillig; utloggad sparas resultat i webbläsaren) | ja | test, inte på startsidan |
+| Mattekorsord | www.cyberdyne.se/mattekorsord/ | `mattekorsord/` | `mattekorsord` (inloggning frivillig; utloggad sparas resultat i webbläsaren) | ja | test, inte på startsidan |
 
 | Del | Var | Kommentar |
 |---|---|---|
@@ -45,6 +46,7 @@ Gratis lärospel för mellanstadiet på **https://www.cyberdyne.se**. Allt ligge
 ├── talvaven/          Talväven, räknepussel där uträkningar korsar varandra (en fil, ändras direkt, använder ../stil.css)
 │   ├── foraldrar.html information till föräldrar
 │   └── lararhandledning.pdf  lärarhandledning (exporterad från dokumentet "Talväven – information till lärare")
+├── mattekorsord/      Mattekorsord, korsord där ledtrådarna är uträkningar (en fil, ändras direkt, använder ../stil.css)
 ├── databas/           SQL för Supabase
 └── .github/workflows/ pulsjobbet
 ```
@@ -127,6 +129,7 @@ GitHub Pages: repo-inställningar → **Pages** → Custom domain `www.cyberdyne
 
 | Datum | Ändring |
 |---|---|
+| 2026-11-04 | Nytt spel: Mattekorsord i `mattekorsord/`, ett traditionellt korsord där ledtrådarna är uträkningar och enkla frågor. Tre nivåer (5×5, 6×6, 7×7), dagens korsord, topplista, mynt och Korsordsverkstan. Poäng 40/80/150 minus 5 % per fel siffra och 15 % per visad siffra. Dolt från startsidan under test. |
 | 2026-11-04 | Talväven: lärarhandledning (PDF) och föräldrasida, länkade från spelets startsida. Exemplet i "Så spelar du" rättat så att alla uträkningar stämmer. |
 | 2026-11-04 | Mattekorsord bytte namn till Talväven (`talvaven/`, spelnamn `talvaven`, butiken heter Vävstugan). Namnet Mattekorsord används för ett nytt, traditionellt korsord. |
 | 2026-11-04 | Nytt spel: Mattekorsord i `mattekorsord/` (räknekorsord i tre nivåer, dagens korsord, topplista, mynt och Korsordsverkstan). Poäng 30/60/120 per korsord minus 10 % per fel och 20 % per ledtråd. `best` = längsta felfria svit. Dolt från startsidan under test. |
