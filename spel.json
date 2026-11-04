@@ -32,6 +32,69 @@
     "status": "klar"
   },
   {
+    "id": "fingerfard",
+    "namn": "Fingerfärd",
+    "beskrivning": "Lär dig skriva på tangentbordet med rätt finger på rätt tangent. Samla diamanter och pimpa ditt tangentbord.",
+    "adress": "fingerfard/",
+    "amne": "Tangentbord",
+    "arskurs": "åk 3–6",
+    "farg": "#6ec6ff",
+    "topplista": true,
+    "status": "klar",
+    "lankar": [
+      {
+        "text": "För lärare",
+        "adress": "fingerfard/lararhandledning.pdf"
+      },
+      {
+        "text": "För föräldrar",
+        "adress": "fingerfard/foraldrar.html"
+      }
+    ]
+  },
+  {
+    "id": "talvaven",
+    "namn": "Talväven",
+    "beskrivning": "Uträkningar som korsar varandra vågrätt och lodrätt. Fyll i talen som fattas så att allt går ihop.",
+    "adress": "talvaven/",
+    "amne": "Matte",
+    "arskurs": "åk 3–6",
+    "farg": "#7ccf5a",
+    "topplista": true,
+    "status": "klar",
+    "lankar": [
+      {
+        "text": "För lärare",
+        "adress": "talvaven/lararhandledning.pdf"
+      },
+      {
+        "text": "För föräldrar",
+        "adress": "talvaven/foraldrar.html"
+      }
+    ]
+  },
+  {
+    "id": "mattekorsord",
+    "namn": "Mattekorsord",
+    "beskrivning": "Ett riktigt korsord där ledtrådarna är uträkningar och enkla frågor, och svaren är tal.",
+    "adress": "mattekorsord/",
+    "amne": "Matte",
+    "arskurs": "åk 3–6",
+    "farg": "#ffd166",
+    "topplista": true,
+    "status": "klar",
+    "lankar": [
+      {
+        "text": "För lärare",
+        "adress": "mattekorsord/lararhandledning.pdf"
+      },
+      {
+        "text": "För föräldrar",
+        "adress": "mattekorsord/foraldrar.html"
+      }
+    ]
+  },
+  {
     "id": "nasta-spel",
     "namn": "Nästa spel",
     "beskrivning": "Ett nytt spel är på gång.",

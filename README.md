@@ -8,9 +8,9 @@ Gratis lärospel för mellanstadiet på **https://www.cyberdyne.se**. Allt ligge
 |---|---|---|---|---|---|
 | Kristallgruvan | www.cyberdyne.se/kristallgruvan/ | `kristallgruvan/` | `kristallgruvan` | ja | i drift |
 | Kodknäckaren | www.cyberdyne.se/kodknackaren/ | `kodknackaren/` | – (ingen inloggning, statistik sparas i webbläsaren) | nej | i drift |
-| Fingerfärd | www.cyberdyne.se/fingerfard/ | `fingerfard/` | `fingerfard` (inloggning frivillig; utloggad sparas stjärnor i webbläsaren) | ja | test, inte på startsidan |
-| Talväven | www.cyberdyne.se/talvaven/ | `talvaven/` | `talvaven` (inloggning frivillig; utloggad sparas resultat i webbläsaren) | ja | test, inte på startsidan |
-| Mattekorsord | www.cyberdyne.se/mattekorsord/ | `mattekorsord/` | `mattekorsord` (inloggning frivillig; utloggad sparas resultat i webbläsaren) | ja | test, inte på startsidan |
+| Fingerfärd | www.cyberdyne.se/fingerfard/ | `fingerfard/` | `fingerfard` (inloggning frivillig; utloggad sparas stjärnor i webbläsaren) | ja | i drift |
+| Talväven | www.cyberdyne.se/talvaven/ | `talvaven/` | `talvaven` (inloggning frivillig; utloggad sparas resultat i webbläsaren) | ja | i drift |
+| Mattekorsord | www.cyberdyne.se/mattekorsord/ | `mattekorsord/` | `mattekorsord` (inloggning frivillig; utloggad sparas resultat i webbläsaren) | ja | i drift |
 
 | Del | Var | Kommentar |
 |---|---|---|
@@ -131,6 +131,7 @@ GitHub Pages: repo-inställningar → **Pages** → Custom domain `www.cyberdyne
 
 | Datum | Ändring |
 |---|---|
+| 2026-11-04 | Fingerfärd, Talväven och Mattekorsord ligger på startsidan med länkar till lärar- och föräldrainfo. `noindex` borttaget. |
 | 2026-11-04 | Mattekorsord: lärarhandledning (PDF) och föräldrasida. Talväven, Fingerfärd och Mattekorsord har knappar till dem direkt under introtexten. |
 | 2026-11-04 | Nytt spel: Mattekorsord i `mattekorsord/`, ett traditionellt korsord där ledtrådarna är uträkningar och enkla frågor. Tre nivåer (5×5, 6×6, 7×7), dagens korsord, topplista, mynt och Korsordsverkstan. Poäng 40/80/150 minus 5 % per fel siffra och 15 % per visad siffra. Dolt från startsidan under test. |
 | 2026-11-04 | Talväven: lärarhandledning (PDF) och föräldrasida, länkade från spelets startsida. Exemplet i "Så spelar du" rättat så att alla uträkningar stämmer. |
