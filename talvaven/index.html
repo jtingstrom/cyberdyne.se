@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Mattekorsord</title>
+<title>Talväven</title>
 <meta name="robots" content="noindex">
-<meta name="description" content="Räknekorsord för mellanstadiet: fyll i talen så att alla uppställningar går ihop, vågrätt och lodrätt.">
+<meta name="description" content="Mattepussel för mellanstadiet: fyll i talen så att alla uträkningar går ihop, vågrätt och lodrätt.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 7' shape-rendering='crispEdges'%3E%3Cpath fill='%230b0a10' d='M2 0h4v1h1v1h1v2H7v1H6v1H5v1H3V6H2V5H1V4H0V2h1V1h1z'/%3E%3Cpath fill='%237ccf5a' d='M2 1h4v1h1v2H6v1H5v1H3V5H2V4H1V2h1z'/%3E%3Cpath fill='%23fff' d='M2 1h1v1H2zM1 2h1v1H1z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Nunito:wght@500;700;800&display=swap">
 <link rel="stylesheet" href="../stil.css">
 <style>
-  /* Mattekorsord: egna delar har prefix mk- så inget krockar med stil.css */
+  /* Talväven: egna delar har prefix mk- så inget krockar med stil.css */
   #app { max-width: 820px; }
   .mk-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
   .mk-head h1 { font-size: clamp(2rem, 7vw, 2.8rem); }
@@ -150,10 +150,10 @@
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const pick = (a) => a[Math.floor(Math.random() * a.length)];
 
-  /* ---------- korsordsgenerator ----------
+  /* ---------- talvävsgenerator ----------
      Rutnätet har k×k inre tal. Varje rad och kolumn är en uppställning (tal op tal … = svar).
      Raden längst ned räknar på kolumnernas svar, kolumnen längst till höger på radernas svar,
-     och båda måste ge samma tal i hörnet. Dolda rutor väljs så att korsordet går att lösa
+     och båda måste ge samma tal i hörnet. Dolda rutor väljs så att talväven går att lösa
      en uppställning i taget, så lösningen är entydig. */
   const LEVELS = {
     latt:  { id: 'latt',  n: 'Lätt',  k: 2, ops: ['+', '−'], nmin: 1, nmax: 10, rmax: 20, mulmax: 0, hide: [4, 4], pts: 30, mynt: 2,
@@ -302,8 +302,8 @@
 
   /* ---------- sparat: på kontot (inloggad) eller i webbläsaren ---------- */
   const K = window.CyberKonto && window.CyberKonto.online ? window.CyberKonto : null;
-  const SPEL = 'mattekorsord';
-  const SKEY = 'mattekorsord-v1';
+  const SPEL = 'talvaven';
+  const SKEY = 'talvaven-v1';
   const DEFAULT_EQUIP = { tema: '', penna: '', ram: '', fest: '' };
   function norm(o) {
     const v = Object.assign({ solved: {}, streak: 0, bestStreak: 0, mynt: 0, owned: [], daily: { d: '', l: [] } }, o || {});
@@ -351,12 +351,12 @@
     }
   }
 
-  /* ---------- Korsordsverkstan ---------- */
+  /* ---------- Vävstugan ---------- */
   const SHOP = [
     { id: 'tema-rutor', cat: 'tema', n: 'Rutat papper', d: 'Som i mattehäftet, med blå penna.', p: 15, sw: '#f6f3ea', fg: '#22304e' },
     { id: 'tema-tavla', cat: 'tema', n: 'Svarta tavlan', d: 'Grön tavla och vit krita.', p: 20, sw: '#1f3b2d', fg: '#f5f3ea' },
     { id: 'tema-ritning', cat: 'tema', n: 'Ritning', d: 'Blått ritpapper som en uppfinnare har.', p: 30, sw: '#133f6c', fg: '#eaf4ff' },
-    { id: 'tema-rymd', cat: 'tema', n: 'Rymden', d: 'Korsord bland stjärnorna.', p: 45, sw: 'radial-gradient(120% 120% at 30% 10%,#2a1d52,#07060f 70%)', fg: '#b58cff' },
+    { id: 'tema-rymd', cat: 'tema', n: 'Rymden', d: 'Talväven bland stjärnorna.', p: 45, sw: 'radial-gradient(120% 120% at 30% 10%,#2a1d52,#07060f 70%)', fg: '#b58cff' },
     { id: 'tema-guld', cat: 'tema', n: 'Guld', d: 'Alla tal i rent guld.', p: 70, sw: 'linear-gradient(160deg,#ffe8a0,#d9a52b 55%,#8a6210)', fg: '#2a1f04' },
     { id: 'penna-bla', cat: 'penna', n: 'Blå penna', d: 'Talen du skriver blir blå.', p: 10, sw: 'var(--well)', fg: '#6ec6ff' },
     { id: 'penna-gron', cat: 'penna', n: 'Grön penna', d: 'Talen du skriver blir gröna.', p: 10, sw: 'var(--well)', fg: '#9be07a' },
@@ -368,12 +368,12 @@
     { id: 'ram-metall', cat: 'ram', n: 'Metallram', d: 'Blank, borstad metall.', p: 20, sw: 'linear-gradient(180deg,#cfd4de,#8c93a3 50%,#5d6372)' },
     { id: 'ram-neon', cat: 'ram', n: 'Neonram', d: 'Ramen lyser grönt och blått.', p: 30, sw: 'linear-gradient(90deg,#7ccf5a,#6ec6ff)' },
     { id: 'ram-guld', cat: 'ram', n: 'Guldram', d: 'En ram av rent guld.', p: 50, sw: 'linear-gradient(180deg,#ffe7a0,#d9a52b 50%,#8a6210)' },
-    { id: 'fest-konfetti', cat: 'fest', n: 'Konfetti', d: 'Konfetti regnar när korsordet är löst.', p: 20 },
+    { id: 'fest-konfetti', cat: 'fest', n: 'Konfetti', d: 'Konfetti regnar när talväven är löst.', p: 20 },
     { id: 'fest-ballonger', cat: 'fest', n: 'Ballonger', d: 'Ballonger stiger upp när du är klar.', p: 30 },
-    { id: 'fest-kristaller', cat: 'fest', n: 'Kristallregn', d: 'Kristaller faller över korsordet.', p: 35 },
+    { id: 'fest-kristaller', cat: 'fest', n: 'Kristallregn', d: 'Kristaller faller över talväven.', p: 35 },
     { id: 'fest-fyrverkeri', cat: 'fest', n: 'Fyrverkeri', d: 'Fyrverkerier smäller över rutnätet.', p: 50 }
   ];
-  const CATS = [['tema', 'Tema', 'Hur rutnätet ser ut.'], ['penna', 'Penna', 'Färgen på talen du skriver.'], ['ram', 'Ram', 'Ramen runt korsordet.'], ['fest', 'Firande', 'Visas när korsordet är löst.']];
+  const CATS = [['tema', 'Tema', 'Hur rutnätet ser ut.'], ['penna', 'Penna', 'Färgen på talen du skriver.'], ['ram', 'Ram', 'Ramen runt talväven.'], ['fest', 'Firande', 'Visas när talväven är löst.']];
   const DEFAULTS = { tema: ['Grottan', 'Som från början.', 'var(--well)'], penna: ['Guldkrita', 'Som från början.', 'var(--well)'], ram: ['Ingen ram', 'Som från början.', 'var(--well)'], fest: ['Inget firande', 'Bara ett grattis.', 'var(--well)'] };
   const item = (id) => SHOP.find((x) => x.id === id);
   const owns = (id) => save.owned.includes(id);
@@ -398,7 +398,7 @@
     clearTimeout(toastT); toastT = setTimeout(() => { t.className = 'toast'; }, ms);
   }
 
-  const head = (extra = '') => `<header class="mk-head"><div><p class="eyebrow">Räknekorsord</p><h1>Matte<span>korsord</span></h1></div><div class="mk-headbtns">${sess ? `<button class="btn ghost" data-a="shop" title="Korsordsverkstan">${coins(save.mynt, 18)}</button>` : ''}${extra}<a class="btn ghost" href="../">Alla spel</a></div></header>`;
+  const head = (extra = '') => `<header class="mk-head"><div><p class="eyebrow">Räknepussel</p><h1>Tal<span>väven</span></h1></div><div class="mk-headbtns">${sess ? `<button class="btn ghost" data-a="shop" title="Vävstugan">${coins(save.mynt, 18)}</button>` : ''}${extra}<a class="btn ghost" href="../">Alla spel</a></div></header>`;
   const today = () => new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Stockholm' });
   const dailyDone = (lv) => save.daily.d === today() && save.daily.l.includes(lv);
 
@@ -413,12 +413,12 @@ ${K ? '<section class="panel mk-acct" id="acct" aria-live="polite"></section>' :
   <div class="mk-levels">${Object.values(LEVELS).map((L) => `<button class="mk-lv" data-lv="${L.id}">
     <h3>${L.n}</h3><span class="mk-mini">${L.id === 'latt' ? '4 + ? = 9' : L.id === 'medel' ? '6 × ? = 42' : '3 + 4 × ? = 23'}</span>
     <p>${esc(L.d)}</p>
-    <span class="muted small">${save.solved[L.id] ? `Du har löst ${save.solved[L.id]} korsord` : 'Inte löst något än'}</span>
+    <span class="muted small">${save.solved[L.id] ? `Du har löst ${save.solved[L.id]} ${save.solved[L.id] === 1 ? 'talväv' : 'talvävar'}` : 'Inte löst någon än'}</span>
   </button>`).join('')}</div>
 </section>
 <section class="panel">
-  <h2>Dagens korsord</h2>
-  <p class="muted">Samma korsord för alla i dag. Ett nytt varje dag.${sess ? ' Varje nivå ger 5 extra mynt en gång per dag.' : ''}</p>
+  <h2>Dagens talväv</h2>
+  <p class="muted">Samma talväv för alla i dag. Ett nytt varje dag.${sess ? ' Varje nivå ger 5 extra mynt en gång per dag.' : ''}</p>
   <div class="mk-daily">${Object.values(LEVELS).map((L) => `<button class="btn${dailyDone(L.id) ? ' ghost' : ''}" data-daily="${L.id}">${L.n}${dailyDone(L.id) ? ' ✓' : ''}</button>`).join('')}</div>
 </section>
 ${save.bestStreak ? `<section class="panel"><p>Felfri svit just nu: <b>${save.streak}</b> · Din bästa: <b>${save.bestStreak}</b></p></section>` : ''}
@@ -445,7 +445,7 @@ ${K ? '<section class="panel" id="board"></section>' : ''}
     <li><b>Tryck på Rätta</b> när du vill kontrollera. Rätt tal blir gröna och fel tal blir röda, så att du kan ändra dem.</li>
     <li><b>Ledtråd</b> fyller i ett tal åt dig, men ger färre poäng.</li>
     <li>På nivån Svår räknas <b>× och ÷ före + och −</b>: 3 + 4 × 5 = 23.</li>
-    <li>Löser du korsordet <b>utan fel och utan ledtrådar</b> fortsätter din felfria svit.</li>
+    <li>Löser du talväven <b>utan fel och utan ledtrådar</b> fortsätter din felfria svit.</li>
   </ol>
   <button class="btn" data-a="home">Till nivåerna</button>
 </section>`;
@@ -455,12 +455,12 @@ ${K ? '<section class="panel" id="board"></section>' : ''}
   function renderAcct() {
     const box = $('acct'); if (!box) return;
     if (sess) {
-      box.innerHTML = `<p>Inloggad som <b>${esc(sess.name)}</b>. Du har ${coins(save.mynt)} mynt att pimpa ditt korsord med.</p>
-        <span class="row" style="gap:10px"><button class="btn" data-a="shop">Korsordsverkstan</button><button class="btn ghost" data-a="logout">Logga ut</button></span>`;
+      box.innerHTML = `<p>Inloggad som <b>${esc(sess.name)}</b>. Du har ${coins(save.mynt)} mynt att pimpa din talväv med.</p>
+        <span class="row" style="gap:10px"><button class="btn" data-a="shop">Vävstugan</button><button class="btn ghost" data-a="logout">Logga ut</button></span>`;
       return;
     }
     const isNew = mode === 'new';
-    box.innerHTML = `<p style="width:100%"><b>Logga in</b> för att komma med på topplistan och samla mynt till ditt eget korsord. Samma konto som i de andra spelen.</p>
+    box.innerHTML = `<p style="width:100%"><b>Logga in</b> för att komma med på topplistan och samla mynt till din egen talväv. Samma konto som i de andra spelen.</p>
       <form id="aform" autocomplete="${isNew ? 'off' : 'on'}">
         <label class="fld"><span>Smeknamn</span><input id="aname" maxlength="16" required autocomplete="username"></label>
         <label class="fld"><span>Lösenord</span><input id="apw" type="password" required minlength="4" maxlength="64" autocomplete="${isNew ? 'new-password' : 'current-password'}"></label>
@@ -495,7 +495,7 @@ ${K ? '<section class="panel" id="board"></section>' : ''}
     box.innerHTML = `<div class="mk-bar"><h2>Topplista</h2>${sess && acct ? `<span class="muted small">Du: ${acct.week} poäng i veckan</span>` : ''}</div>
       <div class="chips">${tabs.map(([id, n]) => `<button class="chip${boardKind === id ? ' on' : ''}" data-kind="${id}">${n}</button>`).join('')}</div>
       <div id="brows"><p class="muted">Hämtar…</p></div>
-      <p class="muted small">${boardKind === 'best' ? 'Flest korsord i rad lösta utan fel och utan ledtrådar.' : 'Poäng får du för lösta korsord. Svårare nivå och färre fel ger mer poäng.'}${sess ? '' : ' Logga in för att vara med.'}</p>`;
+      <p class="muted small">${boardKind === 'best' ? 'Flest talvävar i rad lösta utan fel och utan ledtrådar.' : 'Poäng får du för lösta talvävar. Svårare nivå och färre fel ger mer poäng.'}${sess ? '' : ' Logga in för att vara med.'}</p>`;
     box.querySelectorAll('[data-kind]').forEach((b) => { b.onclick = () => { boardKind = b.dataset.kind; loadBoard(); }; });
     try {
       const rows = await K.rpc('get_leaderboard', { p_spel: SPEL, p_kind: boardKind, p_token: (sess && sess.token) || null });
@@ -528,14 +528,14 @@ ${K ? '<section class="panel" id="board"></section>' : ''}
     }
     $('app').innerHTML = `${head()}
 <section class="panel">
-  <div class="mk-bar"><h2>${daily ? 'Dagens korsord · ' : ''}${L.n}</h2><div class="mk-live"><span>Tid <b id="time">0:00</b></span><span>Kvar <b id="left">${pz.hidden.length}</b></span>${save.streak ? `<span>Felfri svit <b>${save.streak}</b></span>` : ''}</div></div>
+  <div class="mk-bar"><h2>${daily ? 'Dagens talväv · ' : ''}${L.n}</h2><div class="mk-live"><span>Tid <b id="time">0:00</b></span><span>Kvar <b id="left">${pz.hidden.length}</b></span>${save.streak ? `<span>Felfri svit <b>${save.streak}</b></span>` : ''}</div></div>
   ${level === 'svar' ? '<p class="muted small">Kom ihåg: × och ÷ räknas före + och −.</p>' : ''}
   <div class="mk-wrap"><div class="mk-board n${N} ${lookClasses()}" id="grid" style="--n:${N}">${cells}<div class="mk-fx" id="fx"></div></div></div>
   <p class="mk-msg" id="msg" aria-live="polite"></p>
   <div class="mk-acts" id="acts">
     <button class="btn" data-a="check">Rätta</button>
     <button class="btn ghost" data-a="hint">Ledtråd</button>
-    <button class="btn ghost" data-a="new">Nytt korsord</button>
+    <button class="btn ghost" data-a="new">Ny talväv</button>
     <button class="btn ghost" data-a="home">Avbryt</button>
   </div>
 </section>`;
@@ -629,13 +629,13 @@ ${K ? '<section class="panel" id="board"></section>' : ''}
     <div><b>${P.errors}</b><span>Fel</span></div>
     <div><b>${save.streak}</b><span>Felfri svit</span></div>
   </div>
-  ${dailyAgain ? '<p class="muted small">Du har redan löst dagens korsord på den här nivån, så det ger inga nya poäng. Kom tillbaka i morgon!</p>'
-    : sess ? `<div class="mk-earn"><span>+${pts} poäng</span>${earned + dailyBonus ? `<span>+${coins(earned + dailyBonus)}${dailyBonus ? ' <span class="small muted">(varav 5 för dagens korsord)</span>' : ''}</span>` : ''}</div>`
-    : (K ? '<p class="muted small">Logga in för att få poäng på topplistan och mynt till ditt korsord.</p>' : '')}
+  ${dailyAgain ? '<p class="muted small">Du har redan löst dagens talväv på den här nivån, så det ger inga nya poäng. Kom tillbaka i morgon!</p>'
+    : sess ? `<div class="mk-earn"><span>+${pts} poäng</span>${earned + dailyBonus ? `<span>+${coins(earned + dailyBonus)}${dailyBonus ? ' <span class="small muted">(varav 5 för dagens talväv)</span>' : ''}</span>` : ''}</div>`
+    : (K ? '<p class="muted small">Logga in för att få poäng på topplistan och mynt till din talväv.</p>' : '')}
   <div class="mk-acts">
-    <button class="btn" data-a="new">Nytt korsord</button>
+    <button class="btn" data-a="new">Ny talväv</button>
     <button class="btn ghost" data-a="home">Välj nivå</button>
-    ${sess ? '<button class="btn ghost" data-a="shop">Korsordsverkstan</button>' : ''}
+    ${sess ? '<button class="btn ghost" data-a="shop">Vävstugan</button>' : ''}
   </div>
 </div>`;
   }
@@ -666,10 +666,10 @@ ${K ? '<section class="panel" id="board"></section>' : ''}
     setTimeout(() => { if (fx) fx.innerHTML = ''; }, 4500);
   }
 
-  /* ---------- Korsordsverkstan ---------- */
+  /* ---------- Vävstugan ---------- */
   function showShop() {
     view = 'shop'; stopTimer();
-    if (!sess) { showHome(); toast('Logga in för att samla mynt och använda Korsordsverkstan.', 3500); return; }
+    if (!sess) { showHome(); toast('Logga in för att samla mynt och använda Vävstugan.', 3500); return; }
     const e = save.equip;
     const demo = makePuzzle('latt', 7);
     let cells = '';
@@ -682,8 +682,8 @@ ${K ? '<section class="panel" id="board"></section>' : ''}
     }
     $('app').innerHTML = `${head()}
 <section class="panel">
-  <div class="mk-bar"><h2>Korsordsverkstan</h2>${coins(save.mynt, 24)}</div>
-  <p class="muted">Pimpa ditt korsord med mynten du tjänar. Lätt ger 2 mynt, Medel 4 och Svår 8. Felfritt ger hälften till. Dagens korsord ger 5 extra per nivå.</p>
+  <div class="mk-bar"><h2>Vävstugan</h2>${coins(save.mynt, 24)}</div>
+  <p class="muted">Pimpa din talväv med mynten du tjänar. Lätt ger 2 mynt, Medel 4 och Svår 8. Felfritt ger hälften till. Dagens talväv ger 5 extra per nivå.</p>
   <div class="mk-wrap"><div class="mk-board n5 ${lookClasses()}" id="grid" style="--n:5;--cs:min(46px, calc((100vw - 140px) / 5))">${cells}<div class="mk-fx" id="fx"></div></div></div>
   ${e.fest && owns(e.fest) ? '<div class="mk-center"><button class="btn ghost" data-a="preview">Visa firandet</button></div>' : ''}
 </section>
