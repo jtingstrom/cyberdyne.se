@@ -1,4 +1,4 @@
-# Cyberdyne Spel
+# Cyberdyne Lärospel
 
 Gratis lärospel för mellanstadiet på **https://www.cyberdyne.se**. Allt ligger i det här repot (`cyberdyne.se`) och publiceras med GitHub Pages. Ett konto gäller i alla spel.
 
@@ -131,6 +131,7 @@ GitHub Pages: repo-inställningar → **Pages** → Custom domain `www.cyberdyne
 
 | Datum | Ändring |
 |---|---|
+| 2026-11-06 | Fokus på utbildning: sajten heter Cyberdyne Lärospel, titlar och beskrivningar beskriver vad eleven tränar, strukturerad data (schema.org LearningResource) på startsidan och i varje spel, avsnitt "För lärare" på startsidan, `robots.txt` och `sitemap.xml`. Syftet är att webbfilter ska klassa sajten som utbildning. |
 | 2026-11-04 | Fingerfärd, Talväven och Mattekorsord ligger på startsidan med länkar till lärar- och föräldrainfo. `noindex` borttaget. |
 | 2026-11-04 | Mattekorsord: lärarhandledning (PDF) och föräldrasida. Talväven, Fingerfärd och Mattekorsord har knappar till dem direkt under introtexten. |
 | 2026-11-04 | Nytt spel: Mattekorsord i `mattekorsord/`, ett traditionellt korsord där ledtrådarna är uträkningar och enkla frågor. Tre nivåer (5×5, 6×6, 7×7), dagens korsord, topplista, mynt och Korsordsverkstan. Poäng 40/80/150 minus 5 % per fel siffra och 15 % per visad siffra. Dolt från startsidan under test. |

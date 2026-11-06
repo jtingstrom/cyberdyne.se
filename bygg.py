@@ -53,13 +53,14 @@ def page(title, desc, scripts, out, body=APP, head_extra='', konto=True):
     (OUT / out).write_text(html)
     print(OUT.name + '/' + out, len(html), 'tecken')
 
-page('Kristallgruvan', 'Ett mattespel för åk 3–6: lös uppdrag, samla kristaller och varelser, bygg din bas och klättra på topplistan.',
-     ['questions.js', 'engine.js', 'game.js', 'public-store.js', 'public-app.js'], 'index.html')
+page('Kristallgruvan – matematikövningar för åk 3–6 | Cyberdyne Lärospel', 'Matematikövningar för åk 3–6 som anpassar svårigheten efter eleven: taluppfattning, de fyra räknesätten, bråk, decimaltal och procent, geometri, mätning och tid, statistik och problemlösning.',
+     ['questions.js', 'engine.js', 'game.js', 'public-store.js', 'public-app.js'], 'index.html',
+     head_extra='\n<script type="application/ld+json">\n{\n "@context": "https://schema.org",\n "@type": "LearningResource",\n "name": "Kristallgruvan",\n "url": "https://www.cyberdyne.se/kristallgruvan/",\n "description": "Matematikövningar för åk 3–6 som anpassar svårigheten efter eleven: taluppfattning, de fyra räknesätten, bråk, decimaltal och procent, geometri, mätning och tid, statistik och problemlösning.",\n "inLanguage": "sv",\n "isAccessibleForFree": true,\n "learningResourceType": "Interaktiv övning",\n "educationalLevel": "Grundskolan åk 3–6",\n "about": "Matematik",\n "teaches": [\n  "taluppfattning och positionssystemet",\n  "de fyra räknesätten",\n  "bråk, decimaltal och procent",\n  "geometri",\n  "mätning och tid",\n  "mönster och ekvationer",\n  "statistik och sannolikhet",\n  "problemlösning"\n ],\n "audience": {\n  "@type": "EducationalAudience",\n  "educationalRole": "student"\n },\n "publisher": {\n  "@type": "Person",\n  "name": "Jan Tingström",\n  "email": "info@tingstrom.se"\n }\n}\n</script>')
 page('Kristallgruvan Lärarsida', 'Anonym statistik över vanliga fel i Kristallgruvan.',
      ['questions.js', 'teacher.js'], 'larare.html', head_extra='\n<meta name="robots" content="noindex">')
 
 MOSSA = ['......pP........','.....pPPP.......','......PPp.......','..KKKKKKKKKKKK..','.KLLLGGGGGgGGGK.','.KLGGGGgGGGGGGK.','.KGGGGGGGGGgGGK.','.KGGWEGGGGWEGGK.','.KGGEEGGGGEEGGK.','.KGBBGGGGGGBBGK.','.KGGGGGMMGGGGGK.','.KGgGGGGGGGGgGK.','.KGGGGgGGGGGGGK.','..KKKKKKKKKKKK..','...KK......KK...','................']
 MCOL = {'K':'#1d2b17','G':'#6cbf4a','L':'#93dd6a','g':'#4c9a35','P':'#9b6bff','p':'#d6c2ff','B':'#f08aa0','M':'#2c4a20','W':'#ffffff','E':'#1d2b17'}
 rects = ''.join(f'<rect x="{x}" y="{y}" width="1.02" height="1.02" fill="{MCOL[c]}"/>' for y, row in enumerate(MOSSA) for x, c in enumerate(row) if c != '.')
-page('Kristallgruvan för föräldrar', 'Information till föräldrar om mattespelet Kristallgruvan.', [], 'foraldrar.html',
+page('Kristallgruvan för föräldrar | Cyberdyne Lärospel', 'Information till föräldrar om Kristallgruvan, matematikövningar för åk 3–6.', [], 'foraldrar.html',
      body=(K / 'parents-body.html').read_text().replace('__MOSSA__', rects), konto=False)

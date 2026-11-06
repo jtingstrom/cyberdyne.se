@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /test.html
+Disallow: /kristallgruvan/larare.html
+
+Sitemap: https://www.cyberdyne.se/sitemap.xml

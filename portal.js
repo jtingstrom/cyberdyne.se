@@ -71,7 +71,7 @@
         <p>${esc(g.beskrivning)}</p>
         <div class="tags">${[g.amne, g.arskurs, g.topplista ? 'Topplista' : ''].filter(Boolean).map((t) => `<span>${esc(t)}</span>`).join('')}</div>
         ${(g.lankar || []).length ? `<nav class="game-links" aria-label="Mer om ${esc(g.namn)}">${g.lankar.map((l) => `<a class="link" href="${esc(l.adress)}">${esc(l.text)}</a>`).join('')}</nav>` : ''}
-        ${soon ? '<span class="btn ghost" aria-disabled="true">Kommer snart</span>' : `<a class="btn" href="${esc(g.adress)}">Spela</a>`}
+        ${soon ? '<span class="btn ghost" aria-disabled="true">Kommer snart</span>' : `<a class="btn" href="${esc(g.adress)}">Börja öva</a>`}
       </article>`;
     }).join('') || '<p class="muted">Inga spel än.</p>';
   }
@@ -81,7 +81,7 @@
     const box = $('board');
     if (!K || !K.online) { box.hidden = true; return; }
     const tabs = [['week', 'Veckans poäng'], ['total', 'All-time']];
-    box.innerHTML = `<h2>Topplista, alla spel</h2>
+    box.innerHTML = `<h2>Topplista, alla lärospel</h2>
       <div class="chips">${tabs.map(([id, n]) => `<button class="chip${boardKind === id ? ' on' : ''}" data-kind="${id}">${n}</button>`).join('')}</div>
       <div id="brows"><p class="muted">Hämtar…</p></div>`;
     box.querySelectorAll('[data-kind]').forEach((b) => { b.onclick = () => { boardKind = b.dataset.kind; loadBoard(); }; });
