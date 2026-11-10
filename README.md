@@ -131,6 +131,7 @@ GitHub Pages: repo-inställningar → **Pages** → Custom domain `www.cyberdyne
 
 | Datum | Ändring |
 |---|---|
+| 2026-11-10 | Google Search Console: verifieringsfilen `google2b76fc8760396af5.html` i roten. Ta inte bort den, då tappar kontot ägarskapet. |
 | 2026-11-06 | Fokus på utbildning: sajten heter Cyberdyne Lärospel, titlar och beskrivningar beskriver vad eleven tränar, strukturerad data (schema.org LearningResource) på startsidan och i varje spel, avsnitt "För lärare" på startsidan, `robots.txt` och `sitemap.xml`. Syftet är att webbfilter ska klassa sajten som utbildning. |
 | 2026-11-04 | Fingerfärd, Talväven och Mattekorsord ligger på startsidan med länkar till lärar- och föräldrainfo. `noindex` borttaget. |
 | 2026-11-04 | Mattekorsord: lärarhandledning (PDF) och föräldrasida. Talväven, Fingerfärd och Mattekorsord har knappar till dem direkt under introtexten. |
